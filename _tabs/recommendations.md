@@ -6,7 +6,7 @@ icon: fa-solid fa-quote-left
 order: 11
 ---
 
-Nesta página, quero compartilho com vocês algumas das plataformas de cursos online, canais do YouTube e podcasts que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.
+Nesta página, quero compartilho com vocês algumas das plataformas de cursos online ecanais do YouTube que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.
 
 ## Plataformas de Treinamentos Online
 
@@ -31,12 +31,15 @@ Nesta página, quero compartilho com vocês algumas das plataformas de cursos on
 - <i class="fab fa-youtube"></i> [Unicast Cloud Lab](https://www.youtube.com/@unicastlab)
 - <i class="fab fa-youtube"></i> [Canal da Cloud](https://www.youtube.com/@CanaldaCloud/)
 - <i class="fab fa-youtube"></i> [TecMundo](https://www.youtube.com/@tecmundo)
-- <i class="fab fa-youtube"></i> [SejaUmaPessoaMelho](https://www.youtube.com/@sejaumapessoamelhor)
+- <i class="fab fa-youtube"></i>
 
-## Podcasts no Spotify
+<br>
 
-- <i class="fa-brands fa-spotify"></i> [Kubicast](https://open.spotify.com/show/7x2OHOUAaOnTjlSwBHNAjN?si=1c30528ecfd9400f)
-- <i class="fa-brands fa-spotify"></i> [IA Sob Controle - Inteligência Artificial](https://open.spotify.com/show/5xLCMHJ6eGWzdu8JaIDkuP?si=802093c6b8884482)
-- <i class="fa-brands fa-spotify"></i> [Cabeça de Lab](https://open.spotify.com/show/6jYjcj4oQ31J85jGhbiRkK?si=23f4d88f65df4faa)
-- <i class="fa-brands fa-spotify"></i> [Canal Marcus Vinícius](https://open.spotify.com/show/4fhMGofxZCOjminSRHp3iN)
-- <i class="fa-brands fa-spotify"></i> [The Unicast DevOps Show](https://open.spotify.com/show/4h44R75Kcg9WQvOr4GxKJK)
+![logotipo](/assets/img/01/image.gif)
+
+<br>
+
+<hr>
+
+
+[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
