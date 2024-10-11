@@ -14,19 +14,19 @@ timezone: America/Sao_Paulo
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Rafael Ferreira # the main title
+title: William Costa # the main title
 
-tagline: My Personal Web Portfolio # it will display as the sub-title
+tagline: Cloud Insights # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  tecnologia, cloud, azure, devops, azure devops, terraform, kubernetes, architect, sre, platform engineer, Rafael Martin Alves Ferreira
+  tecnologia, cloud, azure, devops, azure devops, terraform, William Costa
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://williamcosta.github.io"
 
 github:
-  username: rafaelmaferreira # change to your github username
+  username: williamcrcosta # change to your github username
 
 # twitter:
 #   username: twitter_username # change to your twitter username
@@ -34,17 +34,12 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Rafael Martin Alves Ferreira
+  name: William Costa
   email: rafael.maferreira@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://www.linkedin.com/in/rafaelmaferreira/
-    - https://www.youtube.com/@LowOps-Channel
-    - https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=78799430f99c45e2
-    - https://podcasts.apple.com/br/podcast/lowopscast/id1755380230
+    - https://www.linkedin.com/in/williamcrp/
     - https://github.com/rafaelmaferreira
-    - https://medium.com/@rafaelmaferreira'
-    - https://www.instagram.com/rafaelmaferreira11/
 
 google_site_verification: # fill in to your verification string
 
