@@ -12,14 +12,6 @@
   icon: 'fab fa-youtube'
   url: 'https://www.youtube.com/@AzureFloripa'
 
-- type: spotify
-  icon: 'fab fa-spotify'
-  url: 'likn to Spotify'
-
-- type: Apple Podcasts
-  icon: fa-solid fa-podcast
-  url: 'link to Apple Podcasts'
-
 - type: github
   icon: 'fab fa-github'
   url: 'https://github.com/williamcrcosta'  # Uncomment and add URL when available
