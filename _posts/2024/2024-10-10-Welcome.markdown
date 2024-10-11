@@ -6,7 +6,7 @@ categories: [Welcome]
 tags: [CloudInsights, Azure, Tech, Cloud]
 slug: 'Welcome'
 image:
-  path: assets/img/01/image.gif
+  path: assets/img/02/cloudinsights3.png
 ---
 
 Fala galera!
