@@ -19,7 +19,13 @@ title: William Costa # the main title
 tagline: Cloud Insights # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  tecnologia, cloud, azure, devops, azure devops, terraform, William Costa
+  "Explorando novidades, dicas e insights sobre soluções em nuvem."
+
+author: William Costa # change to your full name
+
+seo:
+  keywords: tecnologia, cloud, azure, devops, azure devops, terraform
+  description: "Blog sobre tecnologias e soluções em nuvem"
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -114,6 +120,12 @@ paginate: 10
 # Jekyll Plugins
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-include-cache
+  - jekyll-toc
 
 # ------------ The following options are not recommended to be modified ------------------
 
