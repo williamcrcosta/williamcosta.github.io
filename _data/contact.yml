@@ -22,15 +22,7 @@
 
 - type: github
   icon: 'fab fa-github'
-  #url: 'https://github.com/williamcrcosta'  # Uncomment and add URL when available
-
-- type: medium
-  icon: 'fab fa-medium'
-  url: 'https://medium.com/@perfil'
-
-- type: instagram
-  icon: 'fab fa-instagram'
-  url: 'https://www.instagram.com/perfil/'
+  url: 'https://github.com/williamcrcosta'  # Uncomment and add URL when available
 
 # Uncomment and complete the url below to enable more contact options
 
