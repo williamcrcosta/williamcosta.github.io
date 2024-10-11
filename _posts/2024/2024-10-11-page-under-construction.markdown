@@ -1,7 +1,7 @@
 ---
-#layout: post
+layout: post
 title: 'Pagina em Construção'
-date: 2024-10-11 12:21:00
+date: 2024-10-11 12:21:00 -0300
 categories: [page]
 tags: [About]
 slug: 'construction page'

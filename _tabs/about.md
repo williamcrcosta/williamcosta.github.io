@@ -6,7 +6,7 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-## Hello there 👋!
+## Hello There 👋!
 
 
 Olá muito prazer, sou o William.
