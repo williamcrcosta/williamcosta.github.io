@@ -32,6 +32,6 @@ Até a próxima!! 😉
 <hr>
 
 
-
+[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
 
 
