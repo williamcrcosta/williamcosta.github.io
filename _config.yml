@@ -35,7 +35,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: William Costa
-  email: rafael.maferreira@gmail.com # change to your email address
+  email:  # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://www.linkedin.com/in/williamcrp/
@@ -86,7 +86,7 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: "rafaelmaferreira/rafaelmaferreira.com.br"  # Nome do repositório GitHub
+    repo: "williamcrcosta/williamcosta.github.io"  # Nome do repositório GitHub
     repo_id: "MDEwOlJlcG9zaXRvcnkxMjk2MjY5NQ=="       # ID do repositório (obtido no Giscus)
     category: "Comments"                              # Nome da categoria escolhida
     category_id: "DIC_kwDOA5lwPs4B-cuS"               # ID da categoria (obtido no Giscus)
