@@ -5,8 +5,8 @@ date: 2024-10-11 12:21:00 -0300
 categories: [page]
 tags: [About]
 slug: 'construction-page'
-image:
-  path: assets/img/01/image.gif
+#image:
+#  path: assets/img/01/image.gif
 ---
 
 Fala galera!
