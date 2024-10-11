@@ -39,7 +39,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://www.linkedin.com/in/williamcrp/
-    - https://github.com/rafaelmaferreira
+    - https://github.com/williamcrcosta
 
 google_site_verification: # fill in to your verification string
 
@@ -193,3 +193,9 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+status_badge: "[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)"
+
+readme_index:
+  enabled: true
+  # 2: Enable index page.Apparently, the option 'enabled' is not recommended to be modified
