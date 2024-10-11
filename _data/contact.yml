@@ -8,9 +8,9 @@
   icon: 'fab fa-youtube'
   url: 'https://www.youtube.com/@IT-CloudInsights'
 
-- type: youtube
-  icon: 'fab fa-youtube'
-  url: 'https://www.youtube.com/@AzureFloripa'
+#- type: youtube
+#  icon: 'fab fa-youtube'
+#  url: 'https://www.youtube.com/@AzureFloripa'
 
 - type: github
   icon: 'fab fa-github'
