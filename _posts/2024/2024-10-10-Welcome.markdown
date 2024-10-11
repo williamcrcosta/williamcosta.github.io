@@ -5,8 +5,8 @@ date: 2024-10-10 11:45:00 -0300
 categories: [Welcome]
 tags: [CloudInsights, Azure, Tech, Cloud]
 slug: 'Welcome'
-image:
-  path: assets/img/02/cloudinsights3.png
+#image:
+#  path: assets/img/02/cloudinsights3.png
 ---
 
 Fala galera!
