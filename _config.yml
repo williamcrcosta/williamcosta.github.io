@@ -17,7 +17,7 @@ timezone: America/Sao_Paulo
 title: William Costa # the main title
 
 tagline: Cloud Specialist | Azure 🇧🇷
-         Cloud Insights # it will display as the sub-title
+              Cloud Insights # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   "Explorando novidades, dicas e insights sobre soluções em nuvem."
