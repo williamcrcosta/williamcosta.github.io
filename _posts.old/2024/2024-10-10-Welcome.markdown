@@ -1,0 +1,28 @@
+---
+layout: post
+title: 'Welcome'
+date: 2024-10-10 11:45:00 -0300
+categories: [Welcome]
+tags: [CloudInsights, Azure, Tech, Cloud]
+slug: 'Welcome'
+#image:
+#  path: assets/img/02/cloudinsights3.png
+---
+
+Fala galera!
+
+👋 **Bem-vindos ao Blog Cloud Insights!** ☁️
+
+![logotipo](/assets/img/02/cloudinsights3.png)
+
+Estou super animado para compartilhar com vocês este espaço dedicado ao mundo da computação em nuvem. Aqui no Cloud Insights, vamos explorar juntos novidades, dicas e insights sobre soluções em nuvem, terraform e muito mais.
+
+Vamos desbravar o futuro da tecnologia e aprender juntos!
+
+Até a próxima!! 🚀✨
+
+#CloudInsights #PartiuNuvem #Azure #Tech #Cloud
+
+---
+
+[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)

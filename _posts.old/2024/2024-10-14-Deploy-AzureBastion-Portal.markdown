@@ -1,0 +1,41 @@
+# Criar um grupo de recursos
+az group create --name TestRG1 --location eastus
+
+# Criar uma rede virtual
+az network vnet create --resource-group TestRG1 --name VNet1 --location eastus --address-prefix 10.0.0.0/16
+
+# Criar um endereço IP público com SKU Standard
+az network public-ip create --resource-group TestRG1 --name VNet1-ip --sku Standard --location eastus
+
+# Criar uma sub-rede
+az network vnet subnet create --resource-group TestRG1 --vnet-name VNet1 --name Subnet1 --address-prefix 10.0.1.0/24
+
+# Criar um host Bastion com SKU Basic
+az network bastion create --resource-group TestRG1 --name BastionHost1 --vnet-name VNet1 --subnet Subnet1 --sku Basic
+
+# Verificar o status do Bastion
+az network bastion show --resource-group TestRG1 --name BastionHost1
+
+
+
+# Criar um grupo de recursos
+```sh
+az group create --name TestRG1 --location eastus
+```
+---
+
+```powershel
+Get-AzRoleDefinition -Name Virtual Machine Contributor | ConvertTo-Json | Out-File C:\CustomRoles\NewRole.json
+```
+
+
+# Criar um endereço IP público com múltiplas zonas de disponibilidade
+```hcl
+resource "azurerm_public_ip" "example" {
+  name                = "VNet1-ip"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  zones               = ["1", "2", "3"]
+}
