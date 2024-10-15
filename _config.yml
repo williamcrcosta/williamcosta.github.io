@@ -6,8 +6,8 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-#lang: [pt, en]
-languages: [pt, en]
+lang: en
+#languages: [pt, en]
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: America/Sao_Paulo
@@ -155,17 +155,17 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-#collections:
-#  tabs:
-#    output: true
-#    sort_by: order
 collections:
-  posts:
-    output: true
-
   tabs:
     output: true
     sort_by: order
+#collections:
+#  posts:
+#    output: true
+
+#  tabs:
+#    output: true
+#    sort_by: order
 
 
 defaults:
