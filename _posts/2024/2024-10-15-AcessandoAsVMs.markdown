@@ -29,11 +29,11 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 1. Clique na sua máquina virtual Linux para abrir a página de detalhes.
 2. No painel de navegação da VM, clique em **Connect**.
 3. Selecione **Connect via Bastion**.
+4. Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
+5. Clique em **Connect**.
 
 ![resource-group](/assets/img/Lab01-Bastion/05-LogandoVMLinux.png){: .shadow .rounded-10}
 
-- Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
-- Clique em **Connect**.
 
 ![resource-group](/assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png){: .shadow .rounded-10}
 
