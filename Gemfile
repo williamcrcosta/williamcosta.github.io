@@ -18,7 +18,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
-#  gem 'jekyll-multiple-languages-plugin'  # Plugin de múltiplos idiomas
+  #gem 'jekyll-multiple-languages-plugin'  # Plugin de múltiplos idiomas
 end
 
 group :test do
