@@ -33,7 +33,7 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 ![resource-group](/assets/img/Lab01-Bastion/05-LogandoVMLinux.png){: .shadow .rounded-10}
 
 4. Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
-5. Clique em **Conectar**.
+5. Clique em **Connect**.
 
 ![resource-group](/assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png){: .shadow .rounded-10}
 
