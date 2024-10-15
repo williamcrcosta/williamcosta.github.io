@@ -47,23 +47,14 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 1. Faça login no [Portal do Azure](https://portal.azure.com/).
 
-<br>
-
 ### Passo 2: Deploy dos recursos Base
 
-<br>
-
 1. Crie um novo resource-group
-
-<br>
-
 
 > Obs.: Vocês vão notar que no meu caso o Resource-Group já existe.
 {:.prompt-info}
 
-
 ![resource-group](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
-
 
 2. Crie uma nova Virtual Network + AzureBastionSubnet
 
@@ -74,10 +65,7 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 1. Na barra de pesquisa, digite **Bastion** e selecione **Bastion** nos resultados.
 2. Clique em **Criar**.
 
-
 ![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource.png){: .shadow .rounded-10}
-
-<br>
 
 ### Passo 4: Configurar o Bastion
 
@@ -94,35 +82,21 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
    - **Virtual Network**: Selecione a virtual network criada (ci-bastion-vnet). Voce vai notar que ele vai identificar automaticamente a subnet do AzureBastion.
    - **Public-IP**: Crie um novo IP-Público. Você pode criar um com o nome: "ci-bastion-pip"
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource2.png){: .shadow .rounded-10}
 
 > Avance para a aba Advanced (Avançado).
 {:.prompt-info}
 
 
-<br>
-
    - **Kerberos Authentication**: Selecione a unica opção disponivel e clique em Review + Create.
 
-<br>
 
 ![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion02.png){: .shadow .rounded-10}
-
-
-<br>
-<br>
 
 2. **Revisar e Criar**:
    - Revise suas configurações e clique em **Criar**.
 
-<br>
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion.png){: .shadow .rounded-10}
-
-<br>
 
 ## Conclusão
 
@@ -131,7 +105,6 @@ Agora você sabe como realizar o deploy do Azure Bastion no Microsoft Azure.
 Até a próxima!! 😉
 
 ![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
-
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security #Network
 

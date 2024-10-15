@@ -22,11 +22,7 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 1. Já logado no [Portal do Azure](https://portal.azure.com/).
 2. Navegue até o **Grupo de Recursos** onde está sua VM Linux.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/11-LocalizandoVMLnx.png){: .shadow .rounded-10}
-
-<br>
 
 ### Passo 2: Conecte-se via Bastion
 
@@ -34,30 +30,18 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 2. No painel de navegação da VM, clique em **Connect**.
 3. Selecione **Connect via Bastion**.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/05-LogandoVMLinux.png){: .shadow .rounded-10}
-
-<br>
 
 4. Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
 5. Clique em **Conectar**.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png){: .shadow .rounded-10}
-
-<br>
 
 ### Passo 3: Acesso à VM
 
 Após alguns segundos, uma nova janela será aberta, permitindo que você interaja com a linha de comando da sua VM Linux.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/07-VMLinuxLogadaviabastion.png){: .shadow .rounded-10}
-
-<br>
 
 ---
 
@@ -67,11 +51,7 @@ Após alguns segundos, uma nova janela será aberta, permitindo que você intera
 
 Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/10-LocalizandoVMWind.png){: .shadow .rounded-10}
-
-<br>
 
 ### Passo 2: Conecte-se via Bastion
 
@@ -79,21 +59,13 @@ Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
 2. No painel de navegação da VM, clique em **Connect**.
 3. Selecione **Connect via Bastion**.
 
-<br>
-
 ![resource-group](/assets/img/Lab01-Bastion/12-LogandoVMWind.png){: .shadow .rounded-10}
-
-<br>
 
 Repita as etapas 4 e 5 do Passo 2 para sua VM Windows. Autentique-se com sua credencias do Windows.
 
 ### Passo 3: Acesso à VM
 
-<br>
-
 Após alguns segundos, a conexão será estabelecida, e você verá a área de trabalho da sua VM Windows.
-
-<br>
 
 ![resource-group](/assets/img/Lab01-Bastion/08-VMWindowsLogadaviabastion.png){: .shadow .rounded-10}
 
@@ -104,8 +76,6 @@ Agora você sabe como acessar suas VMs Linux e Windows utilizando o Azure Bastio
 Até a próxima!! 😉
 
 ![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
-
-<br>
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security
 
