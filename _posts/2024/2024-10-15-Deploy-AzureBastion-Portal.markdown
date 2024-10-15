@@ -57,26 +57,17 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 <br>
 
-<div style="text-align: center;">
-            Obs.: Vocês vão notar que no meu caso o Resource-Group já existe.
-</div>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/001-ResourceGroup.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+> Obs.: Vocês vão notar que no meu caso o Resource-Group já existe.
+{:.prompt-info}
 
-<br>
-<br>
+
+![resource-group](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
+
 
 2. Crie uma nova Virtual Network + AzureBastionSubnet
 
-
-
-<div style="display: flex; justify-content: center; align-items: center; align-items: center; margin: 38px;">
-<img src="../../assets/img/Lab01-Bastion/02-VirtualNetwork.png" alt="Imagem 1" style="display:inline-block; width:35%; margin-right: 5px;"/>
-<img src="../../assets/img/Lab01-Bastion/03-AzureBastionSubnet.png" alt="Imagem 2" style="display:inline-block; width:70%; margin-right: 5px;"/>
-</div>
-
+| ![azure-automation-account](/assets/img/Lab01-Bastion/02-VirtualNetwork.png){: .shadow .rounded-10 } | ![azure-automation-account](/assets/img/Lab01-Bastion/03-AzureBastionSubnet.png){: .shadow .rounded-10 } |
 
 ### Passo 3: Deploy do Azure Bastion
 
@@ -84,9 +75,7 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 2. Clique em **Criar**.
 
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/09-CreateaResource.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource.png){: .shadow .rounded-10}
 
 <br>
 
@@ -107,13 +96,11 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/09-CreateaResource2.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource2.png){: .shadow .rounded-10}
 
-<div style="text-align: center;">
-            Avance para a aba Advanced (Avançado)
-</div>
+> Avance para a aba Advanced (Avançado).
+{:.prompt-info}
+
 
 <br>
 
@@ -121,9 +108,8 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/04-DeployAzureBastion02.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion02.png){: .shadow .rounded-10}
+
 
 <br>
 <br>
@@ -133,9 +119,8 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 <br>
 <br>
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/04-DeployAzureBastion.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+
+![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion.png){: .shadow .rounded-10}
 
 <br>
 
@@ -145,10 +130,8 @@ Agora você sabe como realizar o deploy do Azure Bastion no Microsoft Azure.
 
 Até a próxima!! 😉
 
+![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
-<div style="text-align: center;">
-    <img src="../../assets/img/02/cloudinsights3.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security #Network
 
