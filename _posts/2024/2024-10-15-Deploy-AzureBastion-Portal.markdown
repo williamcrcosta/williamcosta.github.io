@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Portal Azure)'
-date: 2024-10-15 01:00:00 -0300
+date: 2024-10-15 01:30:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion]
 slug: 'Network'
