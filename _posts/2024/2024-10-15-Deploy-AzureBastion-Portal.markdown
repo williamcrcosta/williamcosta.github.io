@@ -40,6 +40,7 @@ O Azure Bastion elimina a necessidade de endereços IP públicos em suas VMs, re
 Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 - Uma conta do Azure com uma assinatura/subscription ativa.
+- Uma VM Linux ou Windows criada em sua subscription.
 
 ## Implantação do Azure Bastion pelo Portal do Azure
 
@@ -57,6 +58,9 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 ![resource-group](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
 
 2. Crie uma nova Virtual Network + AzureBastionSubnet
+
+> Obs.: Se você tiver já tiver uma VNET criada, você pode criar sua AzureBastionSubnet nela.
+{:.prompt-info}
 
 | ![azure-automation-account](/assets/img/Lab01-Bastion/02-VirtualNetwork.png){: .shadow .rounded-10 } | ![azure-automation-account](/assets/img/Lab01-Bastion/03-AzureBastionSubnet.png){: .shadow .rounded-10 } |
 
