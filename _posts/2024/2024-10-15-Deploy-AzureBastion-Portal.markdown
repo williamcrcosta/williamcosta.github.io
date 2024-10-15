@@ -75,7 +75,7 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
    - **Nome do Resource**: Forneça um nome para seu host Bastion.
    - **Região**: Escolha a mesma região da sua VNet (East US2).
    - **Availability Zone**: Deixe em none.
-   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, voce pode conferir [aqui](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview).
+   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, você pode conferir <a href="https://docs.microsoft.com/en-us/azure/bastion/bastion-overview" target="_blank">aqui</a>.
 
         - *Ao escolhermos o tier Basic, ficam pré-definidas 2 instances*.
 
@@ -112,4 +112,3 @@ Até a próxima!! 😉
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
 
-Até a próxima!! 😉
