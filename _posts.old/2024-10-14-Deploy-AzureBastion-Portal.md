@@ -13,7 +13,7 @@ Fala galera!👋
 
 **Bem-vindo ao Blog Cloud Insights!** ☁️
 
-Em nosso primeiro post, vamos explorar como implantar e utilizar o Azure Bastion via Portal.
+Em nosso primeiro post, vamos explorar como implantar o Azure Bastion através do Portal Azure.
 
 ### Azure Bastion
 
