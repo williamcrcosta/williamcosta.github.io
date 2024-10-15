@@ -1,19 +1,19 @@
 ---
 layout: post
-title: 'Página em Construção'
-date: 2024-10-11 12:21:00 -0300
-categories: [page]
-tags: [About]
-slug: 'construction-page'
+title: 'Deploy Azure Bastion (Portal Azure)'
+date: 2024-10-14 21:43:00 -0300
+categories: [Network]
+tags: [Azure, Network, Bastion]
+slug: 'Network'
 #image:
 #  path: assets/img/01/image.gif
 ---
 
-Fala galera!
+Fala galera!👋
 
-👋 **Bem-vindo ao Blog Cloud Insights!** ☁️
+**Bem-vindo ao Blog Cloud Insights!** ☁️
 
-Em nosso primeiro post, vamos explorar como implantar e utilizar o Azure Bastion.
+Em nosso primeiro post, vamos explorar como implantar e utilizar o Azure Bastion via Portal.
 
 ### Azure Bastion
 
@@ -98,9 +98,9 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
    - **Nome do Resource**: Forneça um nome para seu host Bastion.
    - **Região**: Escolha a mesma região da sua VNet (East US2).
    - **Availability Zone**: Deixe em none.
-   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, voce pode conferir aqui.
+   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, voce pode conferir [aqui](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview).
 
-            Quando escolhermos o tier Basic, fica pre-definido 2 instances.
+        - *Ao escolhermos o tier Basic, ficam pré-definidas 2 instances*.
 
    - **Virtual Network**: Selecione a virtual network criada (ci-bastion-vnet). Voce vai notar que ele vai identificar automaticamente a subnet do AzureBastion.
    - **Public-IP**: Crie um novo IP-Público. Você pode criar um com o nome: "ci-bastion-pip"
@@ -138,16 +138,22 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 </div>
 
 <br>
+
+## Conclusão
+
+Agora você sabe como realizar o deploy do Azure Bastion no Microsoft Azure.
+
 Até a próxima!! 😉
 
 
+<div style="text-align: center;">
+    <img src="../../assets/img/02/cloudinsights3.png" alt="Imagem 1" style="width: 50%;"/>
+</div>
 
----
-
-#CloudInsights #PartiuNuvem #Azure #Tech #Cloud
+#CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security #Network
 
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
 
-[def]: /assets/img/Lab01-Bation/09-CreateResource.png
+Até a próxima!! 😉

@@ -9,9 +9,9 @@ slug: 'Welcome'
 #  path: assets/img/02/cloudinsights3.png
 ---
 
-Fala galera!
+Fala galera!👋
 
-👋 **Bem-vindos ao Blog Cloud Insights!** ☁️
+**Bem-vindo ao Blog Cloud Insights!** ☁️
 
 ![logotipo](/assets/img/02/cloudinsights3.png)
 
