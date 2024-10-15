@@ -7,9 +7,9 @@ gem "jekyll", "~> 4.3.4"  # Ajuste a versão conforme necessário
 #gem "github-pages", "~> 228", group: :jekyll_plugins
 # gem "minima", "~> 2.5"  # Se você quiser usar o tema minima, descomente esta linha
 
-gem 'logger'
-gem 'csv'
-gem 'base64'
+#gem 'logger'
+#gem 'csv'
+#gem 'base64'
 
 # Adicione o jekyll-feed
 group :jekyll_plugins do
@@ -18,7 +18,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
-  gem 'jekyll-multiple-languages-plugin'  # Plugin de múltiplos idiomas
+#  gem 'jekyll-multiple-languages-plugin'  # Plugin de múltiplos idiomas
 end
 
 group :test do
