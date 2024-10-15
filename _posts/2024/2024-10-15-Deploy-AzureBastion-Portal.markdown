@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Portal Azure)'
-date: 2024-10-15 01:40:00
+date: 2024-10-15 01:40:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion]
 slug: 'Network'
@@ -13,7 +13,7 @@ Fala galera!👋
 
 **Bem-vindo ao Blog Cloud Insights!** ☁️
 
-Em nosso primeiro post, vamos explorar como implantar e utilizar o Azure Bastion via Portal.
+Em nosso primeiro post, vamos explorar como implantar o Azure Bastion via Portal.
 
 ### Azure Bastion
 
