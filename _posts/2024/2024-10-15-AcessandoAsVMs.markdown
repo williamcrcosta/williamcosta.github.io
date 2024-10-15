@@ -24,9 +24,7 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/11-LocalizandoVMLnx.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/11-LocalizandoVMLnx.png){: .shadow .rounded-10}
 
 <br>
 
@@ -38,11 +36,8 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/05-LogandoVMLinux.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/05-LogandoVMLinux.png){: .shadow .rounded-10}
 
-<br>
 <br>
 
 4. Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
@@ -50,9 +45,7 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png){: .shadow .rounded-10}
 
 <br>
 
@@ -62,9 +55,7 @@ Após alguns segundos, uma nova janela será aberta, permitindo que você intera
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/07-VMLinuxLogadaviabastion.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/07-VMLinuxLogadaviabastion.png){: .shadow .rounded-10}
 
 <br>
 
@@ -78,9 +69,7 @@ Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/10-LocalizandoVMWind.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/10-LocalizandoVMWind.png){: .shadow .rounded-10}
 
 <br>
 
@@ -92,9 +81,7 @@ Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/12-LogandoVMWind.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/12-LogandoVMWind.png){: .shadow .rounded-10}
 
 <br>
 
@@ -108,9 +95,7 @@ Após alguns segundos, a conexão será estabelecida, e você verá a área de t
 
 <br>
 
-<div style="text-align: center;">
-    <img src="../../assets/img/Lab01-Bastion/08-VMWindowsLogadaviabastion.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+![resource-group](/assets/img/Lab01-Bastion/08-VMWindowsLogadaviabastion.png){: .shadow .rounded-10}
 
 ## Conclusão
 
@@ -118,10 +103,9 @@ Agora você sabe como acessar suas VMs Linux e Windows utilizando o Azure Bastio
 
 Até a próxima!! 😉
 
+![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
-<div style="text-align: center;">
-    <img src="../../assets/img/02/cloudinsights3.png" alt="Imagem 1" style="width: 50%;"/>
-</div>
+<br>
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security
 
