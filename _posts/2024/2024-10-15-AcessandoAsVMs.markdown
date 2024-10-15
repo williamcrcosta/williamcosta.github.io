@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Acessando VMs Linux e Windows com Azure Bastion (Portal Azure)'
-date: 2024-10-15 01:40:00
+date: 2024-10-15 08:30:00 -0300
 categories: [Network]
 tags: [Azure, Bastion]
 slug: 'Azure-Bastion'
