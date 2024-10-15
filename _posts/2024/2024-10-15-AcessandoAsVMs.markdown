@@ -32,8 +32,8 @@ No post anterior fizemos o deploy do Azure Bastion. Hoje vamos explorar como ace
 
 ![resource-group](/assets/img/Lab01-Bastion/05-LogandoVMLinux.png){: .shadow .rounded-10}
 
-4. Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
-5. Clique em **Connect**.
+- Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
+- Clique em **Connect**.
 
 ![resource-group](/assets/img/Lab01-Bastion/06-InserindoCredenciaseacessando.png){: .shadow .rounded-10}
 
@@ -61,7 +61,7 @@ Repita as etapas 1 e 2 do [Passo 1](https://cloudinsights.com.br/posts/Azure-Bas
 
 ![resource-group](/assets/img/Lab01-Bastion/12-LogandoVMWind.png){: .shadow .rounded-10}
 
-Repita as etapas 4 e 5 do Passo 2 [Passo 2](https://cloudinsights.com.br/posts/Azure-Bastion/#passo-2-conecte-se-via-bastion) para sua VM Windows. Autentique-se com sua credencias do Windows.
+Repita as etapas 4 e 5 do [Passo 2](https://cloudinsights.com.br/posts/Azure-Bastion/#passo-2-conecte-se-via-bastion) para sua VM Windows. Autentique-se com sua credencias do Windows.
 
 ### Passo 3: Acesso à VM
 
