@@ -49,7 +49,7 @@ Após alguns segundos, uma nova janela será aberta, permitindo que você intera
 
 ### Passo 1: Localize sua VM Windows
 
-Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
+Repita as etapas 1 e 2 do [Passo 1](https://cloudinsights.com.br/posts/Azure-Bastion/#passo-1-acesse-o-portal-do-azure-e-localize-sua-vm-linux) para localizar sua VM Windows.
 
 ![resource-group](/assets/img/Lab01-Bastion/10-LocalizandoVMWind.png){: .shadow .rounded-10}
 
@@ -61,7 +61,7 @@ Repita as etapas 1 e 2 do Passo 1 para localizar sua VM Windows.
 
 ![resource-group](/assets/img/Lab01-Bastion/12-LogandoVMWind.png){: .shadow .rounded-10}
 
-Repita as etapas 4 e 5 do Passo 2 para sua VM Windows. Autentique-se com sua credencias do Windows.
+Repita as etapas 4 e 5 do Passo 2 [Passo 2](https://cloudinsights.com.br/posts/Azure-Bastion/#passo-2-conecte-se-via-bastion) para sua VM Windows. Autentique-se com sua credencias do Windows.
 
 ### Passo 3: Acesso à VM
 
