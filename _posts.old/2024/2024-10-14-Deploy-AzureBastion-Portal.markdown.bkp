@@ -1,3 +1,18 @@
+---
+layout: post
+title: 'Deploy Azure Bastion (Portal Azure)'
+date: 2024-10-14 21:43:00 -0300
+categories: [Networking]
+tags: [Azure-Bastion]
+slug: ''
+#image:
+#  path: assets/img/01/image.gif
+---
+
+Fala galera!
+
+
+
 # Criar um grupo de recursos
 az group create --name TestRG1 --location eastus
 
