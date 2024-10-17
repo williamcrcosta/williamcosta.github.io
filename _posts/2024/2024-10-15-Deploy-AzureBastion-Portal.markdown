@@ -4,7 +4,7 @@ title: 'Deploy Azure Bastion (Portal Azure)'
 date: 2024-10-15 01:40:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion]
-slug: 'Network'
+slug: 'Deploy-Bastion-Portal'
 #image:
 #  path: assets/img/01/image.gif
 ---

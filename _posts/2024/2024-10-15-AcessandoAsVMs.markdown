@@ -4,7 +4,7 @@ title: 'Acessando VMs Linux e Windows com Azure Bastion'
 date: 2024-10-15 08:30:00 -0300
 categories: [Network]
 tags: [Azure, Bastion]
-slug: 'Azure-Bastion'
+slug: 'Access-VMs-AzureBastion'
 #image:
 #  path: assets/img/01/image.gif
 ---

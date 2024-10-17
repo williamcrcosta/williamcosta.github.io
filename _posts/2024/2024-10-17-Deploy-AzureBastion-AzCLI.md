@@ -4,7 +4,7 @@ title: 'Deploy Azure Bastion (Az CLI)'
 date: 2024-10-17 01:00:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion, AzCLI]
-slug: 'Network'
+slug: 'Deploy-Bastion-AzCLI'
 #image:
 #  path: assets/img/01/image.gif
 ---
