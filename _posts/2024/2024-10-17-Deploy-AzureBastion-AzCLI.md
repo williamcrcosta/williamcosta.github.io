@@ -201,7 +201,7 @@ az network bastion create --name BastionHost-CLI --resource-group RG-BastionCLI 
 
 #### Passo 6: Acessando VMs com o Azure Bastion
 
-- Neste <a href="https://cloudinsights.com.br/posts/Azure-Bastion/" target="_blank">link</a>, tem um post apresentando o passo a passo para acessar uma VM Linux ou Windows com o Azure Bastion.
+- Neste <a href="https://cloudinsights.com.br/posts/Access-VMs-AzureBastion/" target="_blank">link</a>, tem um post apresentando o passo a passo para acessar uma VM Linux ou Windows com o Azure Bastion.
 
 ## Documentação Adicional
 
