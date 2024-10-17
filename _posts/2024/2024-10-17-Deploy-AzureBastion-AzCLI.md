@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Az CLI)'
-date: 2024-10-17 01:00:00 -0300
+date: 2024-10-17 08:00:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion, AzCLI]
 slug: 'Deploy-Bastion-AzCLI'
@@ -201,7 +201,7 @@ az network bastion create --name BastionHost-CLI --resource-group RG-BastionCLI 
 
 #### Passo 6: Acessando VMs com o Azure Bastion
 
-- Neste <a href="https://cloudinsights.com.br/posts/Azure-Bastion/" target="_blank">link</a>, tem um post apresentando o passo a passo para acessar uma VM Linux ou Windows com o Azure Bastion.
+- Neste <a href="https://cloudinsights.com.br/posts/Access-VMs-AzureBastion/" target="_blank">link</a>, tem um post apresentando o passo a passo para acessar uma VM Linux ou Windows com o Azure Bastion.
 
 ## Documentação Adicional
 
