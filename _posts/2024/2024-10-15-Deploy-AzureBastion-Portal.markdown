@@ -46,18 +46,18 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 ### Passo 1: Acesse o Portal do Azure
 
-1. Faça login no [Portal do Azure](https://portal.azure.com/).
+- Faça o login no [Portal do Azure](https://portal.azure.com/).
 
 ### Passo 2: Deploy dos recursos Base
 
-1. Crie um novo resource-group
+- Crie um novo resource-group
 
 > Obs.: Vocês vão notar que no meu caso o Resource-Group já existe.
 {:.prompt-info}
 
 ![resource-group](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
 
-2. Crie uma nova Virtual Network + AzureBastionSubnet
+- Crie uma nova Virtual Network + AzureBastionSubnet
 
 > Obs.: Se você tiver já tiver uma VNET criada, você pode criar sua AzureBastionSubnet nela.
 {:.prompt-info}
@@ -66,14 +66,14 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 ### Passo 3: Deploy do Azure Bastion
 
-1. Na barra de pesquisa, digite **Bastion** e selecione **Bastion** nos resultados.
-2. Clique em **Criar**.
+- Na barra de pesquisa, digite **Bastion** e selecione **Bastion** nos resultados.
+- Clique em **Criar**.
 
 ![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource.png){: .shadow .rounded-10}
 
 ### Passo 4: Configurar o Bastion
 
-1. **Configurações Básicas**:
+ **Configurações Básicas**:
    - **Subscription**: Escolha sua Subscription.
    - **Resource-Group**: Selecione o Resource-Group que criamos (ci-bastion)
    - **Nome do Resource**: Forneça um nome para seu host Bastion.
@@ -97,7 +97,7 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 
 ![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion02.png){: .shadow .rounded-10}
 
-2. **Revisar e Criar**:
+ **Revisar e Criar**:
    - Revise suas configurações e clique em **Criar**.
 
 ![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion.png){: .shadow .rounded-10}
