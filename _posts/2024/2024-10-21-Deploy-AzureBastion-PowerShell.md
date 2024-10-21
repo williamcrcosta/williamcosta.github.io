@@ -208,7 +208,7 @@ New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vmConfig
 {:.prompt-info}
 
 
-### Passo 7: Acessando VMs com o Bastion Linux
+### Passo 7: Acessando VMs Linux
 
 - Acesse o Portal do Azure e Localize sua VM Linux.
   - Já logado no [Portal do Azure](https://portal.azure.com/).
