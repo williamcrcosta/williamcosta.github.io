@@ -237,7 +237,7 @@ New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vmConfig
 
 Para mais detalhes, você pode consultar a documentação oficial no Microsoft Learn:
 
-<a href="https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm?view=azureml-api-2&form=MG0AV3" target="_blank">Deploy VMs Windows usando o Powershell</a>
+<a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell?view=azureml-api-2" target="_blank">Deploy VMs Linux usando o Powershell</a>
 
 <a href="https://learn.microsoft.com/en-us/azure/bastion/bastion-create-host-powershell?form=MG0AV3" target="_blank">Deploy Azure Bastion usando o PowerShell</a>
 
