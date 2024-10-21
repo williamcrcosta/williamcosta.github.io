@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (PowerShell)'
-date: 2024-10-21 01:30:00 -0300
+date: 2024-10-21 07:30:00 -0300
 categories: [Network]
-tags: [Azure, Network, Bastion, PowerShell]
+tags: [Azure, Network, Bastion, PowerShell, VM, Linux, Ubuntu]
 slug: 'Deploy-Bastion-PowerShell'
 #image:
 #  path: assets/img/01/image.gif
@@ -243,7 +243,7 @@ Para mais detalhes, você pode consultar a documentação oficial no Microsoft L
 
 ## Conclusão
 
-Agora você sabe como realizar o deploy do Azure Bastion através do PowerShell.
+Agora você sabe como realizar o deploy do Azure Bastion e de uma Virtual Machine Linux através do PowerShell.
 
 Até a próxima!! 😉
 
