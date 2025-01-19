@@ -5,8 +5,8 @@ date: 2025-01-19 08:30:00 -0300
 categories: [Identity]
 tags: [Azure, Identity, EntraID, Terraform]
 slug: 'Service-Principal-Terraform'
-#image:
-#  path: assets/img/01/image.gif
+image:
+  path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
 ---
 
 Fala galera!👋
@@ -350,13 +350,29 @@ terraform state list
 
 ### Conclusão
 
-Agora você sabe como realizar a criação de um Service Principal na Azure com o Terraform, além de gerenciar ele com infraestrutura como código.
+Utilizar o Service Principal no Azure não apenas automatiza processos, mas também fortalece a segurança ao garantir que as permissões sejam estritamente necessárias. Com o Terraform, podemos criar e gerenciar essa identidade de forma eficiente, mantendo práticas de governança e controle de acesso. Agora, é hora de aplicar esses conceitos na sua infraestrutura, aprimorando sua automação e segurança.
+
+### Resumo
+
+Neste artigo, exploramos o processo de criação de um Service Principal no Azure utilizando o Terraform. Abordamos desde os pré-requisitos necessários, como uma conta ativa no Azure e a instalação do Terraform, até a configuração das variáveis de ambiente no Windows. Passo a passo, demonstramos como preparar o ambiente de trabalho, criar a estrutura de arquivos no VSCode e definir as variáveis de ambiente essenciais para o funcionamento adequado do Terraform. Essas etapas são fundamentais para garantir uma automação eficiente e segura na gestão de recursos no Azure.
+
+### Próximos Passos
+
+Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
+
+  - **Autenticação do Terraform no Azure**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
+
+  - **Provisionamento de Service Principals com Terraform**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
+
+  - **Gerenciamento de Permissões de Service Principals**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
+
+  - **Integração do Terraform com o Azure Kubernetes Service (AKS)**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
 
 Até a próxima!! 😉
 
 ![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
-# CloudInsights #Azure #Tech #Cloud #Security #Network #PowerShell
+#CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #EntraID
 
 ---
 
