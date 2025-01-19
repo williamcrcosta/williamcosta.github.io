@@ -5,8 +5,8 @@ date: 2025-01-19 08:30:00 -0300
 categories: [Identity]
 tags: [Azure, Identity, EntraID, Terraform]
 slug: 'Service-Principal-Terraform'
-image:
-  path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
+#image:
+  #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
 ---
 
 Fala galera!👋
@@ -360,13 +360,13 @@ Neste artigo, exploramos o processo de criação de um Service Principal no Azur
 
 Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
 
-  - **Autenticação do Terraform no Azure**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
+- **<a href="https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash" target="_blank">Autenticação do Terraform no Azure</a>**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
 
-  - **Provisionamento de Service Principals com Terraform**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
+- **<a href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/terraform/service-principals" target="_blank">Provisionamento de Service Principals com Terraform</a>**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
 
-  - **Gerenciamento de Permissões de Service Principals**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
+- **<a href="https://learn.microsoft.com/en-us/answers/questions/1250584/what-permissions-does-my-service-principal-need-to" target="_blank">Gerenciamento de Permissões de Service Principals</a>**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
 
-  - **Integração do Terraform com o Azure Kubernetes Service (AKS)**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
+- **<a href="https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-terraform?pivots=development-environment-azure-cli" target="_blank">Integração do Terraform com o Azure Kubernetes Service (AKS)</a>**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
 
 Até a próxima!! 😉
 
