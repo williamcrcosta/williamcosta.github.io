@@ -15,6 +15,28 @@ Fala galera!👋
 
 Em nosso primeiro post de 2025, vamos explorar como realizar a criação de um Service Principal com Terraform.
 
+### Service Principal
+
+**O que é**:
+No contexto do Azure Active Directory (AAD), um Service Principal é uma identidade que pode ser atribuída a aplicações, serviços ou automações para interagir com recursos no Azure. Ele atua como uma "conta de serviço" que oferece permissões específicas para executar tarefas sem depender de uma identidade humana.
+
+## Por Que Usar o Azure Bastion?
+
+Utilizar um Service Principal no Azure possibilita a automação de processos com segurança, assegura o controle de acesso baseado no princípio de menor privilégio e facilita a integração com ferramentas de DevOps e scripts de infraestrutura, promovendo eficiência e governança.
+
+## Para que serve
+
+- **Autenticação Automatizada**: Permite que aplicações ou scripts interajam com o Azure de forma segura, usando autenticação baseada em credenciais ou certificados.
+- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de *Least Privilege*.
+- **Integração com Ferramentas de DevOps**: É amplamente usado em pipelines CI/CD para deploys, atualizações e configurações automáticas.
+
+### Cenários de Uso
+
+- **Deploy de Infraestrutura com Terraform**: No Terraform, o Service Principal permite autenticar e executar operações no Azure para criar, atualizar ou destruir recursos de forma programática.
+- **Execução de Workloads Automatizadas**: Usado por aplicações que precisam acessar APIs ou recursos no Azure, como bancos de dados, filas ou serviços de armazenamento.
+- **Integração com Ferramentas de Terceiros**: Muitas ferramentas, como GitHub Actions, Jenkins ou Ansible, usam um Service Principal para se conectar ao Azure.
+- **Segurança em Ambientes Multi-Tenant**: Facilita o gerenciamento de acessos específicos para serviços em ambientes multi-tenant.
+
 ### Pré-Requisitos
 
 Antes de começarmos nosso laboratório, verifique se você possui:
