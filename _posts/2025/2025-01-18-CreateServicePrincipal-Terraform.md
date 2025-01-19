@@ -27,7 +27,7 @@ Utilizar um Service Principal no Azure possibilita a automação de processos co
 ## Para que serve
 
 - **Autenticação Automatizada**: Permite que aplicações ou scripts interajam com o Azure de forma segura, usando autenticação baseada em credenciais ou certificados.
-- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de *Least Privilege*.
+- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices" target="_blank">*Least Privilege*</a>.
 - **Integração com Ferramentas de DevOps**: É amplamente usado em pipelines CI/CD para deploys, atualizações e configurações automáticas.
 
 ### Cenários de Uso
@@ -70,42 +70,41 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 ````powershell
 # Aqui vamos definir as variáveis de ambiente do usuário
 
-#Este comando obtém o valor atual da variável de ambiente Path para o usuário e o armazena na variável $oldPath
+#Este comando obtém o valor atual da variável de ambiente *Path* para o usuário e o armazena na variável $oldPath
 $oldPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
 
 #Este comando adiciona o caminho C:\terraform ao valor atual de $oldPath e armazena o resultado na variável $newPath.
 $newPath = $oldPath + ";C:\terraform"
 
-#Este comando define a variável de ambiente Path do usuário para o novo valor contido em $newPath.
+#Este comando define a variável de ambiente *Path* do usuário para o novo valor contido em $newPath.
 [System.Environment]::SetEnvironmentVariable("Path", $newPath, [System.EnvironmentVariableTarget]::User)
 
 # Agora vamos definir as variáveis de ambiente do Sistema
 
-# Este comando obtém o valor atual da variável de ambiente Path para o sistema (máquina) e o armazena na variável $oldPath.
+# Este comando obtém o valor atual da variável de ambiente *Path* para o sistema (máquina) e o armazena na variável $oldPath.
 $oldPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 
 # Este comando adiciona o caminho C:\terraform ao valor atual de $oldPath e armazena o resultado na variável $newPath.
-
 $newPath = $oldPath + ";C:\terraform"
-# Este comando define a variável de ambiente Path do sistema para o novo valor contido em $newPath.
 
+# Este comando define a variável de ambiente *Path* do sistema para o novo valor contido em $newPath.
 [System.Environment]::SetEnvironmentVariable("Path", $newPath, [System.EnvironmentVariableTarget]::Machine)
-# Este comando define a variável de ambiente Path do sistema para o novo valor contido em $newPath.
 ````
 
 - Agora vamos verificar se as variáveis foram criadas.
 
 ````powershell
-[System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 # Este comando obtém e exibe o valor atual da variável de ambiente Path para o sistema (máquina).
+[System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 
+# Este comando obtém e exibe o valor atual da variável de ambiente Path para o sistema (máquina).
 [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
-# Este comando obtém e exibe o valor atual da variável de ambiente Path para o usuário.
 ````
 
 ![Set-Variables](/assets/img/Lab02-ServicePrincipal/SetVariaveis.png){: .shadow .rounded-10}
 
 > Esses comandos ajudam a gerenciar e verificar as variáveis de ambiente no Windows. Mais informações consulte os links a seguir:
+
 - [Set (environment variable) - Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1?form=MG0AV3). Esta página explica como usar o comando set para definir, exibir ou remover variáveis de ambiente no Windows
 - [About_Environment_Variables - PowerShell - Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4&form=MG0AV3). Esta página fornece informações detalhadas sobre como acessar e gerenciar variáveis de ambiente no PowerShell.
 {: .prompt-tip }
@@ -159,9 +158,11 @@ terraform {
   }
 }
 ```
+
 > Se quiser consultar uma versão mais recente, pode buscar nos links a seguir.
-  - [AzureRM Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
-  - [AzureAD Provider](https://registry.terraform.io/providers/hashicorp/azuread/latest)
+
+- [AzureRM Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
+- [AzureAD Provider](https://registry.terraform.io/providers/hashicorp/azuread/latest)
   {: .prompt-tip }
 
 - Agora vamos adicionar o código para criar o Service Principal. Adicione o conteudo abaixo no arquivo *spn.tf*
@@ -241,7 +242,7 @@ terraform init
 
 ![Terraform-Init](/assets/img/Lab02-ServicePrincipal/terraform%20init.png){: .shadow .rounded-10}
 
-O "terraform init" é o primeiro passo para configurar um projeto no Terraform. Ele faz uma série de coisas essenciais:
+O *terraform init* é o primeiro passo para configurar um projeto no Terraform. Ele faz uma série de coisas essenciais:
 
 - Prepara o Diretório de Trabalho: Inicializa um novo diretório de trabalho ou reconfigura um existente. Esse diretório contém os arquivos de configuração do Terraform.
 
@@ -253,7 +254,7 @@ O "terraform init" é o primeiro passo para configurar um projeto no Terraform. 
 
 ### 5. Validar se a configuração está Correta
 
-- Nesta etapa vamos executar o "terraform validate" para verificar se os arquivos de configuração criados estão corretos em termos de sintaxe e lógica. Ele não faz alterações nos recursos, apenas valida a configuração. É útil para identificar erros antes de executar o plano (terraform plan). 😉
+- Nesta etapa vamos executar o *terraform validate* para verificar se os arquivos de configuração criados estão corretos em termos de sintaxe e lógica. Ele não faz alterações nos recursos, apenas valida a configuração. É útil para identificar erros antes de executar o plano *terraform plan*. 😉
 
 ```powershell
 terraform validate
@@ -263,7 +264,7 @@ terraform validate
 
 #### 6. Validar a formatação dos Arquivos
 
-- Agora vamos executar o "terraform fmt". Este comando formata os arquivos de configuração para seguir um estilo de código consistente e legível. Corrige indentação, alinhamento e outros aspectos de formatação conforme as convenções do Terraform. É uma boa prática usar esse comando regularmente para manter a base de código organizada.
+- Agora vamos executar o *terraform fmt*. Este comando formata os arquivos de configuração para seguir um estilo de código consistente e legível. Corrige indentação, alinhamento e outros aspectos de formatação conforme as convenções do Terraform. É uma boa prática usar esse comando regularmente para manter a base de código organizada.
 
 ```powershell
 terraform fmt
@@ -273,7 +274,7 @@ terraform fmt
 
 #### 7. Criar as variáveis de ambiente para ser possivel se conectar na Azure
 
-- Neste passo com o powershell aberto, dentro do VSCode, execute o comando abaixo. Ele vai executar o arquivo "powershell-credencials-azure.ps1"
+- Neste passo com o powershell aberto, dentro do VSCode, execute o comando abaixo. Ele vai executar o arquivo *powershell-credencials-azure.ps1*.
 
 ```powershell
 .\powershell-credencials-azure.ps1
@@ -284,7 +285,7 @@ terraform fmt
 
 #### 8. Criar plano de Execução
 
-- Seguido todos esses passos, agora vamos criar um plano, execute o comando "terraform plan -out meu_spn.out". Ele cria um plano de execução e armazena em um arquivo. O arquivo meu_spn.tfplan é criado para revisar o que será feito sem aplicar as mudanças.
+- Seguido todos esses passos, agora vamos criar um plano, execute o comando *terraform plan -out meu_spn.out*. Ele cria um plano de execução e armazena em um arquivo. O arquivo meu_spn.tfplan é criado para revisar o que será feito sem aplicar as mudanças.
 
 ```powershell
 terraform plan -out meu_spn.out
@@ -297,18 +298,18 @@ terraform plan -out meu_spn.out
 
 #### 8. Fazer o deploy dos Recursos
 
-- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o "terraform apply meu_spn.out".
+- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o *terraform apply meu_spn.out*.
   - Esse comando aplica as mudanças especificadas no arquivo de plano gerado pelo comando *terraform plan*.
 
 ```powershell
 terraform apply meu_spn.out
 ```
-![Terraform-Apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.png){: .shadow .rounded-10}
 
+![Terraform-Apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.png){: .shadow .rounded-10}
 
 #### 9. Validar as informações no Output
 
-- Voçê pode executar o comando "terraform output". Ele é utilizado para exibir os valores das variáveis de saída definidas no seu arquivo de configuração do Terraform. Essas variáveis de saída permitem que você acesse e use os valores gerados pela execução do plano de Terraform, como endereços IP, IDs de recursos, URLs e outras informações importantes.
+- Voçê pode executar o comando *terraform output*. Ele é utilizado para exibir os valores das variáveis de saída definidas no seu arquivo de configuração do Terraform. Essas variáveis de saída permitem que você acesse e use os valores gerados pela execução do plano de Terraform, como endereços IP, IDs de recursos, URLs e outras informações importantes.
 
 ```powershell
 terraform output
@@ -316,10 +317,9 @@ terraform output
 
 ![Terraform-Output](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
 
-
 #### 10. Listar recursos criados pelo Terraform
 
-- Vamos executar o comando "terraform state list". Ele é utilizado para listar todos os recursos gerenciados pelo estado do Terraform.
+- Vamos executar o comando *terraform state list*. Ele é utilizado para listar todos os recursos gerenciados pelo estado do Terraform.
   - Este comando exibe uma lista de recursos que foram criados, atualizados ou destruídos pelo Terraform e que estão sendo rastreados no arquivo tfstate.
 
 ```powershell
@@ -337,15 +337,16 @@ terraform state list
 
 #### 12. Remover recursos criados com Terraform Destroy
 
-- Agora que nós criamos o service principal, vamos fazer a remoção dele. O comando "terraform destroy" é utilizado para destruir todos os recursos gerenciados pelo Terraform em sua configuração. Isso significa que ele apagará todos os recursos da infraestrutura que foram criados ou gerenciados pelo Terraform.
+- Agora que nós criamos o service principal, vamos fazer a remoção dele. O comando *terraform destroy* é utilizado para destruir todos os recursos gerenciados pelo Terraform em sua configuração. Isso significa que ele apagará todos os recursos da infraestrutura que foram criados ou gerenciados pelo Terraform.
 
-<center> Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente. </center>
+> Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
+{: .prompt-tip }
+
 ![Terraform-Destroy](/assets/img/Lab02-ServicePrincipal/terraform%20destroy.png){: .shadow .rounded-10}
 ![Terraform-Destroy2](/assets/img/Lab02-ServicePrincipal/terraform%20destroy2.png){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
-
 
 ### Conclusão
 
