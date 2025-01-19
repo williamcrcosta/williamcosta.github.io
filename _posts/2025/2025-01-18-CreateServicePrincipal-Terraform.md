@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Service Principal com Terraform'
-date: 2025-01-17 08:30:00 -0300
+date: 2025-01-19 08:30:00 -0300
 categories: [Identity]
 tags: [Azure, Identity, EntraID, Terraform]
 slug: 'Service-Principal-Terraform'
