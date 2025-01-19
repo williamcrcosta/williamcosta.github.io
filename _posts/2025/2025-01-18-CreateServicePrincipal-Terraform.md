@@ -111,7 +111,7 @@ $newPath = $oldPath + ";C:\terraform"
 
 *Agora que finalizamos as configurações iniciais no Windows, vamos preparar nosso ambiente de trabalho.*
 
-### 2. Criar uma nova pasta  e estrutura de Arquivos
+### 3. Criar uma nova pasta  e estrutura de Arquivos
 
 - Crie uma nova pasta e inicie o VSCode a partir dela para iniciar a codificação dos recursos que necessitamos criar.
 
