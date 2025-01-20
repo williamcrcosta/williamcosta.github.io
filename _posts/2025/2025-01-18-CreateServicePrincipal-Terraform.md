@@ -18,9 +18,9 @@ Em nosso primeiro post de 2025, vamos explorar como realizar a criação de um S
 ### Service Principal
 
 **O que é**:
-No contexto do Azure Active Directory (AAD), um Service Principal é uma identidade que pode ser atribuída a aplicações, serviços ou automações para interagir com recursos no Azure. Ele atua como uma "conta de serviço" que oferece permissões específicas para executar tarefas sem depender de uma identidade humana.
+No contexto do **Microsoft Entra ID**, um Service Principal é uma identidade que pode ser atribuída a aplicações, serviços ou automações para interagir com recursos no Azure. Ele atua como uma "conta de serviço" que oferece permissões específicas para executar tarefas sem depender de uma identidade humana.
 
-## Por Que Usar o Azure Bastion?
+## Por que usar um Service Principal?
 
 Utilizar um Service Principal no Azure possibilita a automação de processos com segurança, assegura o controle de acesso baseado no princípio de menor privilégio e facilita a integração com ferramentas de DevOps e scripts de infraestrutura, promovendo eficiência e governança.
 
@@ -347,6 +347,21 @@ terraform state list
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
+
+#### 13. Segurança e Boas Práticas
+
+**Armazenamento Seguro de Credenciais**: É recomendável usar o "*Azure Key Vault*" para armazenar informações sensíveis, como IDs de cliente, segredos e certificados. Para integrá-lo ao Terraform, use a <a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault_secret" target="_blank">provider oficial do Azure</a>. Isso garante que as credenciais sejam acessadas de forma segura e centralizada.
+
+**Exemplo:**
+
+```hcl
+data "azurerm_key_vault_secret" "example" {
+  name         = "service-principal-secret"
+  key_vault_id = azurerm_key_vault.example.id
+}
+```
+
+**Rotação de Secrets**: Configure políticas de rotação periódica de segredos no Azure Key Vault ou automatize esse processo para minimizar riscos de segurança.
 
 ### Conclusão
 
