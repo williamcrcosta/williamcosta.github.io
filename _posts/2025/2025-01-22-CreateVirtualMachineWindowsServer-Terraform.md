@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'Service Principal com Terraform'
-date: 2025-01-19 08:30:00 -0300
-categories: [Identity]
-tags: [Azure, Identity, EntraID, Terraform]
-slug: 'Service-Principal-Terraform'
+title: 'Deploy VM WindowsServer2025 com Terraform'
+date: 2025-01-20 08:30:00 -0300
+categories: [IaaS]
+tags: [Azure, IaaS, WindowsServer, Terraform]
+slug: 'Deploy-VM-WindowsServer-Terraform'
 #image:
   #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
 ---
@@ -13,29 +13,59 @@ Fala galera!👋
 
 **Bem-vindo ao Blog Cloud Insights!** ☁️
 
-Em nosso primeiro post de 2025, vamos explorar como realizar a criação de um Service Principal com Terraform.
+Neste post, vamos explorar como automatizar o deploy de uma máquina virtual Windows Server 2025 no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
 
-### Service Principal
+- Consistência: Elimina erros manuais ao criar recursos no Azure.
+- Eficiência: Reduz o tempo de configuração e implantação.
+- Versionamento: Com o Terraform, você pode rastrear e controlar alterações no ambiente de infraestrutura.
+
+### Maquina Virtual ou Virtual Machine
 
 **O que é**:
-No contexto do **Microsoft Entra ID**, um Service Principal é uma identidade que pode ser atribuída a aplicações, serviços ou automações para interagir com recursos no Azure. Ele atua como uma "conta de serviço" que oferece permissões específicas para executar tarefas sem depender de uma identidade humana.
+Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para rodar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
 
-## Por que usar um Service Principal?
+## Por que usar uma VM?
 
-Utilizar um Service Principal no Azure possibilita a automação de processos com segurança, assegura o controle de acesso baseado no princípio de menor privilégio e facilita a integração com ferramentas de DevOps e scripts de infraestrutura, promovendo eficiência e governança.
+- **Eliminação de Custos Fixos**: Substitui investimentos em servidores físicos por custos variáveis baseados no uso.
+- **Redução de Complexidade**: O Azure cuida da infraestrutura básica, permitindo que você foque no software e nos serviços.
+- **Globalização**: Implante VMs em diferentes regiões do mundo para garantir baixa latência e atender a requisitos locais.
+- **Backup e Escalabilidade**: Recursos para redimensionar ou replicar rapidamente conforme a necessidade.
 
 ## Para que serve
 
-- **Autenticação Automatizada**: Permite que aplicações ou scripts interajam com o Azure de forma segura, usando autenticação baseada em credenciais ou certificados.
-- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices" target="_blank">*Least Privilege*</a>.
-- **Integração com Ferramentas de DevOps**: É amplamente usado em pipelines CI/CD para deploys, atualizações e configurações automáticas.
+1. **Execução de Aplicações**: Ideal para hospedar aplicações empresariais que exigem um servidor dedicado.
+2. **Ambiente de Testes**: Permite criar ambientes isolados para testes de software e experimentos.
+3. **Armazenamento Temporário**: Processar ou hospedar dados em períodos curtos sem ocupar recursos físicos.
+4. **Ambiente de Desenvolvimento**: Para equipes de desenvolvimento que precisam de máquinas personalizadas.
 
 ### Cenários de Uso
 
-- **Deploy de Infraestrutura com Terraform**: No Terraform, o Service Principal permite autenticar e executar operações no Azure para criar, atualizar ou destruir recursos de forma programática.
-- **Execução de Workloads Automatizadas**: Usado por aplicações que precisam acessar APIs ou recursos no Azure, como bancos de dados, filas ou serviços de armazenamento.
-- **Integração com Ferramentas de Terceiros**: Muitas ferramentas, como GitHub Actions, Jenkins ou Ansible, usam um Service Principal para se conectar ao Azure.
-- **Segurança em Ambientes Multi-Tenant**: Facilita o gerenciamento de acessos específicos para serviços em ambientes multi-tenant.
+1º **Desenvolvimento e Teste de Software**:
+
+- Criar ambientes de desenvolvimento semelhantes aos de produção.
+- Testar diferentes sistemas operacionais ou configurações.
+
+2º **Hospedagem de Aplicações Web**:
+
+- Servir websites ou APIs com alta disponibilidade.
+- Usar VMs como backend para aplicações críticas.
+
+3º **Computação Intensiva**:
+
+- Processamento de big data, análise de dados ou execução de simulações complexas.
+- Treinamento de modelos de Machine Learning.
+
+4º **Sistemas Herdados**:
+
+- Migrar sistemas legados (on-premises) para a nuvem sem necessidade de reformulação imediata.
+
+5º **Extensão de Data Centers**:
+
+- Usar VMs como uma extensão de data centers locais para lidar com demandas sazonais ou picos de carga.
+
+6º **Recuperação de Desastres**:
+
+- Configurar VMs como backup de infraestrutura crítica para garantir continuidade em caso de falhas.
 
 ### Pré-Requisitos
 
@@ -48,70 +78,21 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 - Um Service Principal com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID e com a permissao de Contributor na minha subscription. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform e Hashicorp Terraform.
 
-> *Caso não tenha o VSCode Instalado, faça o Download do instalador [aqui](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64)*.
+> *Caso não tenha o VSCode Instalado, faça o Download do instalador <a href="https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" target="_blank">aqui</a>*.
 {:.prompt-info}
 
-### 1. Primeiro passo aqui é realizar o download da última versão do executável do Terraform para Windows
+- Ter o Terraform instalado no seu computador.
 
-- Acesse a página da <a href="https://developer.hashicorp.com/terraform/" target="_blank">Hashicorp</a> para fazer o download do pacote, depois disso salve o pacote na pasta Downloads e extraia o conteudo. Em seguida crie um novo diretório no disco C com nome "terraform" e adicione o conteudo extraído lá.
+> *Caso não tenha o Terraform instalado, siga este <a href="https://cloudinsights.com.br/posts/Service-Principal-Terraform/#1-primeiro-passo-aqui-%C3%A9-realizar-o-download-da-%C3%BAltima-vers%C3%A3o-do-execut%C3%A1vel-do-terraform-para-windows" target="_blank">procedimento</a>*.
+{:.prompt-info}
 
-  - *Acompanhe o passo-a-passo abaixo*
-![Download-TF](/assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.gif){: .shadow .rounded-10}
 
-### 2. Definir variáveis de ambiente
-
-- Neste passo vamos definir variáveis de ambiente. Abra o PowerShell ISE como administrator e execute os comandos abaixo.
-
-````powershell
-# Aqui vamos definir as variáveis de ambiente do usuário
-
-#Este comando obtém o valor atual da variável de ambiente *Path* para o usuário e o armazena na variável $oldPath
-$oldPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
-
-#Este comando adiciona o caminho C:\terraform ao valor atual de $oldPath e armazena o resultado na variável $newPath.
-$newPath = $oldPath + ";C:\terraform"
-
-#Este comando define a variável de ambiente *Path* do usuário para o novo valor contido em $newPath.
-[System.Environment]::SetEnvironmentVariable("Path", $newPath, [System.EnvironmentVariableTarget]::User)
-
-# Agora vamos definir as variáveis de ambiente do Sistema
-
-# Este comando obtém o valor atual da variável de ambiente *Path* para o sistema (máquina) e o armazena na variável $oldPath.
-$oldPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
-
-# Este comando adiciona o caminho C:\terraform ao valor atual de $oldPath e armazena o resultado na variável $newPath.
-$newPath = $oldPath + ";C:\terraform"
-
-# Este comando define a variável de ambiente *Path* do sistema para o novo valor contido em $newPath.
-[System.Environment]::SetEnvironmentVariable("Path", $newPath, [System.EnvironmentVariableTarget]::Machine)
-````
-
-- Agora vamos verificar se as variáveis foram criadas.
-
-````powershell
-# Este comando obtém e exibe o valor atual da variável de ambiente Path para o sistema (máquina).
-[System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
-
-# Este comando obtém e exibe o valor atual da variável de ambiente Path para o sistema (máquina).
-[System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
-````
-
-![Set-Variables](/assets/img/Lab02-ServicePrincipal/SetVariaveis.png){: .shadow .rounded-10}
-
-> Esses comandos ajudam a gerenciar e verificar as variáveis de ambiente no Windows. Mais informações consulte os links a seguir:
-
-- [Set (environment variable) - Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1?form=MG0AV3). Esta página explica como usar o comando set para definir, exibir ou remover variáveis de ambiente no Windows
-- [About_Environment_Variables - PowerShell - Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4&form=MG0AV3). Esta página fornece informações detalhadas sobre como acessar e gerenciar variáveis de ambiente no PowerShell.
-{: .prompt-tip }
-
-*Agora que finalizamos as configurações iniciais no Windows, vamos preparar nosso ambiente de trabalho.*
-
-### 3. Criar uma nova pasta  e estrutura de Arquivos
+### 1. Criar estrutura de Arquivos
 
 - Crie uma nova pasta e abra o VSCode nela para começar a configurar os recursos necessários.
 - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos no Terraform.
@@ -150,10 +131,6 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "4.16.0"
     }
-    azuread = {
-      source  = "hashicorp/azuread"
-      version = "3.1.0"
-    }
   }
 }
 ```
@@ -161,10 +138,9 @@ terraform {
 > Se quiser consultar uma versão mais recente, pode buscar nos links a seguir.
 
 - [AzureRM Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
-- [AzureAD Provider](https://registry.terraform.io/providers/hashicorp/azuread/latest)
   {: .prompt-tip }
 
-- Agora vamos adicionar o código para criar o Service Principal. Adicione o conteudo abaixo no arquivo *spn.tf*
+- Agora vamos adicionar o código para criar uma Virtual Network. Adicione o conteudo abaixo no arquivo *vnet.tf*
 
 ```hcl
 # Obtenha a configuração do client EntraID atual
