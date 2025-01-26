@@ -113,9 +113,8 @@ $newPath = $oldPath + ";C:\terraform"
 
 ### 3. Criar uma nova pasta  e estrutura de Arquivos
 
-- Crie uma nova pasta e inicie o VSCode a partir dela para iniciar a codificação dos recursos que necessitamos criar.
-
-- Vamos criar uma estrutura de arquivos para começar a trabalhar na codificação dos recursos que necessitamos criar.
+- Crie uma nova pasta e abra o VSCode nela para começar a configurar os recursos necessários.
+- Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos no Terraform.
 
 ![Folder-Structure](/assets/img/Lab02-ServicePrincipal/File-Structure.png){: .shadow .rounded-10}
 
