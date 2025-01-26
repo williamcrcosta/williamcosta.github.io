@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Deploy VM WindowsServer2025 com Terraform'
+title: 'Automatize o Deploy de uma VM Windows Server 2025 no Azure com Terraform'
 date: 2025-01-20 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, WindowsServer, Terraform]
