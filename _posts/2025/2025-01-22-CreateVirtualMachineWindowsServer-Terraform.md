@@ -19,7 +19,9 @@ Neste post, vamos explorar como automatizar o deploy de uma máquina virtual "**
 - Eficiência: Reduz o tempo de configuração e implantação.
 - Versionamento: Com o Terraform, você pode rastrear e controlar alterações no ambiente de infraestrutura.
 
-### Maquina Virtual ou Virtual Machine
+*Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da escrita deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
+
+### Máquina Virtual ou Virtual Machine
 
 **O que é**:
 Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para rodar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
@@ -90,6 +92,8 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 > Caso não tenha o Terraform instalado, siga este <a href="https://cloudinsights.com.br/posts/Service-Principal-Terraform/#1-primeiro-passo-aqui-%C3%A9-realizar-o-download-da-%C3%BAltima-vers%C3%A3o-do-execut%C3%A1vel-do-terraform-para-windows" target="_blank">procedimento</a>.
 {:.prompt-info}
+
+- Imnportante: Certifique-se de que sua Subscription do Azure oferece suporte à versão Windows Server 2025. Caso contrário, ajuste o exemplo para uma versão suportada, como Windows Server 2022.
 
 
 ### 1. Criar estrutura de Arquivos
