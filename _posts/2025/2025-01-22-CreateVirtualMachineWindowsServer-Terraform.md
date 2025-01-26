@@ -108,7 +108,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 - Aqui vamos adicionar as informações do nosso ambiente no Azure.
   - *Precisaremos setar algumas variáveis de ambiente.*
-- Adicione esse conteudo no arquivo ***powershell-credencials-azure.ps1***.
+- Adicione esse conteúdo no arquivo ***powershell-credencials-azure.ps1***.
 
 ```powershell
 $env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
@@ -117,7 +117,7 @@ $env:ARM_SUBSCRIPTION_ID = "ID da sua subscription"
 $env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
 ```
 
-- Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteudo abaixo no arquivo ***provider.tf***.
+- Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteúdo abaixo no arquivo ***provider.tf***.
 
 ```hcl
 provider "azurerm" {
@@ -126,7 +126,7 @@ provider "azurerm" {
 }
 ```
 
-- Aqui vamos adicionar as informações da versão mais recente do Provider AzureRM e HTTP. Adicione o conteudo abaixo no arquivo ***version.tf***.
+- Aqui vamos adicionar as informações da versão mais recente do Provider AzureRM e HTTP. Adicione o conteúdo abaixo no arquivo ***version.tf***.
 
 ```hcl
 # Configure Terraform para usar os provedores necessários
@@ -175,7 +175,7 @@ resource "azurerm_resource_group" "rg-vm-win" {
 }
 ```
 
-- Agora vamos adicionar o código para criar uma Virtual Network. Adicione o conteudo abaixo no arquivo ***vnet.tf***.
+- Agora vamos adicionar o código para criar uma Virtual Network. Adicione o conteúdo abaixo no arquivo ***vnet.tf***.
 
 ```hcl
 # Crie um recurso do tipo virtual_network
@@ -332,7 +332,7 @@ resource "azurerm_windows_virtual_machine" "vm-win-server" {
 }
 ```
 
-- Por fim, vamos adicionar alguns outputs para facilitar a visualização dos resultados do deploy. Adicione o conteudo abaixo no arquivo ***output.tf***.
+- Por fim, vamos adicionar alguns outputs para facilitar a visualização dos resultados do deploy. Adicione o conteúdo abaixo no arquivo ***output.tf***.
 
 ```hcl
 output "public_ip" {
@@ -525,3 +525,4 @@ Até a próxima!! 😉
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
+
