@@ -498,24 +498,30 @@ data "azurerm_key_vault_secret" "example" {
 
 ### Conclusão
 
-<!-- Utilizar o Service Principal no Azure não apenas automatiza processos, mas também fortalece a segurança ao garantir que as permissões sejam estritamente necessárias. Com o Terraform, podemos criar e gerenciar essa identidade de forma eficiente, mantendo práticas de governança e controle de acesso. Agora, é hora de aplicar esses conceitos na sua infraestrutura, aprimorando sua automação e segurança. -->
+Implantar uma máquina virtual Windows Server 2025 no Azure utilizando Terraform simplifica o processo de gerenciamento e escalabilidade da infraestrutura. Com as instruções e exemplos fornecidos, você pode automatizar a criação e configuração de VMs, garantindo consistência e eficiência em suas operações.
 
 ### Resumo
 
-<!-- Neste artigo, exploramos o processo de criação de um Service Principal no Azure utilizando o Terraform. Abordamos desde os pré-requisitos necessários, como uma conta ativa no Azure e a instalação do Terraform, até a configuração das variáveis de ambiente no Windows. Passo a passo, demonstramos como preparar o ambiente de trabalho, criar a estrutura de arquivos no VSCode e definir as variáveis de ambiente essenciais para o funcionamento adequado do Terraform. Essas etapas são fundamentais para garantir uma automação eficiente e segura na gestão de recursos no Azure. -->
+Neste artigo, abordamos como utilizar o Terraform para implantar uma máquina virtual (VM) Windows Server 2025 no Azure. Explicamos os conceitos básicos e fornecemos um exemplo prático, detalhando cada etapa, desde a configuração inicial do Terraform até a criação e configuração da VM. Destacamos a importância de uma gestão eficiente e consistente da infraestrutura por meio da automação e da infraestrutura como código (IaC).
 
 ### Próximos Passos
 
 Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
 
-<!-- - **<a href="https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash" target="_blank">Autenticação do Terraform no Azure</a>**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
+**Aprimorar a Segurança**: Adicione regras de firewall específicas, configure grupos de segurança de rede (NSGs) e implemente autenticação multifator (MFA) para melhorar a segurança. Saiba mais sobre segurança
 
-- **<a href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/terraform/service-principals" target="_blank">Provisionamento de Service Principals com Terraform</a>**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
+**Gerenciamento de Configuração**: Utilize ferramentas como Ansible, Chef ou Puppet para gerenciar configurações de VMs após a criação.
 
-- **<a href="https://learn.microsoft.com/en-us/answers/questions/1250584/what-permissions-does-my-service-principal-need-to" target="_blank">Gerenciamento de Permissões de Service Principals</a>**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
+**Automatização Contínua**: Integre o Terraform com pipelines de CI/CD, como Azure DevOps ou GitHub Actions, para automações contínuas e implantação de infraestrutura como código (IaC).
 
-- **<a href="https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-terraform?pivots=development-environment-azure-cli" target="_blank">Integração do Terraform com o Azure Kubernetes Service (AKS)</a>**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
- -->
+**Monitoramento e Logs**: Configure Azure Monitor e Log Analytics para monitorar o desempenho das VMs e obter insights detalhados.
+
+**Otimização de Custos**: Use Azure Cost Management para monitorar e otimizar os custos relacionados à sua infraestrutura, garantindo eficiência econômica.
+
+**Backup e Recuperação**: Implemente soluções de backup e recuperação para garantir a disponibilidade e integridade dos dados.
+
+Seguir esses passos ajudará a melhorar a segurança, eficiência e gestão contínua da sua infraestrutura no Azure, permitindo uma abordagem mais robusta e profissional na automação e gerenciamento de seus recursos.
+
 Até a próxima!! 😉
 
 ![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
