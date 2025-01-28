@@ -81,7 +81,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 - Um Service Principal com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform, Hashicorp Terraform e PowerShell.
@@ -111,10 +111,10 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Adicione esse conteúdo no arquivo ***powershell-credencials-azure.ps1***.
 
 ```powershell
-$env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
+$env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no Entra ID
 $env:ARM_TENANT_ID = "O ID do seu Tenant no EntraID"
 $env:ARM_SUBSCRIPTION_ID = "ID da sua subscription"
-$env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
+$env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no Entra ID
 ```
 
 - Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteúdo abaixo no arquivo ***provider.tf***.
