@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Automatize o Deploy de uma VM Windows Server 2025 no Azure com Terraform'
+title: 'Crie VMs Windows Server 2025 no Azure em Minutos com Terraform'
 date: 2025-01-20 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, WindowsServer, Terraform]
@@ -13,7 +13,7 @@ Fala galera!👋
 
 **Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar o deploy de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
 
 - Consistência: Elimina erros manuais ao criar recursos no Azure.
 - Eficiência: Reduz o tempo de configuração e implantação.
@@ -79,7 +79,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 > Caso você não tenha uma subscription, você pode criar uma Trial. Mais informações consulte <a href="https://azure.microsoft.com/en-us/" target="_blank">aqui</a>.
 {: .prompt-tip }
 
-- Um Service Principal com permissionamento adequado.
+- Um Service Principal (um tipo de identidade no Azure usada para autenticação) com permissionamento adequado.
 
 > Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
@@ -531,4 +531,3 @@ Até a próxima!! 😉
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
-
