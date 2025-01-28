@@ -29,10 +29,10 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 
 ## Por que usar uma VM?
 
-- **Eliminação de Custos Fixos**: Substitui investimentos em servidores físicos por custos variáveis baseados no uso.
-- **Redução de Complexidade**: O Azure ou qualquer provedor de nuvem cuida da infraestrutura básica, permitindo que você se concentre no software e nos serviços.
-- **Globalização**: Implante VMs em diferentes regiões do mundo para garantir baixa latência e atender a requisitos locais.
-- **Backup e Escalabilidade**: Recursos para redimensionar ou replicar rapidamente conforme a necessidade.
+- **💰 Corte de Custos Fixos**: Substitua grandes investimentos em servidores físicos por custos baseados no uso. Por exemplo, crie VMs para testes temporários e pague apenas pelo tempo utilizado.
+- **⚙️ Menos Complexidade**: O Azure cuida da infraestrutura básica, como atualizações e segurança, permitindo que você se concentre em desenvolver e entregar serviços.
+- **🌍 Globalização Simples**: Garanta baixa latência para seus usuários ao implantar VMs em data centers ao redor do mundo, atendendo também a requisitos locais de conformidade.
+- **📈 Backup e Escalabilidade**: Ajuste os recursos rapidamente para atender à demanda. Seja aumentando capacidade durante a Black Friday ou replicando ambientes para recuperação de desastres, as VMs facilitam a adaptação.
 
 ## Para que serve
 
