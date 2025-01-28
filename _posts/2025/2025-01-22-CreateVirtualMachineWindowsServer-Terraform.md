@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Automatize o Deploy de uma VM Windows Server 2025 no Azure com Terraform'
+title: 'Crie VMs Windows Server 2025 no Azure em Minutos com Terraform'
 date: 2025-01-20 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, WindowsServer, Terraform]
@@ -13,7 +13,7 @@ Fala galera!👋
 
 **Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar o deploy de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
 
 - Consistência: Elimina erros manuais ao criar recursos no Azure.
 - Eficiência: Reduz o tempo de configuração e implantação.
@@ -29,10 +29,10 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 
 ## Por que usar uma VM?
 
-- **Eliminação de Custos Fixos**: Substitui investimentos em servidores físicos por custos variáveis baseados no uso.
-- **Redução de Complexidade**: O Azure ou qualquer provedor de nuvem cuida da infraestrutura básica, permitindo que você se concentre no software e nos serviços.
-- **Globalização**: Implante VMs em diferentes regiões do mundo para garantir baixa latência e atender a requisitos locais.
-- **Backup e Escalabilidade**: Recursos para redimensionar ou replicar rapidamente conforme a necessidade.
+- **💰 Corte de Custos Fixos**: Substitua grandes investimentos em servidores físicos por custos baseados no uso. Por exemplo, crie VMs para testes temporários e pague apenas pelo tempo utilizado.
+- **⚙️ Menos Complexidade**: O Azure cuida da infraestrutura básica, como atualizações e segurança, permitindo que você se concentre em desenvolver e entregar serviços.
+- **🌍 Globalização Simples**: Garanta baixa latência para seus usuários ao implantar VMs em data centers ao redor do mundo, atendendo também a requisitos locais de conformidade.
+- **📈 Backup e Escalabilidade**: Ajuste os recursos rapidamente para atender à demanda. Seja aumentando capacidade durante a Black Friday ou replicando ambientes para recuperação de desastres, as VMs facilitam a adaptação.
 
 ## Para que serve
 
@@ -79,9 +79,9 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 > Caso você não tenha uma subscription, você pode criar uma Trial. Mais informações consulte <a href="https://azure.microsoft.com/en-us/" target="_blank">aqui</a>.
 {: .prompt-tip }
 
-- Um Service Principal com permissionamento adequado.
+- Um Service Principal (um tipo de identidade no Azure usada para autenticação) com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform, Hashicorp Terraform e PowerShell.
@@ -111,10 +111,10 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Adicione esse conteúdo no arquivo ***powershell-credencials-azure.ps1***.
 
 ```powershell
-$env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
+$env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no Entra ID
 $env:ARM_TENANT_ID = "O ID do seu Tenant no EntraID"
 $env:ARM_SUBSCRIPTION_ID = "ID da sua subscription"
-$env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no EntraID
+$env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no Entra ID
 ```
 
 - Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteúdo abaixo no arquivo ***provider.tf***.
@@ -531,4 +531,3 @@ Até a próxima!! 😉
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
-
