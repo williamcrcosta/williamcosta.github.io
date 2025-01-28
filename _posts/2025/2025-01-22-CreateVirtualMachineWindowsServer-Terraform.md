@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Crie VMs Windows Server 2025 no Azure em Minutos com Terraform'
+title: 'Crie VMs Windows Server no Azure em Minutos com Terraform'
 date: 2025-01-20 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, WindowsServer, Terraform]
@@ -13,7 +13,7 @@ Fala galera!👋
 
 **Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual com ***Windows Server*** no Azure usando Terraform. Embora o processo seja aplicável a qualquer versão do sistema operacional Windows Server, neste post faremos o deploy específico do ***Windows Server 2025***. A automação desse processo oferece vários benefícios, como:
 
 - Consistência: Elimina erros manuais ao criar recursos no Azure.
 - Eficiência: Reduz o tempo de configuração e implantação.
