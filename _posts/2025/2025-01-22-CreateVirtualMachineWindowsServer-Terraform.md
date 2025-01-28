@@ -11,33 +11,33 @@ slug: 'Deploy-VM-WindowsServer-Terraform'
 
 Fala galera!👋
 
-**Bem-vindo ao Blog Cloud Insights!** ☁️
+**Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar o deploy de uma máquina virtual "***Windows Server 2025***" no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar o deploy de uma máquina virtual ***Windows Server 2025*** no Azure usando Terraform. A automação desse processo oferece vários benefícios, como:
 
 - Consistência: Elimina erros manuais ao criar recursos no Azure.
 - Eficiência: Reduz o tempo de configuração e implantação.
 - Versionamento: Com o Terraform, você pode rastrear e controlar alterações no ambiente de infraestrutura.
 
-> *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da escrita deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
+> *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da redação deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
 {:.prompt-info}
 
 ### Máquina Virtual ou Virtual Machine
 
 **O que é**:
-Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para rodar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
+Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para executar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
 
 ## Por que usar uma VM?
 
 - **Eliminação de Custos Fixos**: Substitui investimentos em servidores físicos por custos variáveis baseados no uso.
-- **Redução de Complexidade**: O Azure ou qualquer Cloud Provider cuida da infraestrutura básica, permitindo que você foque no software e nos serviços.
+- **Redução de Complexidade**: O Azure ou qualquer provedor de nuvem cuida da infraestrutura básica, permitindo que você se concentre no software e nos serviços.
 - **Globalização**: Implante VMs em diferentes regiões do mundo para garantir baixa latência e atender a requisitos locais.
 - **Backup e Escalabilidade**: Recursos para redimensionar ou replicar rapidamente conforme a necessidade.
 
 ## Para que serve
 
 1. **Execução de Aplicações**: Ideal para hospedar aplicações empresariais que exigem um servidor dedicado.
-2. **Ambiente de Testes**: Permite criar ambientes isolados para testes de software e experimentos.
+2. **Ambiente de Testes**: Permite a criação de ambientes isolados para testes de software e experimentos.
 3. **Armazenamento Temporário**: Processar ou hospedar dados em períodos curtos sem ocupar recursos físicos.
 4. **Ambiente de Desenvolvimento**: Para equipes de desenvolvimento que precisam de máquinas personalizadas.
 
@@ -50,7 +50,7 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 
 2º **Hospedagem de Aplicações Web**:
 
-- Servir websites ou APIs com alta disponibilidade.
+- Hospedar websites ou APIs com alta disponibilidade.
 - Usar VMs como backend para aplicações críticas.
 
 3º **Computação Intensiva**:
@@ -81,7 +81,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 - Um Service Principal com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID e com a permissao de Contributor na minha subscription. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform, Hashicorp Terraform e PowerShell.
@@ -99,7 +99,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 ### 1. Criar estrutura de Arquivos
 
-- Crie uma nova pasta e abra o VSCode nela para começar a configurar os recursos necessários.
+- Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos a abaixo:
 
 ![Folder-Structure](/assets/img/Lab03-VMWindowsServer/FolderStructure.png){: .shadow .rounded-10}
