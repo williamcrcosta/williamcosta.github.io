@@ -508,7 +508,7 @@ Neste artigo, abordamos como utilizar o Terraform para implantar uma máquina vi
 
 Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
 
-**Aprimorar a Segurança**: Adicione regras de firewall específicas, configure grupos de segurança de rede (NSGs) e implemente autenticação multifator (MFA) para melhorar a segurança. Saiba mais sobre segurança
+**Aprimorar a Segurança**: Adicione regras de firewall específicas, configure grupos de segurança de rede (NSGs) e implemente autenticação multifator (MFA) para melhorar a segurança.
 
 **Gerenciamento de Configuração**: Utilize ferramentas como Ansible, Chef ou Puppet para gerenciar configurações de VMs após a criação.
 
