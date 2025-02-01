@@ -3,7 +3,7 @@ layout: post
 title: 'Crie VMs Windows Server no Azure em Minutos com Terraform'
 date: 2025-01-27 08:30:00 -0300
 categories: [IaaS]
-tags: [Azure, IaaS, WindowsServer, Terraform]
+tags: [Azure, IaaS, WindowsServer, Terraform, InfraAsCpde]
 slug: 'Deploy-VM-WindowsServer-Terraform'
 #image:
   #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
