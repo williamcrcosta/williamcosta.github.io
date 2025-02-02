@@ -3,7 +3,7 @@ layout: post
 title: 'Crie VMs Linux no Azure em Minutos com Terraform'
 date: 2025-01-30 08:30:00 -0300
 categories: [IaaS]
-tags: [Azure, IaaS, WindowsServer, Terraform, InfraAsCode]
+tags: [Azure, IaaS, Linux, Terraform, InfraAsCode, Ubuntu]
 slug: 'Deploy-VM-Linux-Terraform'
 #image:
   #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
