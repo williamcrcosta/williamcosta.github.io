@@ -455,27 +455,27 @@ $env:TF_VAR_key_pub_lnx="Adicione aqui o conteudo da sua chave publica"
 
 #### 8. Criar plano de Execução
 
-- Seguido todos esses passos, agora vamos criar um plano, execute o comando `terraform plan -out my_vm.out`. Ele cria um plano de execução e armazena em um arquivo. O arquivo my_vm.out é criado para revisar o que será feito sem aplicar as mudanças.
+- Seguido todos esses passos, agora vamos criar um plano, execute o comando `terraform plan -out my_vm-lnx.out`. Ele cria um plano de execução e armazena em um arquivo. O arquivo my_vm-lnx.out é criado para revisar o que será feito sem aplicar as mudanças.
 
 ```powershell
-terraform plan -out my_vm.out
+terraform plan -out my_vm-lnx.out
 ```
 
-![Terraform-Plan](/assets/img/Lab03-VMWindowsServer/TerraformPlan.png){: .shadow .rounded-10}
+![Terraform-Plan](/assets/img/Lab04-VMLNX/TerraformPlan.png){: .shadow .rounded-10}
 
 > Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é feito para proteger a segurança dos dados e evitar exposição desnecessária de informações sensíveis, como o ID da subscription onde os recursos serão criados. Note que ele já me traz as informações de outputs que criamos logo acima.
 {: .prompt-danger }
 
 #### 8. Fazer o deploy dos Recursos
 
-- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o `terraform apply my_vm.out`.
+- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o `terraform apply my_vm-lnx.out`.
   - Esse comando aplica as mudanças especificadas no arquivo de plano gerado pelo comando `terraform plan`.
 
 ```powershell
-terraform apply my_vm.out
+terraform apply my_vm-lnx.out
 ```
 
-![Terraform-Apply](/assets/img/Lab03-VMWindowsServer/TerraformApply+Outputs.png){: .shadow .rounded-10}
+![Terraform-Apply](/assets/img/Lab04-VMLNX/TerraformApply.png){: .shadow .rounded-10}
 
 <!-- #### 9. Validar as informações no Output
 
@@ -498,28 +498,35 @@ terraform output
 terraform state list
 ```
 
-![Terraform-State-List](/assets/img/Lab03-VMWindowsServer/TerraformStateList.png){: .shadow .rounded-10}
+![Terraform-State-List](/assets/img/Lab04-VMLNX/TerraformState.png){: .shadow .rounded-10}
 
 #### 11. Validar recursos criados no Portal Azure
 
 - A estrutura de recursos criada pode ser vista na figura abaixo.
 
-![RG-Recursos](/assets/img/Lab03-VMWindowsServer/RG+Recursos.png){: .shadow .rounded-10}
+![RG-Recursos](/assets/img/Lab04-VMLNX/RG.png){: .shadow .rounded-10}
 
 - Os detalhes da VM criada podem ser vistos na figura abaixo.
 
-![VM-Portal](/assets/img/Lab03-VMWindowsServer/ValidaçãoVMCriadanoPortal.png){: .shadow .rounded-10}
+![VM-Portal](/assets/img/Lab04-VMLNX/CreateVM.png){: .shadow .rounded-10}
 
 - A regra de segurança de rede (NSG) foi criada com origem somente meu IP público e destino o IP da VM, como visto na figura abaixo.
 
-![NSG-Rule](/assets/img/Lab03-VMWindowsServer/NSGRule.png){: .shadow .rounded-10}
+![NSG-Rule](/assets/img/Lab04-VMLNX/NSGRule.png){: .shadow .rounded-10}
 
 
 #### 12. Acessar VM criada
 
-- Nesta parte, com o usuario e senha em mãos, podemos fazer o teste de acesso à VM através do ***RDP - Remote Desktop***.
+- Nesta parte, com o usuário e chave SSH configurados como variáveis de ambiente, podemos conectar à VM utilizando o protocolo SSH com autenticação por chave pública.
 
-![VM-Access](/assets/img/Lab03-VMWindowsServer/AcessoWindowsServer.png){: .shadow .rounded-10}
+Execute o comando abaixo e, na sequência, aceite a conexão
+
+```powershell
+# Adicione o IP Publico da VM que foi criada. O IP da VM você obtém como output do terraform apply
+ssh -i key-pub-lnx terraform@x.x.x.231
+```
+
+![VM-Access](/assets/img/Lab04-VMLNX/VMAccess+Version.png){: .shadow .rounded-10}
 
 #### 12. Remover recursos criados com Terraform Destroy
 
@@ -528,8 +535,8 @@ terraform state list
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Terraform-Destroy](/assets/img/Lab03-VMWindowsServer/TerraformDestroy1.png){: .shadow .rounded-10}
-![Terraform-Destroy2](/assets/img/Lab03-VMWindowsServer/TerraformDestroy2.png){: .shadow .rounded-10}
+![Terraform-Destroy](/assets/img/Lab04-VMLNX/TerraformDestroy.png){: .shadow .rounded-10}
+![Terraform-Destroy2](/assets/img/Lab04-VMLNX/TerraformDestroy2.png){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
