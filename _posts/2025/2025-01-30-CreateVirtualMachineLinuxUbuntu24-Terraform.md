@@ -15,7 +15,7 @@ Fala galera!👋
 
 Neste post, vamos explorar como automatizar a implantação de uma máquina virtual no Azure utilizando Terraform. A abordagem Infrastructure as Code (IaC) permite criar e gerenciar infraestrutura de forma repetível, eficiente e sem a necessidade de configurações manuais.
 
-Embora esse processo seja aplicável a qualquer versão do Linux, neste tutorial utilizaremos o ***Ubuntu Server 24.04***. A automação desse processo oferece vários benefícios:
+Embora esse processo funcione para diferentes distribuições Linux, neste guia utilizaremos o ***Ubuntu Server 24.04*** como exemplo. A automação desse processo oferece vários benefícios:
 
 - ✅ **Consistência**: Elimina erros manuais ao criar recursos no Azure.
 - ✅ **Eficiência**: Reduz o tempo de configuração e implantação.
@@ -78,14 +78,14 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 
 Antes de começarmos nosso laboratório, verifique se você possui:
 
-- Uma conta do Azure com uma assinatura/subscription ativa.
+- Uma conta do Azure com uma assinatura ativa.
 
 > Caso você não tenha uma subscription, você pode criar uma Trial. Mais informações consulte <a href="https://azure.microsoft.com/en-us/" target="_blank">aqui</a>.
 {: .prompt-tip }
 
 - Um Service Principal (um tipo de identidade no Azure usada para autenticação) com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar permissões elevadas em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform, Hashicorp Terraform e PowerShell.
@@ -168,6 +168,9 @@ ssh-keygen -t rsa -b 4096 -f key-pub-lnx
 
 > A chave privada (key-pub-lnx) deve ser mantida segura e nunca compartilhada. A chave pública (key-pub-lnx.pub) pode ser distribuída para qualquer sistema com o qual você deseja se conectar via SSH.
 {: .prompt-warning }
+
+> Nunca compartilhe sua chave privada (id_rsa), pois ela dá acesso irrestrito à VM. Para maior segurança, utilize um cofre de senhas ou uma solução como o Azure Key Vault para armazená-la.
+{: .prompt-danger }
 
 
 - Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteúdo abaixo no arquivo ***provider.tf***.
@@ -576,7 +579,7 @@ Agora que sua VM já está rodando, que tal explorar mais possibilidades? Aqui e
 - Automatizar a instalação de pacotes na VM com cloud-init 🛠️.
 - Utilizar o Terraform Remote State para armazenar o estado da infraestrutura na nuvem 🌍.
 
-Ao avançar nesses próximos passos, você aprofundará suas habilidades em automação de infraestrutura e fortalecerá a robustez de seus ambientes na nuvem.
+*Essas são apenas algumas ideias para aprimorar sua infraestrutura com Terraform! Continue explorando novas configurações e torne seu ambiente ainda mais seguro e automatizado.*
 
 Até a próxima!! 😉
 
