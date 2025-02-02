@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Crie VMs Linux no Azure em Minutos com Terraform'
-date: 2025-01-30 08:30:00 -0300
+date: 2025-02-02 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, Linux, Terraform, InfraAsCode, Ubuntu]
 slug: 'Deploy-VM-Linux-Terraform'
@@ -23,57 +23,6 @@ Embora esse processo funcione para diferentes distribuições Linux, neste guia 
 
 Ao longo deste artigo, vamos configurar o Terraform, definir os recursos no Azure e provisionar a VM automaticamente. Pronto para tornar suas implementações mais rápidas e seguras? Vamos lá!
 
-<!-- > *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da redação deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
-{:.prompt-info} -->
-
-<!-- ### Máquina Virtual ou Virtual Machine
-
-**O que é**:
-Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para executar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
-
-## Por que usar uma VM?
-
-- **💰 Corte de Custos Fixos**: Substitua grandes investimentos em servidores físicos por custos baseados no uso. Por exemplo, crie VMs para testes temporários e pague apenas pelo tempo utilizado.
-- **⚙️ Menos Complexidade**: O Azure cuida da infraestrutura básica, como atualizações e segurança, permitindo que você se concentre em desenvolver e entregar serviços.
-- **🌍 Globalização Simples**: Garanta baixa latência para seus usuários ao implantar VMs em data centers ao redor do mundo, atendendo também a requisitos locais de conformidade.
-- **📈 Backup e Escalabilidade**: Ajuste os recursos rapidamente para atender à demanda. Seja aumentando capacidade durante a Black Friday ou replicando ambientes para recuperação de desastres, as VMs facilitam a adaptação.
-
-## Para que serve
-
-1. **Execução de Aplicações**: Ideal para hospedar aplicações empresariais que exigem um servidor dedicado.
-2. **Ambiente de Testes**: Permite a criação de ambientes isolados para testes de software e experimentos.
-3. **Armazenamento Temporário**: Processar ou hospedar dados em períodos curtos sem ocupar recursos físicos.
-4. **Ambiente de Desenvolvimento**: Para equipes de desenvolvimento que precisam de máquinas personalizadas.
-
-### Cenários de Uso
-
-1º **Desenvolvimento e Teste de Software**:
-
-- Criar ambientes de desenvolvimento semelhantes aos de produção.
-- Testar diferentes sistemas operacionais ou configurações.
-
-2º **Hospedagem de Aplicações Web**:
-
-- Hospedar websites ou APIs com alta disponibilidade.
-- Usar VMs como backend para aplicações críticas.
-
-3º **Computação Intensiva**:
-
-- Processamento de big data, análise de dados ou execução de simulações complexas.
-- Treinamento de modelos de Machine Learning.
-
-4º **Sistemas Herdados**:
-
-- Migrar sistemas legados (on-premises) para a nuvem sem necessidade de reformulação imediata.
-
-5º **Extensão de Data Centers**:
-
-- Usar VMs como uma extensão de data centers locais para lidar com demandas sazonais ou picos de carga.
-
-6º **Recuperação de Desastres**:
-
-- Configurar VMs como backup de infraestrutura crítica para garantir continuidade em caso de falhas.
- -->
 ### Pré-Requisitos
 
 Antes de começarmos nosso laboratório, verifique se você possui:
@@ -97,8 +46,6 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 
 > Caso não tenha o Terraform instalado, siga este <a href="https://cloudinsights.com.br/posts/Service-Principal-Terraform/#1-primeiro-passo-aqui-%C3%A9-realizar-o-download-da-%C3%BAltima-vers%C3%A3o-do-execut%C3%A1vel-do-terraform-para-windows" target="_blank">procedimento</a>.
 {:.prompt-info}
-
-<!-- - Importante: Certifique-se de que sua Subscription do Azure oferece suporte à versão ***Windows Server 2025***. Caso contrário, ajuste o exemplo para uma versão suportada, como ***Windows Server 2022***. -->
 
 ### 1. Criar estrutura de Arquivos
 
@@ -484,18 +431,6 @@ terraform apply my_vm-lnx.out
 ```
 
 ![Terraform-Apply](/assets/img/Lab04-VMLNX/TerraformApply.png){: .shadow .rounded-10}
-
-<!-- #### 9. Validar as informações no Output
-
-- Voçê pode executar o comando *terraform output*. Ele é utilizado para exibir os valores das variáveis de saída definidas no seu arquivo de configuração do Terraform. Essas variáveis de saída permitem que você acesse e use os valores gerados pela execução do plano de Terraform, como endereços IP, IDs de recursos, URLs e outras informações importantes.
-
-```powershell
-terraform output
-```
-
-![Terraform-Output](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
-
- -->
 
 #### 09. Listar recursos criados pelo Terraform
 
