@@ -17,9 +17,9 @@ Neste post, vamos explorar como automatizar a implantação de uma máquina virt
 
 Embora esse processo seja aplicável a qualquer versão do Linux, neste tutorial utilizaremos o ***Ubuntu Server 24.04***. A automação desse processo oferece vários benefícios:
 
-✅ **Consistência**: Elimina erros manuais ao criar recursos no Azure.
-✅ **Eficiência**: Reduz o tempo de configuração e implantação.
-✅ **Versionamento**: Permite rastrear e controlar alterações no ambiente de infraestrutura.
+- ✅ **Consistência**: Elimina erros manuais ao criar recursos no Azure.
+- ✅ **Eficiência**: Reduz o tempo de configuração e implantação.
+- ✅ **Versionamento**: Permite rastrear e controlar alterações no ambiente de infraestrutura.
 
 Ao longo deste artigo, vamos configurar o Terraform, definir os recursos no Azure e provisionar a VM automaticamente. Pronto para tornar suas implementações mais rápidas e seguras? Vamos lá!
 
@@ -572,9 +572,9 @@ A automação da infraestrutura em nuvem com o Terraform não apenas simplifica 
 
 Agora que sua VM já está rodando, que tal explorar mais possibilidades? Aqui estão algumas sugestões para continuar aprendendo:
 
-🔹 Adicionar um disco extra à VM para armazenar mais dados 💾
-🔹 Automatizar a instalação de pacotes na VM com cloud-init 🛠️
-🔹 Utilizar o Terraform Remote State para armazenar o estado da infraestrutura na nuvem 🌍
+- Adicionar um disco extra à VM para armazenar mais dados 💾.
+- Automatizar a instalação de pacotes na VM com cloud-init 🛠️.
+- Utilizar o Terraform Remote State para armazenar o estado da infraestrutura na nuvem 🌍.
 
 Ao avançar nesses próximos passos, você aprofundará suas habilidades em automação de infraestrutura e fortalecerá a robustez de seus ambientes na nuvem.
 
