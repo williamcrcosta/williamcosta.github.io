@@ -555,31 +555,25 @@ data "azurerm_key_vault_secret" "example" {
 ```
 **Rotação de Secrets**: Configure políticas de rotação periódica de segredos no Azure Key Vault ou automatize esse processo para minimizar riscos de segurança.
 
-### Conclusão
+### Resumo:
 
-Implantar uma máquina virtual Windows Server 2025 no Azure utilizando Terraform simplifica o processo de gerenciamento e escalabilidade da infraestrutura. Com as instruções e exemplos fornecidos, você pode automatizar a criação e configuração de VMs, garantindo consistência e eficiência em suas operações.
+Neste artigo, exploramos o processo de automação da implantação de uma máquina virtual Ubuntu Server no Azure utilizando o Terraform. Discutimos os pré-requisitos necessários, incluindo a configuração de um Service Principal e a instalação das ferramentas essenciais. Além disso, detalhamos a estruturação dos arquivos do projeto e a geração de chaves SSH para acesso seguro à VM. Por fim, apresentamos o código necessário para a criação dos recursos no Azure, destacando a eficiência e consistência que a automação com Terraform proporciona.
 
-### Resumo
+### Conclusão:
 
-Neste artigo, abordamos como utilizar o Terraform para implantar uma máquina virtual (VM) Windows Server 2025 no Azure. Explicamos os conceitos básicos e fornecemos um exemplo prático, detalhando cada etapa, desde a configuração inicial do Terraform até a criação e configuração da VM. Destacamos a importância de uma gestão eficiente e consistente da infraestrutura por meio da automação e da infraestrutura como código (IaC).
+A automação da infraestrutura em nuvem com o Terraform não apenas simplifica o processo de implantação, mas também garante consistência e rastreabilidade nas configurações. Ao seguir os passos delineados neste guia, você está apto a criar e gerenciar máquinas virtuais no Azure de maneira eficiente e reproduzível. Essa abordagem reduz a probabilidade de erros manuais e facilita a manutenção e escalabilidade dos recursos na nuvem.
 
-### Próximos Passos
+### Próximos Passos:
 
-Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
+**Explorar Recursos Adicionais**: Após a criação básica da VM, considere automatizar a configuração de outros recursos do Azure, como bancos de dados, balanceadores de carga e redes virtuais, utilizando o Terraform.
 
-**Aprimorar a Segurança**: Adicione regras de firewall específicas, configure grupos de segurança de rede (NSGs) e implemente autenticação multifator (MFA) para melhorar a segurança.
+**Gerenciamento de Estado Remoto**: Implemente o armazenamento remoto do estado do Terraform para facilitar o trabalho em equipe e garantir a integridade do estado da infraestrutura.
 
-**Gerenciamento de Configuração**: Utilize ferramentas como Ansible, Chef ou Puppet para gerenciar configurações de VMs após a criação.
+**Integração Contínua (CI/CD)**: Integre o Terraform em pipelines de CI/CD para automatizar ainda mais o processo de implantação e garantir que as mudanças na infraestrutura sejam testadas e aplicadas de forma controlada.
 
-**Automatização Contínua**: Integre o Terraform com pipelines de CI/CD, como Azure DevOps ou GitHub Actions, para automações contínuas e implantação de infraestrutura como código (IaC).
+**Políticas de Governança**: Utilize ferramentas como o Sentinel para definir e aplicar políticas que garantam conformidade e melhores práticas na criação e gerenciamento dos recursos.
 
-**Monitoramento e Logs**: Configure Azure Monitor e Log Analytics para monitorar o desempenho das VMs e obter insights detalhados.
-
-**Otimização de Custos**: Use Azure Cost Management para monitorar e otimizar os custos relacionados à sua infraestrutura, garantindo eficiência econômica.
-
-**Backup e Recuperação**: Implemente soluções de backup e recuperação para garantir a disponibilidade e integridade dos dados.
-
-Seguir esses passos ajudará a melhorar a segurança, eficiência e gestão contínua da sua infraestrutura no Azure, permitindo uma abordagem mais robusta e profissional na automação e gerenciamento de seus recursos.
+Ao avançar nesses próximos passos, você aprofundará suas habilidades em automação de infraestrutura e fortalecerá a robustez e segurança de seus ambientes na nuvem.
 
 Até a próxima!! 😉
 
