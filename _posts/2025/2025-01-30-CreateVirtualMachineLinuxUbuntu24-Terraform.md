@@ -13,11 +13,15 @@ Fala galera!👋
 
 **Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual com ***Ubuntu Server*** no Azure usando Terraform. Embora o processo seja aplicável a qualquer versão do sistema operacional Linux, neste post faremos o deploy específico do ***Ubuntu 24.04***. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar a implantação de uma máquina virtual no Azure utilizando Terraform. A abordagem Infrastructure as Code (IaC) permite criar e gerenciar infraestrutura de forma repetível, eficiente e sem a necessidade de configurações manuais.
 
-- Consistência: Elimina erros manuais ao criar recursos no Azure.
-- Eficiência: Reduz o tempo de configuração e implantação.
-- Versionamento: Com o Terraform, você pode rastrear e controlar alterações no ambiente de infraestrutura.
+Embora esse processo seja aplicável a qualquer versão do Linux, neste tutorial utilizaremos o ***Ubuntu Server 24.04***. A automação desse processo oferece vários benefícios:
+
+✅ **Consistência**: Elimina erros manuais ao criar recursos no Azure.
+✅ **Eficiência**: Reduz o tempo de configuração e implantação.
+✅ **Versionamento**: Permite rastrear e controlar alterações no ambiente de infraestrutura.
+
+Ao longo deste artigo, vamos configurar o Terraform, definir os recursos no Azure e provisionar a VM automaticamente. Pronto para tornar suas implementações mais rápidas e seguras? Vamos lá!
 
 <!-- > *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da redação deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
 {:.prompt-info} -->
@@ -337,6 +341,7 @@ resource "azurerm_linux_virtual_machine" "vm-lnx" {
     azurerm_network_interface.nic-vm-lnx.id,
   ]
 
+  # Utiliza a chave SSH gerada para autenticação segura
   admin_ssh_key {
     username   = "terraform"
     public_key = var.key_pub_lnx
@@ -565,15 +570,13 @@ A automação da infraestrutura em nuvem com o Terraform não apenas simplifica 
 
 ### Próximos Passos:
 
-**Explorar Recursos Adicionais**: Após a criação básica da VM, considere automatizar a configuração de outros recursos do Azure, como bancos de dados, balanceadores de carga e redes virtuais, utilizando o Terraform.
+Agora que sua VM já está rodando, que tal explorar mais possibilidades? Aqui estão algumas sugestões para continuar aprendendo:
 
-**Gerenciamento de Estado Remoto**: Implemente o armazenamento remoto do estado do Terraform para facilitar o trabalho em equipe e garantir a integridade do estado da infraestrutura.
+🔹 Adicionar um disco extra à VM para armazenar mais dados 💾
+🔹 Automatizar a instalação de pacotes na VM com cloud-init 🛠️
+🔹 Utilizar o Terraform Remote State para armazenar o estado da infraestrutura na nuvem 🌍
 
-**Integração Contínua (CI/CD)**: Integre o Terraform em pipelines de CI/CD para automatizar ainda mais o processo de implantação e garantir que as mudanças na infraestrutura sejam testadas e aplicadas de forma controlada.
-
-**Políticas de Governança**: Utilize ferramentas como o Sentinel para definir e aplicar políticas que garantam conformidade e melhores práticas na criação e gerenciamento dos recursos.
-
-Ao avançar nesses próximos passos, você aprofundará suas habilidades em automação de infraestrutura e fortalecerá a robustez e segurança de seus ambientes na nuvem.
+Ao avançar nesses próximos passos, você aprofundará suas habilidades em automação de infraestrutura e fortalecerá a robustez de seus ambientes na nuvem.
 
 Até a próxima!! 😉
 
@@ -584,4 +587,3 @@ Até a próxima!! 😉
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
-
