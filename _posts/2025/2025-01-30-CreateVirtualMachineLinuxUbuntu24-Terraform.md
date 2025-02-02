@@ -78,14 +78,14 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 
 Antes de começarmos nosso laboratório, verifique se você possui:
 
-- Uma conta do Azure com uma assinatura/subscription ativa.
+- Uma conta do Azure com uma assinatura ativa.
 
 > Caso você não tenha uma subscription, você pode criar uma Trial. Mais informações consulte <a href="https://azure.microsoft.com/en-us/" target="_blank">aqui</a>.
 {: .prompt-tip }
 
 - Um Service Principal (um tipo de identidade no Azure usada para autenticação) com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no Entra ID e com a permissao de Contributor na minha assinatura. Para saber como adicionar permissões elevadas em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
 {:.prompt-info}
 
 - Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform, Hashicorp Terraform e PowerShell.
