@@ -549,7 +549,7 @@ ssh -i key-pub-lnx terraform@x.x.x.231
 
 ```hcl
 data "azurerm_key_vault_secret" "example" {
-  name         = "admin-passwork"
+  name         = "secret-vm-lnx"
   key_vault_id = azurerm_key_vault.example.id
 }
 ```
@@ -579,7 +579,7 @@ Até a próxima!! 😉
 
 ![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
-#CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #EntraID
+#CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #InfraAsCode
 
 ---
 
