@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'Crie VMs Windows Server no Azure em Minutos com Terraform'
-date: 2025-01-27 08:30:00 -0300
+title: 'Crie VMs Linux no Azure em Minutos com Terraform'
+date: 2025-01-30 08:30:00 -0300
 categories: [IaaS]
-tags: [Azure, IaaS, WindowsServer, Terraform]
-slug: 'Deploy-VM-WindowsServer-Terraform'
+tags: [Azure, IaaS, WindowsServer, Terraform, InfraAsCode]
+slug: 'Deploy-VM-Linux-Terraform'
 #image:
   #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
 ---
@@ -13,16 +13,16 @@ Fala galera!👋
 
 **Bem-vindo ao blog Cloud Insights!** ☁️
 
-Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual com ***Windows Server*** no Azure usando Terraform. Embora o processo seja aplicável a qualquer versão do sistema operacional Windows Server, neste post faremos o deploy específico do ***Windows Server 2025***. A automação desse processo oferece vários benefícios, como:
+Neste post, vamos explorar como automatizar a implantação (deploy) de uma máquina virtual com ***Ubuntu Server*** no Azure usando Terraform. Embora o processo seja aplicável a qualquer versão do sistema operacional Linux, neste post faremos o deploy específico do ***Ubuntu 24.04***. A automação desse processo oferece vários benefícios, como:
 
 - Consistência: Elimina erros manuais ao criar recursos no Azure.
 - Eficiência: Reduz o tempo de configuração e implantação.
 - Versionamento: Com o Terraform, você pode rastrear e controlar alterações no ambiente de infraestrutura.
 
-> *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da redação deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
-{:.prompt-info}
+<!-- > *Nota: Este tutorial utiliza o Windows Server 2025, que ainda se encontra em estágio de pré-lançamento no momento da redação deste artigo. Certifique-se de verificar a disponibilidade da versão para o seu ambiente antes de seguir o passo a passo.*
+{:.prompt-info} -->
 
-### Máquina Virtual ou Virtual Machine
+<!-- ### Máquina Virtual ou Virtual Machine
 
 **O que é**:
 Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob demanda na nuvem. Esses servidores podem ser configurados para executar sistemas operacionais como Windows ou Linux, além de aplicações específicas. É como ter um servidor físico, mas sem a necessidade de gerenciar o hardware diretamente, já que tudo é virtualizado.
@@ -69,7 +69,7 @@ Uma VM (Virtual Machine) é um serviço que oferece servidores virtuais sob dema
 6º **Recuperação de Desastres**:
 
 - Configurar VMs como backup de infraestrutura crítica para garantir continuidade em caso de falhas.
-
+ -->
 ### Pré-Requisitos
 
 Antes de começarmos nosso laboratório, verifique se você possui:
@@ -94,15 +94,14 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 > Caso não tenha o Terraform instalado, siga este <a href="https://cloudinsights.com.br/posts/Service-Principal-Terraform/#1-primeiro-passo-aqui-%C3%A9-realizar-o-download-da-%C3%BAltima-vers%C3%A3o-do-execut%C3%A1vel-do-terraform-para-windows" target="_blank">procedimento</a>.
 {:.prompt-info}
 
-- Importante: Certifique-se de que sua Subscription do Azure oferece suporte à versão ***Windows Server 2025***. Caso contrário, ajuste o exemplo para uma versão suportada, como ***Windows Server 2022***.
-
+<!-- - Importante: Certifique-se de que sua Subscription do Azure oferece suporte à versão ***Windows Server 2025***. Caso contrário, ajuste o exemplo para uma versão suportada, como ***Windows Server 2022***. -->
 
 ### 1. Criar estrutura de Arquivos
 
 - Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos a abaixo:
 
-![Folder-Structure](/assets/img/Lab03-VMWindowsServer/FolderStructure.png){: .shadow .rounded-10}
+![Folder-Structure](/assets/img/Lab04-VMLNX/FolderStructure.png){: .shadow .rounded-10}
 
 ### 2. Vamos iniciar codificando nossos arquivos
 
@@ -116,6 +115,56 @@ $env:ARM_TENANT_ID = "O ID do seu Tenant no EntraID"
 $env:ARM_SUBSCRIPTION_ID = "ID da sua subscription"
 $env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contém a permissão de Global Administrator no Entra ID
 ```
+
+- Vamos criar a chave SSH para acessar a VM por meio de conexão segura.
+
+  - O comando ssh-keygen -t rsa -b 4096 -f key-pub-lnx é usado para gerar um par de chaves SSH. O que esses parâmetros segnificam?
+
+    - **ssh-keygen**: É a ferramenta de linha de comando usada para gerar, gerenciar e converter chaves de autenticação para o SSH (Secure Shell).
+
+    - **-t rsa**: Especifica o tipo de chave a ser gerada. Neste caso, é uma chave RSA (Rivest–Shamir–Adleman), um dos algoritmos mais comuns para criptografia de chave pública.
+
+    - **-b 4096**: Define o número de bits na chave gerada. Neste exemplo, a chave terá 4096 bits, o que proporciona um nível elevado de segurança.
+
+    - **-f key-pub-lnx**: Especifica o nome do arquivo que será gerado. A chave privada será salva no arquivo key-pub-lnx, e a chave pública será salva no arquivo key-pub-lnx.pub.
+
+> Quando você executar esse comando, será solicitado que você insira uma senha (opcional) para proteger a chave privada. **Aqui está um exemplo de como a execução se parecerá**:
+{: .prompt-tip }
+
+```sh
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa): key-pub-lnx
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in key-pub-lnx.
+Your public key has been saved in key-pub-lnx.pub.
+The key fingerprint is:
+SHA256:...
+The key's randomart image is:
++---[RSA 4096]----+
+| .o.             |
+| .o+ .           |
+| ooE+ .          |
+|.oB=..           |
+|=+o+.. o o       |
+|.+ .+.= B        |
+|o o. .++ +       |
+| +.o   +         |
+|  oo             |
++----[SHA256]-----+
+```
+
+Adicione o conteudo abaixo no terminal PowerShell.
+
+```powershell
+ssh-keygen -t rsa -b 4096 -f key-pub-lnx
+```
+
+![RSA-Key](/assets/img/Lab04-VMLNX/RDS-Key.png){: .shadow .rounded-10}
+
+> A chave privada (key-pub-lnx) deve ser mantida segura e nunca compartilhada. A chave pública (key-pub-lnx.pub) pode ser distribuída para qualquer sistema com o qual você deseja se conectar via SSH.
+{: .prompt-warning }
+
 
 - Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteúdo abaixo no arquivo ***provider.tf***.
 
@@ -134,7 +183,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "4.16.0"
+      version = "4.17.0"
     }
     http = {
       source  = "hashicorp/http"
@@ -156,7 +205,7 @@ locals {
     # Ambiente em que o recurso esta sendo criado
     Environment = "Dev"
     # Nome do projeto que o recurso esta sendo criado
-    Project = "VM-WindowsServer"
+    Project = "VM-Ubuntu2404"
     # Ferramenta que esta gerenciando o recurso
     Managedby = "Terraform"
   }
@@ -168,8 +217,8 @@ locals {
 ```hcl
 # Crie um recurso do tipo resource_group
 # mais informacoes: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
-resource "azurerm_resource_group" "rg-vm-win" {
-  name     = "rg-vm-win"
+resource "azurerm_resource_group" "rg-vm-lnx" {
+  name     = "rg-vm-lnx"
   location = "East US 2"
   tags     = local.tags
 }
@@ -178,23 +227,24 @@ resource "azurerm_resource_group" "rg-vm-win" {
 - Agora vamos adicionar o código para criar uma Virtual Network. Adicione o conteúdo abaixo no arquivo ***vnet.tf***.
 
 ```hcl
-# Crie um recurso do tipo virtual_network
+# Crie um recurso do tipo azurerm_virtual_network
 # mais informacoes: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnet"
-  resource_group_name = azurerm_resource_group.rg-vm-win.name
-  location            = azurerm_resource_group.rg-vm-win.location
+  resource_group_name = azurerm_resource_group.rg-vm-lnx.name
+  location            = azurerm_resource_group.rg-vm-lnx.location
   address_space       = ["10.101.0.0/16"] # Espaco de enderecamento da VNet
   tags                = local.tags
 }
 
-# Crie um recurso do tipo subnet
+# Crie um recurso do tipo azurerm_subnet
 # mais informacoes: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet
 resource "azurerm_subnet" "subnet" {
   name                              = "subnet"
-  resource_group_name               = azurerm_resource_group.rg-vm-win.name
+  resource_group_name               = azurerm_resource_group.rg-vm-lnx.name
   virtual_network_name              = azurerm_virtual_network.vnet.name
   address_prefixes                  = ["10.101.10.0/24"] # Sub-rede criada na VNet
+  # Habilita a aplicacao de politicas de seguranca na sub-rede a nivel de NSG
   private_endpoint_network_policies = "NetworkSecurityGroupEnabled"
 }
 ```
@@ -211,21 +261,21 @@ data "http" "myip" {
 # mais informacoes: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group
 resource "azurerm_network_security_group" "nsg" {
   name                = "nsg"
-  resource_group_name = azurerm_resource_group.rg-vm-win.name
-  location            = azurerm_resource_group.rg-vm-win.location
+  resource_group_name = azurerm_resource_group.rg-vm-lnx.name
+  location            = azurerm_resource_group.rg-vm-lnx.location
   tags                = local.tags
 
   # Permite que as requisições sejam recebidas somente a partir do meu IP público, garantindo que apenas eu consiga acessar a VM.
   security_rule {
-    name                       = "RDPInbound"
+    name                       = "SSHInbound"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "*"
     source_port_range          = "*"
-    destination_port_range     = "3389"
+    destination_port_range     = "22"
     source_address_prefix      = chomp(data.http.myip.response_body)
-    destination_address_prefix = azurerm_windows_virtual_machine.vm-win-server.private_ip_address # Aqui no destino você garante que a origem vai conseguir comunicação na porta 3389 somente no IP Privado da VM que vamos criar.
+    destination_address_prefix = azurerm_windows_virtual_machine.vm-lnx.private_ip_address # Aqui no destino você garante que a origem vai conseguir comunicação na porta 3389 somente no IP Privado da VM que vamos criar.
   }
 }
 
@@ -244,85 +294,70 @@ resource "azurerm_subnet_network_security_group_association" "association" {
 {: .prompt-warning }
 
 ```hcl
-# Variáveis para atribuir um usuário e senha para a Maquina Virtual Windows Server.
-variable "admin_username" {
-  description = "O nome de usuário para acessar a maquina virtual. Será usado para o acesso remoto via RDP."
-  type        = string
-}
-
-variable "admin_password" {
-  description = "A senha para a máquina virtual. Será usada para o acesso remoto via RDP."
+# Variável para chave pública SSH
+variable "key_pub_lnx" {
+  description = "Chave pública para acesso remoto via SSH."
   type        = string
   sensitive   = true
 }
 ```
 
-- Agora vamos adicionar o código para a estrutura da VM. Adicione o conteúdo abaixo no arquivo ***vm-win-server.tf***.
+- Agora vamos adicionar o código para a estrutura da VM. Adicione o conteúdo abaixo no arquivo ***vm-lnx.tf***.
 
 ```hcl
-# Cria um IP publico para a VM
-resource "azurerm_public_ip" "vm-win-server-pip" {
-  name                = "vm-win-server-pip"
-  resource_group_name = azurerm_resource_group.rg-vm-win.name
-  location            = azurerm_resource_group.rg-vm-win.location
+resource "azurerm_public_ip" "pip-vm-lnx" {
+  name                = "pip-vm-lnx"
+  resource_group_name = azurerm_resource_group.rg-vm-lnx.name
+  location            = azurerm_resource_group.rg-vm-lnx.location
   allocation_method   = "Static"
-  sku                 = "Standard"
   tags                = local.tags
 }
 
-# Cria uma interface de rede para a VM
-resource "azurerm_network_interface" "vm-win-server-nic" {
-  name                = "vm-win-server-nic"
-  location            = azurerm_resource_group.rg-vm-win.location
-  resource_group_name = azurerm_resource_group.rg-vm-win.name
-
+resource "azurerm_network_interface" "nic-vm-lnx" {
+  name                = "nic-vm-lnx"
+  location            = azurerm_resource_group.rg-vm-lnx.location
+  resource_group_name = azurerm_resource_group.rg-vm-lnx.name
+  tags                = local.tags
   ip_configuration {
-    name                          = "vm-win-server-ipconfig"
+    name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.vm-win-server-pip.id
+    public_ip_address_id          = azurerm_public_ip.pip-vm-lnx.id
   }
-  tags = local.tags
 }
 
-# Cria a VM com o Windows Server
-resource "azurerm_windows_virtual_machine" "vm-win-server" {
-  name                  = "vm-win-server"
-  resource_group_name   = azurerm_resource_group.rg-vm-win.name
-  location              = azurerm_resource_group.rg-vm-win.location
-  size                  = "Standard_B2ms"
-  admin_username        = var.admin_username
-  admin_password        = var.admin_password
-  network_interface_ids = [azurerm_network_interface.vm-win-server-nic.id]
-  tags                  = local.tags
+resource "azurerm_linux_virtual_machine" "vm-lnx" {
+  name                = "vm-lnx"
+  resource_group_name = azurerm_resource_group.rg-vm-lnx.name
+  location            = azurerm_resource_group.rg-vm-lnx.location
+  size                = "Standard_B1s"
+  admin_username      = "terraform"
+  tags                = local.tags
+  network_interface_ids = [
+    azurerm_network_interface.nic-vm-lnx.id,
+  ]
 
-  # Configura o disco do sistema operacional
-  os_disk {
-    caching              = "ReadWrite"
-    disk_size_gb         = 128
-    storage_account_type = "StandardSSD_LRS"
-    name                 = "vm-win-server-os-disk"
+  admin_ssh_key {
+    username   = "terraform"
+    public_key = var.key_pub_lnx
   }
 
-  # Configura a imagem do sistema operacional
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    disk_size_gb         = 128
+    name                 = "vm-lnx-os-disk"
+  }
+
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2025-datacenter-azure-edition"
+    publisher = "Canonical"
+    offer     = "ubuntu-24_04-lts"
+    sku       = "server"
     version   = "latest"
   }
 
   # Habilita o agente de provisionamento da VM
   provision_vm_agent = true
-
-  # Configura o fuso horario da VM
-  timezone = "E. South America Standard Time"
-
-  # Habilita o hotpatching
-  hotpatching_enabled = true
-
-  # Configura o modo de patch
-  patch_mode = "AutomaticByPlatform"
 
   # Habilita o TPM
   vtpm_enabled = true
@@ -330,21 +365,40 @@ resource "azurerm_windows_virtual_machine" "vm-win-server" {
   # Habilita o Secure Boot
   secure_boot_enabled = true
 }
+
+# Crie um recurso do tipo azurerm_virtual_machine_extension para atualizar a VM com o script de atualizacao
+resource "azurerm_virtual_machine_extension" "example" {
+  name                 = "vm-ext"
+  virtual_machine_id   = azurerm_linux_virtual_machine.vm-lnx.id
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.0"
+
+  settings = <<SETTINGS
+    {
+      "commandToExecute": "sudo apt-get update && sudo apt-get dist-upgrade -y"
+    }
+  SETTINGS
+}
+
 ```
 
 - Por fim, vamos adicionar alguns outputs para facilitar a visualização dos resultados do deploy. Adicione o conteúdo abaixo no arquivo ***output.tf***.
 
 ```hcl
+# Saída do endereço IP público da máquina virtual
 output "public_ip" {
-  value = azurerm_public_ip.vm-win-server-pip.ip_address
+  value = azurerm_public_ip.pip-vm-lnx.ip_address
 }
 
+# Saída do endereço IP privado da interface de rede da máquina virtual
 output "private_ip" {
-  value = azurerm_network_interface.vm-win-server-nic.private_ip_address
+  value = azurerm_network_interface.nic-vm-lnx.private_ip_address
 }
 
+# Saída do nome da máquina virtual
 output "vm_name" {
-  value = azurerm_windows_virtual_machine.vm-win-server.name
+  value = azurerm_linux_virtual_machine.vm-lnx.name
 }
 ```
 
@@ -358,7 +412,7 @@ output "vm_name" {
 terraform init
 ```
 
-![Terraform-Init](/assets/img/Lab03-VMWindowsServer/TerraformInit.png){: .shadow .rounded-10}
+![Terraform-Init](/assets/img/Lab04-VMLNX/TerraformInit.png){: .shadow .rounded-10}
 
 ### 5. Validar se a configuração está Correta
 
@@ -368,7 +422,7 @@ terraform init
 terraform validate
 ```
 
-![Terraform-Validate](/assets/img/Lab03-VMWindowsServer/TerraformValidate.png){: .shadow .rounded-10}
+![Terraform-Validate](/assets/img/Lab04-VMLNX/TerraformValidate.png){: .shadow .rounded-10}
 
 #### 6. Validar a formatação dos Arquivos
 
@@ -378,7 +432,7 @@ terraform validate
 terraform fmt
 ```
 
-![Terraform-FMT](/assets/img/Lab03-VMWindowsServer/TerraformFMT.png){: .shadow .rounded-10}
+![Terraform-FMT](/assets/img/Lab04-VMLNX/TerraformFMT.png){: .shadow .rounded-10}
 
 #### 7. Criar as variáveis de ambiente para ser possivel se conectar na Azure
 
@@ -389,41 +443,39 @@ terraform fmt
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Set-Azure-Variables](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.png){: .shadow .rounded-10}
+![Set-Azure-Variables](/assets/img/Lab04-VMLNX/EnvironmentVariables.png){: .shadow .rounded-10}
 
-- Aqui vamos adicionar as variavies de ambiente informando o usuario e senha da Virtual Machine. Adicione o comando abaixo em seu terminal do PowerShell.
+- Aqui vamos adicionar a variavel de ambiente da chave Publico que criamos mais acima. Adicione o comando abaixo em seu terminal do PowerShell.
 
 ```powershell
-$env:TF_VAR_admin_username="admin.cloudinsights"
-
-$env:TF_VAR_password="Crie uma senha e adicione aqui"
+$env:TF_VAR_key_pub_lnx="Adicione aqui o conteudo da sua chave publica"
 ```
 
-![Set-VM-Variables](/assets/img/Lab03-VMWindowsServer/VariaveisUserPass.png){: .shadow .rounded-10}
+![Set-VM-Variables](/assets/img/Lab04-VMLNX/Key_TF_Variable.png){: .shadow .rounded-10}
 
 #### 8. Criar plano de Execução
 
-- Seguido todos esses passos, agora vamos criar um plano, execute o comando `terraform plan -out my_vm.out`. Ele cria um plano de execução e armazena em um arquivo. O arquivo my_vm.out é criado para revisar o que será feito sem aplicar as mudanças.
+- Seguido todos esses passos, agora vamos criar um plano, execute o comando `terraform plan -out my_vm-lnx.out`. Ele cria um plano de execução e armazena em um arquivo. O arquivo my_vm-lnx.out é criado para revisar o que será feito sem aplicar as mudanças.
 
 ```powershell
-terraform plan -out my_vm.out
+terraform plan -out my_vm-lnx.out
 ```
 
-![Terraform-Plan](/assets/img/Lab03-VMWindowsServer/TerraformPlan.png){: .shadow .rounded-10}
+![Terraform-Plan](/assets/img/Lab04-VMLNX/TerraformPlan.png){: .shadow .rounded-10}
 
 > Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é feito para proteger a segurança dos dados e evitar exposição desnecessária de informações sensíveis, como o ID da subscription onde os recursos serão criados. Note que ele já me traz as informações de outputs que criamos logo acima.
 {: .prompt-danger }
 
 #### 8. Fazer o deploy dos Recursos
 
-- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o `terraform apply my_vm.out`.
+- Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o `terraform apply my_vm-lnx.out`.
   - Esse comando aplica as mudanças especificadas no arquivo de plano gerado pelo comando `terraform plan`.
 
 ```powershell
-terraform apply my_vm.out
+terraform apply my_vm-lnx.out
 ```
 
-![Terraform-Apply](/assets/img/Lab03-VMWindowsServer/TerraformApply+Outputs.png){: .shadow .rounded-10}
+![Terraform-Apply](/assets/img/Lab04-VMLNX/TerraformApply.png){: .shadow .rounded-10}
 
 <!-- #### 9. Validar as informações no Output
 
@@ -446,28 +498,35 @@ terraform output
 terraform state list
 ```
 
-![Terraform-State-List](/assets/img/Lab03-VMWindowsServer/TerraformStateList.png){: .shadow .rounded-10}
+![Terraform-State-List](/assets/img/Lab04-VMLNX/TerraformState.png){: .shadow .rounded-10}
 
 #### 11. Validar recursos criados no Portal Azure
 
 - A estrutura de recursos criada pode ser vista na figura abaixo.
 
-![RG-Recursos](/assets/img/Lab03-VMWindowsServer/RG+Recursos.png){: .shadow .rounded-10}
+![RG-Recursos](/assets/img/Lab04-VMLNX/RG.png){: .shadow .rounded-10}
 
 - Os detalhes da VM criada podem ser vistos na figura abaixo.
 
-![VM-Portal](/assets/img/Lab03-VMWindowsServer/ValidaçãoVMCriadanoPortal.png){: .shadow .rounded-10}
+![VM-Portal](/assets/img/Lab04-VMLNX/CreateVM.png){: .shadow .rounded-10}
 
 - A regra de segurança de rede (NSG) foi criada com origem somente meu IP público e destino o IP da VM, como visto na figura abaixo.
 
-![NSG-Rule](/assets/img/Lab03-VMWindowsServer/NSGRule.png){: .shadow .rounded-10}
+![NSG-Rule](/assets/img/Lab04-VMLNX/NSGRule.png){: .shadow .rounded-10}
 
 
 #### 12. Acessar VM criada
 
-- Nesta parte, com o usuario e senha em mãos, podemos fazer o teste de acesso à VM através do ***RDP - Remote Desktop***.
+- Nesta parte, com o usuário e chave SSH configurados como variáveis de ambiente, podemos conectar à VM utilizando o protocolo SSH com autenticação por chave pública.
 
-![VM-Access](/assets/img/Lab03-VMWindowsServer/AcessoWindowsServer.png){: .shadow .rounded-10}
+Execute o comando abaixo e, na sequência, aceite a conexão
+
+```powershell
+# Adicione o IP Publico da VM que foi criada. O IP da VM você obtém como output do terraform apply
+ssh -i key-pub-lnx terraform@x.x.x.231
+```
+
+![VM-Access](/assets/img/Lab04-VMLNX/VMAccess+Version.png){: .shadow .rounded-10}
 
 #### 12. Remover recursos criados com Terraform Destroy
 
@@ -476,8 +535,8 @@ terraform state list
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Terraform-Destroy](/assets/img/Lab03-VMWindowsServer/TerraformDestroy1.png){: .shadow .rounded-10}
-![Terraform-Destroy2](/assets/img/Lab03-VMWindowsServer/TerraformDestroy2.png){: .shadow .rounded-10}
+![Terraform-Destroy](/assets/img/Lab04-VMLNX/TerraformDestroy.png){: .shadow .rounded-10}
+![Terraform-Destroy2](/assets/img/Lab04-VMLNX/TerraformDestroy2.png){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
@@ -531,3 +590,4 @@ Até a próxima!! 😉
 ---
 
 [![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
+
