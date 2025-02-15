@@ -44,7 +44,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos a abaixo:
 
-![Folder-Structure](/assets/img/Lab01-Bastion/Bastion-TF/FolderStructure.png){: .shadow .rounded-10}
+![Folder-Structure](/assets/img/Lab01-Bastion/Bastion-TF/FolderStructure2.png){: .shadow .rounded-10}
 
 ### 2. Vamos iniciar codificando nossos arquivos
 
