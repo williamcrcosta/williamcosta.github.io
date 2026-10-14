@@ -21,7 +21,7 @@ tagline: Cloud Specialist | Azure 🇧🇷
               Cloud Insights # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  "Explorando novidades, dicas e insights sobre soluções em nuvem."
+  Explorando novidades, dicas e insights sobre soluções em nuvem.
 
 author: William Costa # change to your full name
 
@@ -78,7 +78,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: [light]
+theme_mode:
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -88,7 +88,7 @@ theme_mode: [light]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/profile.png
+avatar: /assets/img/profile.webp
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -200,6 +200,7 @@ defaults:
 
 sass:
   style: compressed
+  quiet_deps: true
 
 compress_html:
   clippings: all
@@ -213,6 +214,11 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - assets/img/01/image.gif
+  - assets/img/Lab01-Bastion/Bastion-TF/VM-Access-Bastion.gif
+  - assets/img/Lab01-Bastion/Bastion-azcli/Screenshot_*.png
+  - assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.gif
+  - assets/img/profile.png
   - docs
   - tools
   - README.md

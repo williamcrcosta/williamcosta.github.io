@@ -6,7 +6,7 @@ categories: [Network]
 tags: [Azure, Network, Bastion]
 slug: 'Deploy-Bastion-Portal'
 #image:
-#  path: assets/img/01/image.gif
+#  path: assets/img/01/image.webp
 ---
 
 Fala galera!👋

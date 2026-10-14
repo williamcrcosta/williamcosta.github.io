@@ -61,7 +61,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Acesse a página da <a href="https://developer.hashicorp.com/terraform/" target="_blank">Hashicorp</a> para fazer o download do pacote, depois disso salve o pacote na pasta Downloads e extraia o conteudo. Em seguida crie um novo diretório no disco C com nome "terraform" e adicione o conteudo extraído lá.
 
   - *Acompanhe o passo-a-passo abaixo*
-![Download-TF](/assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.gif){: .shadow .rounded-10}
+![Download-TF](/assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.webp){: .shadow .rounded-10}
 
 ### 2. Definir variáveis de ambiente
 

@@ -6,7 +6,7 @@ categories: [Network]
 tags: [Azure, Bastion]
 slug: 'Access-VMs-AzureBastion'
 #image:
-#  path: assets/img/01/image.gif
+#  path: assets/img/01/image.webp
 ---
 
 Fala galera!👋

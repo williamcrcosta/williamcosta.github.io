@@ -6,7 +6,7 @@ categories: [Network]
 tags: [Azure, Network, Bastion, Terraform, PaaS]
 slug: 'Deploy-Bastion-Terraform'
 #image:
-  #path: assets/img/01/image.gif
+  #path: assets/img/01/image.webp
 ---
 
 Fala galera!👋
@@ -435,7 +435,7 @@ terraform state list
 
   - Dentro do portal da Azure, localize a vm , clique em Overview e depois em Bastion. Voce pode conferir o passo-a-passo abaixo:
 
-![VM-Access](/assets/img/Lab01-Bastion/Bastion-TF/VM-Access-Bastion.gif){: .shadow .rounded-10}
+![VM-Access](/assets/img/Lab01-Bastion/Bastion-TF/VM-Access-Bastion.webp){: .shadow .rounded-10}
 
 #### 13. Remover recursos criados com Terraform Destroy
 
