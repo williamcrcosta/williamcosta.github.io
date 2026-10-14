@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Az CLI)'
+description: 'Aprenda a implantar o Azure Bastion com Azure CLI, incluindo pré-requisitos, rede e validação do acesso.'
 date: 2024-10-17 08:20:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion, AzCLI]
 slug: 'Deploy-Bastion-AzCLI'
-#image:
-#  path: assets/img/01/image.webp
+image:
+  path: /assets/img/covers/deploy-bastion-azcli.webp
+  alt: 'Implantação do Azure Bastion com Azure CLI'
 ---
 
 Fala galera!👋

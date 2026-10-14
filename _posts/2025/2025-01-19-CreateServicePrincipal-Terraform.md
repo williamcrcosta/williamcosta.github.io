@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Service Principal com Terraform'
+description: 'Aprenda a criar um Service Principal com Terraform para autenticar automações no Azure.'
 date: 2025-01-19 08:30:00 -0300
 categories: [Identity]
 tags: [Azure, Identity, EntraID, Terraform]
 slug: 'Service-Principal-Terraform'
-#image:
-  #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
+image:
+  path: /assets/img/covers/service-principal-terraform.webp
+  alt: 'Service Principal e automação no Azure'
 ---
 
 Fala galera!👋
