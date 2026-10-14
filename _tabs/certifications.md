@@ -28,7 +28,7 @@ Design infrastructure solutions
 
 <br>
 
-![logotipo](/assets/img/01/image.gif)
+![logotipo](/assets/img/01/image.webp)
 
 <br>
 
