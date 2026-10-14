@@ -66,5 +66,8 @@ yarn-error.log*
 .env.local
 .env.*.local
 
+# Devin agent knowledge (local only)
+.devin/
+
 # Lock files (opcional - descomente se quiser versionar)
 # Gemfile.lock
