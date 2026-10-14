@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Crie VMs Windows Server no Azure em Minutos com Terraform'
+description: 'Aprenda a criar uma VM Windows Server 2025 no Azure com Terraform, incluindo rede, NSG e autenticação.'
 date: 2025-01-27 08:30:00 -0300
 categories: [IaaS]
-tags: [Azure, IaaS, WindowsServer, Terraform, InfraAsCpde]
+tags: [Azure, IaaS, WindowsServer, Terraform, InfraAsCode]
 slug: 'Deploy-VM-WindowsServer-Terraform'
-#image:
-  #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
+image:
+  path: /assets/img/covers/deploy-vm-windowsserver-terraform.webp
+  alt: 'Terraform inicializado para criar uma VM Windows Server no Azure'
 ---
 
 Fala galera!👋

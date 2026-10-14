@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Acessando VMs Linux e Windows com Azure Bastion'
+description: 'Aprenda a acessar VMs Linux e Windows com Azure Bastion, sem expor RDP ou SSH publicamente.'
 date: 2024-10-15 08:30:00 -0300
 categories: [Network]
 tags: [Azure, Bastion]
 slug: 'Access-VMs-AzureBastion'
-#image:
-#  path: assets/img/01/image.webp
+image:
+  path: /assets/img/covers/access-vms-azurebastion.webp
+  alt: 'VM Linux acessada pelo Azure Bastion'
 ---
 
 Fala galera!👋

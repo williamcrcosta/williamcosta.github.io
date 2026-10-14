@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Welcome'
+description: 'Apresentação do Cloud Insights, um blog sobre nuvem, Azure, Terraform, DevOps e infraestrutura como código.'
 date: 2024-10-10 11:45:00 -0300
 categories: [Welcome]
 tags: [CloudInsights, Azure, Tech, Cloud]
 slug: 'Welcome'
-#image:
-#  path: assets/img/02/cloudinsights3.png
+image:
+  path: /assets/img/covers/welcome.webp
+  alt: 'Logo do Cloud Insights'
 ---
 
 Fala galera!
