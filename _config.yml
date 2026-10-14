@@ -216,9 +216,12 @@ exclude:
   - docs
   - tools
   - README.md
+  - DEVELOPMENT.md
   - LICENSE
   - rollup.config.js
   - package*.json
+  - scripts
+  - _backup
 
 jekyll-archives:
   enabled: [categories, tags]
