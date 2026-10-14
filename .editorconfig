@@ -1,0 +1,63 @@
+# EditorConfig - Configuração de código consistente
+# https://editorconfig.org
+
+root = true
+
+# Configurações padrão para todos os arquivos
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Arquivos YAML
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Arquivos Markdown (não remover trailing whitespace - usado para quebras de linha)
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# Arquivos Ruby
+[*.rb]
+indent_style = space
+indent_size = 2
+
+# Arquivos HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Arquivos JavaScript
+[*.js]
+indent_style = space
+indent_size = 2
+
+# Arquivos CSS/SCSS
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+# Arquivos Shell Script
+[*.sh]
+end_of_line = lf
+indent_style = space
+indent_size = 2
+
+# Arquivos PowerShell
+[*.ps1]
+indent_style = space
+indent_size = 4
+
+# Arquivos de configuração
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
+
+# Makefiles
+[Makefile]
+indent_style = tab
