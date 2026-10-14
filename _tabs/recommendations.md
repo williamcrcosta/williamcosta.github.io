@@ -35,7 +35,7 @@ Nesta página, quero compartilho com vocês algumas das plataformas de cursos on
 
 <br>
 
-![logotipo](/assets/img/01/image.gif)
+![logotipo](/assets/img/01/image.webp)
 
 <br>
 

@@ -6,7 +6,7 @@ categories: [Network]
 tags: [Azure, Network, Bastion, PowerShell, VM, Linux, Ubuntu]
 slug: 'Deploy-Bastion-PowerShell'
 #image:
-#  path: assets/img/01/image.gif
+#  path: assets/img/01/image.webp
 ---
 
 Fala galera!👋

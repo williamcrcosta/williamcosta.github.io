@@ -6,7 +6,7 @@ categories: [Network]
 tags: [Azure, Network, Bastion, AzCLI]
 slug: 'Deploy-Bastion-AzCLI'
 #image:
-#  path: assets/img/01/image.gif
+#  path: assets/img/01/image.webp
 ---
 
 Fala galera!👋
