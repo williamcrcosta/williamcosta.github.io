@@ -13,7 +13,7 @@ Olá muito prazer, sou o William.
 
 <br>
 
-![logotipo](/assets/img/01/image.webp)
+![Logo do Cloud Insights](/assets/img/01/image.webp)
 
 <br>
 

@@ -4,11 +4,12 @@
 title: Youtube
 icon: fa-brands fa-youtube
 order: 10
+published: false
 ---
 
 <br>
 
-![logotipo](/assets/img/01/image.webp)
+![Logo do Cloud Insights](/assets/img/01/image.webp)
 
 <br>
 

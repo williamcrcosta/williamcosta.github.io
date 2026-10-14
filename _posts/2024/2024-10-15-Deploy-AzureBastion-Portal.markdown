@@ -57,21 +57,21 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
 > Obs.: Vocês vão notar que no meu caso o Resource-Group já existe.
 {:.prompt-info}
 
-![resource-group](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
+![Grupo de recursos do laboratório no portal do Azure](/assets/img/Lab01-Bastion/001-ResourceGroup.png){: .shadow .rounded-10}
 
 - Crie uma nova Virtual Network + AzureBastionSubnet
 
 > Obs.: Se você tiver já tiver uma VNET criada, você pode criar sua AzureBastionSubnet nela.
 {:.prompt-info}
 
-| ![azure-automation-account](/assets/img/Lab01-Bastion/02-VirtualNetwork.png){: .shadow .rounded-10 } | ![azure-automation-account](/assets/img/Lab01-Bastion/03-AzureBastionSubnet.png){: .shadow .rounded-10 } |
+| ![Criação da rede virtual do laboratório](/assets/img/Lab01-Bastion/02-VirtualNetwork.png){: .shadow .rounded-10 } | ![Criação da sub-rede AzureBastionSubnet](/assets/img/Lab01-Bastion/03-AzureBastionSubnet.png){: .shadow .rounded-10 } |
 
 ### Passo 3: Deploy do Azure Bastion
 
 - Na barra de pesquisa, digite **Bastion** e selecione **Bastion** nos resultados.
 - Clique em **Criar**.
 
-![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource.png){: .shadow .rounded-10}
+![Criação de recurso no portal do Azure](/assets/img/Lab01-Bastion/09-CreateaResource.png){: .shadow .rounded-10}
 
 ### Passo 4: Configurar o Bastion
 
@@ -81,14 +81,14 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
    - **Nome do Resource**: Forneça um nome para seu host Bastion.
    - **Região**: Escolha a mesma região da sua VNet (East US2).
    - **Availability Zone**: Deixe em none.
-   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, você pode conferir <a href="https://docs.microsoft.com/en-us/azure/bastion/bastion-overview" target="_blank">aqui</a>.
+   - **Tier**: Selecione Basic. Segue quiser mais explorar mais detalhes sobre os Tiers do Azure Bastion, você pode conferir <a href="https://docs.microsoft.com/en-us/azure/bastion/bastion-overview" target="_blank" rel="noopener noreferrer">aqui</a>.
 
         - *Ao escolhermos o tier Basic, ficam pré-definidas 2 instances*.
 
    - **Virtual Network**: Selecione a virtual network criada (ci-bastion-vnet). Voce vai notar que ele vai identificar automaticamente a subnet do AzureBastion.
    - **Public-IP**: Crie um novo IP-Público. Você pode criar um com o nome: "ci-bastion-pip"
 
-![resource-group](/assets/img/Lab01-Bastion/09-CreateaResource2.png){: .shadow .rounded-10}
+![Seleção do Azure Bastion no portal do Azure](/assets/img/Lab01-Bastion/09-CreateaResource2.png){: .shadow .rounded-10}
 
 > Avance para a aba Advanced (Avançado).
 {:.prompt-info}
@@ -97,12 +97,12 @@ Antes de fazermos o deploy do Azure Bastion, verifique se você possui:
    - **Kerberos Authentication**: Selecione a unica opção disponivel e clique em Review + Create.
 
 
-![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion02.png){: .shadow .rounded-10}
+![Parâmetros de implantação do Azure Bastion](/assets/img/Lab01-Bastion/04-DeployAzureBastion02.png){: .shadow .rounded-10}
 
  **Revisar e Criar**:
    - Revise suas configurações e clique em **Criar**.
 
-![resource-group](/assets/img/Lab01-Bastion/04-DeployAzureBastion.png){: .shadow .rounded-10}
+![Revisão e criação do Azure Bastion](/assets/img/Lab01-Bastion/04-DeployAzureBastion.png){: .shadow .rounded-10}
 
 ## Conclusão
 
@@ -110,7 +110,7 @@ Agora você sabe como realizar o deploy do Azure Bastion no Microsoft Azure.
 
 Até a próxima!! 😉
 
-![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security #Network
 
