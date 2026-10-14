@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Crie VMs Linux no Azure em Minutos com Terraform'
+description: 'Aprenda a criar uma VM Ubuntu Server 24.04 no Azure com Terraform, incluindo rede, NSG e autenticação.'
 date: 2025-02-02 08:30:00 -0300
 categories: [IaaS]
 tags: [Azure, IaaS, Linux, Terraform, InfraAsCode, Ubuntu]
 slug: 'Deploy-VM-Linux-Terraform'
-#image:
-  #path: assets/img/Lab02-ServicePrincipal/ServicePrincipal.webp
+image:
+  path: /assets/img/covers/deploy-vm-linux-terraform.webp
+  alt: 'Terraform inicializado para criar uma VM Linux Ubuntu no Azure'
 ---
 
 Fala galera!👋

@@ -202,7 +202,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📬 Contato
 
-- **LinkedIn:** [williamcrp](https://www.linkedin.com/in/williamcrp/)
+- **LinkedIn:** [williamcrpc](https://www.linkedin.com/in/williamcrpc/)
 - **GitHub:** [williamcrcosta](https://github.com/williamcrcosta)
 - **Site:** [cloudinsights.com.br](https://cloudinsights.com.br)
 

@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Portal Azure)'
+description: 'Aprenda a implantar o Azure Bastion pelo Portal Azure e preparar acesso seguro a VMs Linux e Windows.'
 date: 2024-10-15 01:40:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion]
 slug: 'Deploy-Bastion-Portal'
-#image:
-#  path: assets/img/01/image.webp
+image:
+  path: /assets/img/covers/deploy-bastion-portal.webp
+  alt: 'Implantação do Azure Bastion no Portal Azure'
 ---
 
 Fala galera!👋

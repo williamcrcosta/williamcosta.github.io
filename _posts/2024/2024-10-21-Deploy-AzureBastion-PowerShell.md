@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (PowerShell)'
+description: 'Aprenda a implantar o Azure Bastion com PowerShell, preparando rede, IP público e acesso seguro às VMs.'
 date: 2024-10-21 07:30:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion, PowerShell, VM, Linux, Ubuntu]
 slug: 'Deploy-Bastion-PowerShell'
-#image:
-#  path: assets/img/01/image.webp
+image:
+  path: /assets/img/covers/deploy-bastion-powershell.webp
+  alt: 'Implantação de VM Linux com PowerShell para uso com Azure Bastion'
 ---
 
 Fala galera!👋

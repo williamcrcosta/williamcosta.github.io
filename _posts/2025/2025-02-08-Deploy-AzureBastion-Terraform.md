@@ -1,12 +1,14 @@
 ---
 layout: post
 title: 'Deploy Azure Bastion (Terraform)'
+description: 'Aprenda a implantar o Azure Bastion com Terraform e preparar acesso seguro às VMs sem expor portas públicas.'
 date: 2025-02-08 08:30:00 -0300
 categories: [Network]
 tags: [Azure, Network, Bastion, Terraform, PaaS]
 slug: 'Deploy-Bastion-Terraform'
-#image:
-  #path: assets/img/01/image.webp
+image:
+  path: /assets/img/covers/deploy-bastion-terraform.webp
+  alt: 'Terraform inicializado para implantar o Azure Bastion'
 ---
 
 Fala galera!👋
