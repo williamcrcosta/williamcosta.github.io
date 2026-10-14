@@ -4,6 +4,7 @@
 title: Experiências
 icon: fa-solid fa-briefcase
 order: 6
+published: false
 ---
 # Jornada Profissional
 
@@ -17,7 +18,7 @@ order: 6
 
 <br>
 
-![logotipo](/assets/img/01/image.webp)
+![Logo do Cloud Insights](/assets/img/01/image.webp)
 
 <br>
 
