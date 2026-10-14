@@ -4,11 +4,12 @@
 title: Palestras
 icon: fa-solid fa-person-chalkboard
 order: 9
+published: false
 ---
 
 <br>
 
-![logotipo](/assets/img/01/image.webp)
+![Logo do Cloud Insights](/assets/img/01/image.webp)
 
 <br>
 

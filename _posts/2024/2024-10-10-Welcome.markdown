@@ -15,7 +15,7 @@ Fala galera!
 
 👋 **Bem-vindo ao Blog Cloud Insights!** ☁️
 
-![logotipo](/assets/img/02/cloudinsights3.png)
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png)
 
 Estou super animado para compartilhar com vocês este espaço dedicado ao mundo da computação em nuvem. Aqui no Cloud Insights, vamos explorar juntos novidades, dicas e insights sobre soluções em nuvem, terraform e muito mais.
 

@@ -6,7 +6,7 @@ icon: fa-solid fa-quote-left
 order: 11
 ---
 
-Nesta página, quero compartilho com vocês algumas das plataformas de cursos online ecanais do YouTube que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.
+Nesta página, compartilho algumas das plataformas de cursos online e canais do YouTube que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.
 
 ## Plataformas de Treinamentos Online
 
@@ -31,15 +31,3 @@ Nesta página, quero compartilho com vocês algumas das plataformas de cursos on
 - <i class="fab fa-youtube"></i> [Unicast Cloud Lab](https://www.youtube.com/@unicastlab)
 - <i class="fab fa-youtube"></i> [Canal da Cloud](https://www.youtube.com/@CanaldaCloud/)
 - <i class="fab fa-youtube"></i> [TecMundo](https://www.youtube.com/@tecmundo)
-- <i class="fab fa-youtube"></i>
-
-<br>
-
-![logotipo](/assets/img/01/image.webp)
-
-<br>
-
-<hr>
-
-
-[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)

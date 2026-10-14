@@ -29,7 +29,7 @@ Utilizar um Service Principal no Azure possibilita a automação de processos co
 ## Para que serve
 
 - **Autenticação Automatizada**: Permite que aplicações ou scripts interajam com o Azure de forma segura, usando autenticação baseada em credenciais ou certificados.
-- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices" target="_blank">*Least Privilege*</a>.
+- **Segurança e Controle**: Garante que o acesso a recursos seja limitado ao estritamente necessário, seguindo os princípios de <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/best-practices" target="_blank" rel="noopener noreferrer">*Least Privilege*</a>.
 - **Integração com Ferramentas de DevOps**: É amplamente usado em pipelines CI/CD para deploys, atualizações e configurações automáticas.
 
 ### Cenários de Uso
@@ -43,27 +43,27 @@ Utilizar um Service Principal no Azure possibilita a automação de processos co
 
 Antes de começarmos nosso laboratório, verifique se você possui:
 
-- Uma conta do Azure com uma assinatura/subscription ativa.
+- Uma conta do Azure com uma assinatura ativa.
 
-> Caso você não tenha uma subscription, você pode criar uma Trial. Mais informações consulte [aqui](https://azure.microsoft.com/en-us/).
+> Caso você não tenha uma assinatura, você pode criar uma conta gratuita. Mais informações consulte [aqui](https://azure.microsoft.com/en-us/).
 {: .prompt-tip }
 
 - Um Service Principal com permissionamento adequado.
 
-> Obs.: Aqui estou utilizando um Service Principal com permissão de "Global Administrator" no EntraID. Para saber como adicionar uma permissão privilegiada em uma conta, consulte <a href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal?tabs=admin-center" target="_blank">aqui</a>.
+> Obs.: Para executar este laboratório, use uma conta ou identidade com permissão para registrar aplicações no Entra ID, como **Application Administrator**, e autorização para atribuir roles na assinatura, como **User Access Administrator** ou **Owner**. Evite usar **Global Administrator** fora de ambientes controlados.
 {:.prompt-info}
 
-- Ter o VSCode Instalado em seu Sistema Operacional Windows com as extensões Azure Terraform e Hashicorp Terraform.
+- Ter o VS Code instalado em seu sistema operacional Windows com as extensões Azure Terraform e Hashicorp Terraform.
 
-> *Caso não tenha o VSCode Instalado, faça o Download do instalador [aqui](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64)*.
+> *Caso não tenha o VS Code instalado, faça o download do instalador [aqui](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64)*.
 {:.prompt-info}
 
-### 1. Primeiro passo aqui é realizar o download da última versão do executável do Terraform para Windows
+### 1. Baixar a última versão do executável do Terraform para Windows
 
-- Acesse a página da <a href="https://developer.hashicorp.com/terraform/" target="_blank">Hashicorp</a> para fazer o download do pacote, depois disso salve o pacote na pasta Downloads e extraia o conteudo. Em seguida crie um novo diretório no disco C com nome "terraform" e adicione o conteudo extraído lá.
+- Acesse a página da <a href="https://developer.hashicorp.com/terraform/" target="_blank" rel="noopener noreferrer">Hashicorp</a> para fazer o download do pacote, depois disso salve o pacote na pasta Downloads e extraia o conteúdo. Em seguida crie um novo diretório no disco C com nome "terraform" e adicione o conteúdo extraído lá.
 
   - *Acompanhe o passo-a-passo abaixo*
-![Download-TF](/assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.webp){: .shadow .rounded-10}
+![Download e configuração do Terraform no Windows](/assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.webp){: .shadow .rounded-10}
 
 ### 2. Definir variáveis de ambiente
 
@@ -103,7 +103,7 @@ $newPath = $oldPath + ";C:\terraform"
 [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
 ````
 
-![Set-Variables](/assets/img/Lab02-ServicePrincipal/SetVariaveis.png){: .shadow .rounded-10}
+![Variáveis de ambiente usadas pelo Terraform](/assets/img/Lab02-ServicePrincipal/SetVariaveis.png){: .shadow .rounded-10}
 
 > Esses comandos ajudam a gerenciar e verificar as variáveis de ambiente no Windows. Mais informações consulte os links a seguir:
 
@@ -113,27 +113,27 @@ $newPath = $oldPath + ";C:\terraform"
 
 *Agora que finalizamos as configurações iniciais no Windows, vamos preparar nosso ambiente de trabalho.*
 
-### 3. Criar uma nova pasta  e estrutura de Arquivos
+### 3. Criar uma nova pasta e a estrutura de arquivos
 
 - Crie uma nova pasta e abra o VSCode nela para começar a configurar os recursos necessários.
 - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos no Terraform.
 
-![Folder-Structure](/assets/img/Lab02-ServicePrincipal/File-Structure.png){: .shadow .rounded-10}
+![Estrutura de arquivos do laboratório Terraform](/assets/img/Lab02-ServicePrincipal/File-Structure.png){: .shadow .rounded-10}
 
-### 4. Vamos iniciar codificando nossos arquivos
+### 4. Iniciar a codificação dos arquivos
 
 - Aqui vamos adicionar as informações do nosso ambiente no Azure.
-  - *Precisaremos setar mais algumas variáveis de ambiente.*
-- Adicione esse conteudo no arquivo *powershell-credencials-azure.ps1*.
+  - *Precisaremos definir mais algumas variáveis de ambiente.*
+- Adicione esse conteúdo no arquivo *powershell-credentials-azure.ps1*.
 
 ```powershell
-$env:ARM_CLIENT_ID = "Client ID do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contem a permissão de Global Administrator no EntraID
+$env:ARM_CLIENT_ID = "Client ID da identidade usada pelo Terraform"
 $env:ARM_TENANT_ID = "O ID do seu Tenant no EntraID"
-$env:ARM_SUBSCRIPTION_ID = "ID da sua subscription"
-$env:ARM_CLIENT_SECRET = "Secret do seu SPN" # Aqui estou adicionando as informações do meu Service Principal que contem a permissão de Global Administrator no EntraID
+$env:ARM_SUBSCRIPTION_ID = "ID da sua assinatura"
+$env:ARM_CLIENT_SECRET = "Secret da identidade usada pelo Terraform"
 ```
 
-- Aqui vamos adicionar as informações de Provider do AzureRM. Adicione o conteudo abaixo no arquivo *provider.tf*
+- Aqui vamos adicionar as informações do provider AzureRM. Adicione o conteúdo abaixo no arquivo *provider.tf*
 
 ```hcl
 provider "azurerm" {
@@ -142,7 +142,7 @@ provider "azurerm" {
 }
 ```
 
-- Aqui vamos adicionar as informaçoes da versão mais recente do Provider AzureRM e AzureAD. Adicione o conteudo abaixo no arquivo *version.tf*
+- Aqui vamos adicionar as informações das versões mais recentes dos providers AzureRM e AzureAD. Adicione o conteúdo abaixo no arquivo *version.tf*
 
 ```hcl
 # Configure Terraform to use the required provider
@@ -166,7 +166,7 @@ terraform {
 - [AzureAD Provider](https://registry.terraform.io/providers/hashicorp/azuread/latest)
   {: .prompt-tip }
 
-- Agora vamos adicionar o código para criar o Service Principal. Adicione o conteudo abaixo no arquivo *spn.tf*
+- Agora vamos adicionar o código para criar o Service Principal. Adicione o conteúdo abaixo no arquivo *spn.tf*
 
 ```hcl
 # Obtenha a configuração do client EntraID atual
@@ -225,7 +225,7 @@ output "client_id" {
   sensitive = true
 }
 
-# Atribue uma permissão ao Service Principal com escopo da subscription
+# Atribua uma permissão ao Service Principal com escopo da assinatura
 resource "azurerm_role_assignment" "spn-access-rbac" {
   scope                = data.azurerm_subscription.current.id
   role_definition_name = data.azurerm_role_definition.owner.name
@@ -233,7 +233,7 @@ resource "azurerm_role_assignment" "spn-access-rbac" {
 }
 ```
 
-### 4. Inicializar o Terraform
+### 5. Inicializar o Terraform
 
  Já com todos os arquivos codificados, vamos iniciar o Terraform. No terminal do VSCode, digite o comando abaixo.
 
@@ -241,7 +241,7 @@ resource "azurerm_role_assignment" "spn-access-rbac" {
 terraform init
 ```
 
-![Terraform-Init](/assets/img/Lab02-ServicePrincipal/terraform%20init.png){: .shadow .rounded-10}
+![Inicialização do Terraform com terraform init](/assets/img/Lab02-ServicePrincipal/terraform%20init.png){: .shadow .rounded-10}
 
 O *terraform init* é o primeiro passo para configurar um projeto no Terraform. Ele faz uma série de coisas essenciais:
 
@@ -253,7 +253,7 @@ O *terraform init* é o primeiro passo para configurar um projeto no Terraform. 
 
 É basicamente o comando que prepara tudo para que você possa criar, alterar e destruir infraestrutura com o Terraform. 😊
 
-### 5. Validar se a configuração está Correta
+### 6. Validar se a configuração está correta
 
 - Nesta etapa vamos executar o *terraform validate* para verificar se os arquivos de configuração criados estão corretos em termos de sintaxe e lógica. Ele não faz alterações nos recursos, apenas valida a configuração. É útil para identificar erros antes de executar o plano *terraform plan*. 😉
 
@@ -261,9 +261,9 @@ O *terraform init* é o primeiro passo para configurar um projeto no Terraform. 
 terraform validate
 ```
 
-![Terraform-Validate](/assets/img/Lab02-ServicePrincipal/terraform%20validate.png){: .shadow .rounded-10}
+![Validação da configuração com terraform validate](/assets/img/Lab02-ServicePrincipal/terraform%20validate.png){: .shadow .rounded-10}
 
-#### 6. Validar a formatação dos Arquivos
+#### 7. Validar a formatação dos arquivos
 
 - Agora vamos executar o *terraform fmt*. Este comando formata os arquivos de configuração para seguir um estilo de código consistente e legível. Corrige indentação, alinhamento e outros aspectos de formatação conforme as convenções do Terraform. É uma boa prática usar esse comando regularmente para manter a base de código organizada.
 
@@ -271,20 +271,20 @@ terraform validate
 terraform fmt
 ```
 
-![Terraform-FMT](/assets/img/Lab02-ServicePrincipal/terraform%20fmt.png){: .shadow .rounded-10}
+![Formatação dos arquivos com terraform fmt](/assets/img/Lab02-ServicePrincipal/terraform%20fmt.png){: .shadow .rounded-10}
 
-#### 7. Criar as variáveis de ambiente para ser possivel se conectar na Azure
+#### 8. Criar as variáveis de ambiente para conectar ao Azure
 
-- Neste passo com o powershell aberto, dentro do VSCode, execute o comando abaixo. Ele vai executar o arquivo *powershell-credencials-azure.ps1*.
+- Neste passo com o powershell aberto, dentro do VSCode, execute o comando abaixo. Ele vai executar o arquivo *powershell-credentials-azure.ps1*.
 
 ```powershell
-.\powershell-credencials-azure.ps1
+.\powershell-credentials-azure.ps1
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Set-Azure-Variables](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.png){: .shadow .rounded-10}
+![Variáveis de autenticação do Azure no terminal](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.png){: .shadow .rounded-10}
 
-#### 8. Criar plano de Execução
+#### 9. Criar o plano de execução
 
 - Seguido todos esses passos, agora vamos criar um plano, execute o comando *terraform plan -out meu_spn.out*. Ele cria um plano de execução e armazena em um arquivo. O arquivo meu_spn.tfplan é criado para revisar o que será feito sem aplicar as mudanças.
 
@@ -292,12 +292,12 @@ terraform fmt
 terraform plan -out meu_spn.out
 ```
 
-![Terraform-Plan](/assets/img/Lab02-ServicePrincipal/terraform%20plan.png){: .shadow .rounded-10}
+![Plano de execução gerado pelo Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20plan.png){: .shadow .rounded-10}
 
-> Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é necessário porque, ao executar o terraform plan, algumas informações sensíveis, como o ID da subscription onde os recursos serão criados, são exibidas. Para proteger a segurança dos dados e evitar exposição desnecessária dessas informações, optei por mostrar apenas a quantidade de recursos.
+> Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é necessário porque, ao executar o terraform plan, algumas informações sensíveis, como o ID da assinatura onde os recursos serão criados, são exibidas. Para proteger a segurança dos dados e evitar exposição desnecessária dessas informações, optei por mostrar apenas a quantidade de recursos.
 {: .prompt-danger }
 
-#### 8. Fazer o deploy dos Recursos
+#### 10. Fazer o deploy dos recursos
 
 - Agora, com o plano já executado, já sabemos quais recursos serão criados. Vamos executar o *terraform apply meu_spn.out*.
   - Esse comando aplica as mudanças especificadas no arquivo de plano gerado pelo comando *terraform plan*.
@@ -306,9 +306,9 @@ terraform plan -out meu_spn.out
 terraform apply meu_spn.out
 ```
 
-![Terraform-Apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.png){: .shadow .rounded-10}
+![Aplicação da configuração com terraform apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.png){: .shadow .rounded-10}
 
-#### 9. Validar as informações no Output
+#### 11. Validar as informações no output
 
 - Voçê pode executar o comando *terraform output*. Ele é utilizado para exibir os valores das variáveis de saída definidas no seu arquivo de configuração do Terraform. Essas variáveis de saída permitem que você acesse e use os valores gerados pela execução do plano de Terraform, como endereços IP, IDs de recursos, URLs e outras informações importantes.
 
@@ -316,9 +316,9 @@ terraform apply meu_spn.out
 terraform output
 ```
 
-![Terraform-Output](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
+![Saída da aplicação do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
 
-#### 10. Listar recursos criados pelo Terraform
+#### 12. Listar recursos criados pelo Terraform
 
 - Vamos executar o comando *terraform state list*. Ele é utilizado para listar todos os recursos gerenciados pelo estado do Terraform.
   - Este comando exibe uma lista de recursos que foram criados, atualizados ou destruídos pelo Terraform e que estão sendo rastreados no arquivo tfstate.
@@ -327,31 +327,31 @@ terraform output
 terraform state list
 ```
 
-![Terraform-State-List](/assets/img/Lab02-ServicePrincipal/terraform%20state%20list.png){: .shadow .rounded-10}
+![Recursos listados no estado do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20state%20list.png){: .shadow .rounded-10}
 
-#### 11. Validar o Service Principal criado no Portal Azure
+#### 13. Validar o Service Principal criado no portal do Azure
 
 - Nas imagens a seguir podemos validar que o Service Principal foi criado com sucesso no Portal Azure.
 
-![SPN-Overview1](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal.png){: .shadow .rounded-10}
-![SPN-Overview2](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal2.png){: .shadow .rounded-10}
+![Service Principal criado no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal.png){: .shadow .rounded-10}
+![Detalhes do Service Principal no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal2.png){: .shadow .rounded-10}
 
-#### 12. Remover recursos criados com Terraform Destroy
+#### 14. Remover recursos criados com terraform destroy
 
 - Agora que nós criamos o service principal, vamos fazer a remoção dele. O comando *terraform destroy* é utilizado para destruir todos os recursos gerenciados pelo Terraform em sua configuração. Isso significa que ele apagará todos os recursos da infraestrutura que foram criados ou gerenciados pelo Terraform.
 
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Terraform-Destroy](/assets/img/Lab02-ServicePrincipal/terraform%20destroy.png){: .shadow .rounded-10}
-![Terraform-Destroy2](/assets/img/Lab02-ServicePrincipal/terraform%20destroy2.png){: .shadow .rounded-10}
+![Remoção dos recursos com terraform destroy](/assets/img/Lab02-ServicePrincipal/terraform%20destroy.png){: .shadow .rounded-10}
+![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab02-ServicePrincipal/terraform%20destroy2.png){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
 
-#### 13. Segurança e Boas Práticas
+#### 15. Segurança e boas práticas
 
-**Armazenamento Seguro de Credenciais**: É recomendável usar o "*Azure Key Vault*" para armazenar informações sensíveis, como IDs de cliente, segredos e certificados. Para integrá-lo ao Terraform, use a <a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault_secret" target="_blank">provider oficial do Azure</a>. Isso garante que as credenciais sejam acessadas de forma segura e centralizada.
+**Armazenamento Seguro de Credenciais**: É recomendável usar o "*Azure Key Vault*" para armazenar informações sensíveis, como IDs de cliente, segredos e certificados. Para integrá-lo ao Terraform, use a <a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault_secret" target="_blank" rel="noopener noreferrer">provider oficial do Azure</a>. Isso garante que as credenciais sejam acessadas de forma segura e centralizada.
 
 **Exemplo:**
 
@@ -376,17 +376,17 @@ Neste artigo, exploramos o processo de criação de um Service Principal no Azur
 
 Para aprofundar seu conhecimento e expandir as possibilidades de automação com Terraform e Azure, considere os seguintes passos:
 
-- **<a href="https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash" target="_blank">Autenticação do Terraform no Azure</a>**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
+- **<a href="https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash" target="_blank" rel="noopener noreferrer">Autenticação do Terraform no Azure</a>**: Aprenda diferentes métodos de autenticação do Terraform no Azure, incluindo o uso de Service Principals e identidades gerenciadas.
 
-- **<a href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/terraform/service-principals" target="_blank">Provisionamento de Service Principals com Terraform</a>**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
+- **<a href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/terraform/service-principals" target="_blank" rel="noopener noreferrer">Provisionamento de Service Principals com Terraform</a>**: Explore como o Terraform pode ser utilizado para provisionar Service Principals, facilitando cenários de automação no Azure Databricks.
 
-- **<a href="https://learn.microsoft.com/en-us/answers/questions/1250584/what-permissions-does-my-service-principal-need-to" target="_blank">Gerenciamento de Permissões de Service Principals</a>**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
+- **<a href="https://learn.microsoft.com/en-us/answers/questions/1250584/what-permissions-does-my-service-principal-need-to" target="_blank" rel="noopener noreferrer">Gerenciamento de Permissões de Service Principals</a>**: Entenda as permissões necessárias para que um Service Principal possa interagir com recursos como o Azure Key Vault, garantindo segurança e conformidade.
 
-- **<a href="https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-terraform?pivots=development-environment-azure-cli" target="_blank">Integração do Terraform com o Azure Kubernetes Service (AKS)</a>**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
+- **<a href="https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-terraform?pivots=development-environment-azure-cli" target="_blank" rel="noopener noreferrer">Integração do Terraform com o Azure Kubernetes Service (AKS)</a>**: Descubra como implantar clusters do AKS usando o Terraform, ampliando suas habilidades em orquestração de contêineres no Azure.
 
 Até a próxima!! 😉
 
-![resource-group](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #EntraID
 
