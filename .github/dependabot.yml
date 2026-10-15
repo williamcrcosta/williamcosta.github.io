@@ -10,6 +10,10 @@ updates:
     labels:
       - dependencies
       - bundler
+    # Chirpy 7 é migração major — avaliação manual (backlog-tecnico.md)
+    ignore:
+      - dependency-name: jekyll-theme-chirpy
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
