@@ -6,6 +6,7 @@ Esta pasta contém documentos de planejamento interno para posts e melhorias do 
 
 - `proximos-posts.md` - Lista de ideias e posts planejados
 - `2025.md` - Planejamento específico para 2025
+- `backlog-tecnico.md` - Melhorias de infraestrutura, segurança e processo
 
 ## ⚠️ Importante
 
