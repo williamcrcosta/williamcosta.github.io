@@ -1,0 +1,40 @@
+name: "External Link Check"
+
+on:
+  schedule:
+    # Segundas-feiras às 09:00 UTC (06:00 BRT)
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Check external links
+        run: |
+          bundle exec htmlproofer _site \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" \
+            --ignore-status-codes "999" \
+            --typhoeus '{"connecttimeout": 10, "timeout": 30}' \
+            --retry-statuses "429,500,502,503" \
+            --max-retries 3

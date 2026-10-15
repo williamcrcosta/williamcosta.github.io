@@ -216,11 +216,6 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - assets/img/01/image.gif
-  - assets/img/Lab01-Bastion/Bastion-TF/VM-Access-Bastion.gif
-  - assets/img/Lab01-Bastion/Bastion-azcli/Screenshot_*.png
-  - assets/img/Lab02-ServicePrincipal/DownloadTFE-Configure.gif
-  - assets/img/profile.png
   - docs
   - tools
   - README.md
