@@ -74,10 +74,10 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.18.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-include-cache (0.2.2)
+    jekyll-include-cache (0.3.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
-    jekyll-redirect-from (0.16.0)
+    jekyll-redirect-from (0.17.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
@@ -85,7 +85,7 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-theme-chirpy (6.5.5)
+    jekyll-theme-chirpy (7.0.1)
       jekyll (~> 4.3)
       jekyll-archives (~> 2.2)
       jekyll-include-cache (~> 0.2)
@@ -164,7 +164,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.18)
   jekyll-seo-tag
   jekyll-sitemap
-  jekyll-theme-chirpy (~> 6.5.5)
+  jekyll-theme-chirpy (~> 7.0.1)
   jekyll-toc
   logger
   tzinfo (>= 1, < 3)
