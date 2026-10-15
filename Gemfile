@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Adicione o Jekyll
-gem "jekyll", "~> 4.3.4"  # Ajuste a versão conforme necessário
+gem "jekyll", "~> 4.4"
 #gem "github-pages", "~> 228", group: :jekyll_plugins
 # gem "minima", "~> 2.5"  # Se você quiser usar o tema minima, descomente esta linha
 
@@ -13,7 +13,7 @@ gem 'base64'
 
 # Adicione o jekyll-feed
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.18"
   gem "jekyll-theme-chirpy", "~> 6.5.5"  # Mantenha o tema Chirpy
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
