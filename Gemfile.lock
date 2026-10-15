@@ -72,7 +72,7 @@ GEM
       webrick (~> 1.7)
     jekyll-archives (2.3.0)
       jekyll (>= 3.6, < 5.0)
-    jekyll-feed (0.17.0)
+    jekyll-feed (0.18.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-include-cache (0.2.2)
       jekyll (>= 3.7, < 5.0)
@@ -161,7 +161,7 @@ DEPENDENCIES
   html-proofer (~> 5.2)
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.4)
-  jekyll-feed (~> 0.12)
+  jekyll-feed (~> 0.18)
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-theme-chirpy (~> 6.5.5)
