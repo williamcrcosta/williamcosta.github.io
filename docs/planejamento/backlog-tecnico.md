@@ -33,9 +33,10 @@ Cloudflare Pages conectado ao repo:
 
 ## Demais itens da análise (não iniciados)
 
-- [ ] Workflow agendado semanal para checar links externos (link rot)
+- [x] Workflow agendado semanal para checar links externos (link rot) — `link-check.yml`
 - [ ] Pin de GitHub Actions por SHA (supply chain)
-- [ ] Atualização controlada de gems (`jekyll ~> 4.4`, `html-proofer ~> 5.2`)
+- [x] `html-proofer ~> 5.2` e `jekyll 4.4` via Dependabot
+- [ ] Avaliar migração para Chirpy 7 (mudança maior; Jekyll 4.4 já funciona com o 6.5.5)
 - [ ] Remover ~8,4 MB de imagens órfãs (`Bastion-azcli/new/`, `Bicep/`, `Lab0X-EventHUB-Splunk`)
 - [ ] Remover GIFs/fonte pesada excluídos do build (`*.gif`, `profile.png`)
 - [ ] Converter PNGs >1 MB referenciadas para WebP
