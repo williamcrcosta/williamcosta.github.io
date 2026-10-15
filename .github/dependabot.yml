@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directory: /
+    target-branch: dev-qa
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - bundler
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: dev-qa
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
