@@ -10,6 +10,10 @@ updates:
     labels:
       - dependencies
       - bundler
+    # jekyll 4.4 exige Chirpy 7 — ver backlog-tecnico.md
+    ignore:
+      - dependency-name: jekyll
+        update-types: ["version-update:semver-minor", "version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
