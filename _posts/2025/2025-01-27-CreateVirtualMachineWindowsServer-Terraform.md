@@ -104,7 +104,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos a abaixo:
 
-![Estrutura de arquivos do laboratório da VM Windows](/assets/img/Lab03-VMWindowsServer/FolderStructure.png){: .shadow .rounded-10}
+![Estrutura de arquivos do laboratório da VM Windows](/assets/img/Lab03-VMWindowsServer/FolderStructure.webp){: .shadow .rounded-10}
 
 ### 2. Iniciar a codificação dos arquivos
 
@@ -353,7 +353,7 @@ output "vm_name" {
 }
 ```
 
-![Saída do Terraform com o IP público usado no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformOutput.png){: .shadow .rounded-10}
+![Saída do Terraform com o IP público usado no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformOutput.webp){: .shadow .rounded-10}
 
 ### 3. Inicializar o Terraform
 
@@ -363,7 +363,7 @@ output "vm_name" {
 terraform init
 ```
 
-![Inicialização do Terraform no laboratório da VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformInit.png){: .shadow .rounded-10}
+![Inicialização do Terraform no laboratório da VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformInit.webp){: .shadow .rounded-10}
 
 ### 4. Validar se a configuração está correta
 
@@ -373,7 +373,7 @@ terraform init
 terraform validate
 ```
 
-![Validação da configuração Terraform da VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformValidate.png){: .shadow .rounded-10}
+![Validação da configuração Terraform da VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformValidate.webp){: .shadow .rounded-10}
 
 #### 5. Validar a formatação dos arquivos
 
@@ -383,7 +383,7 @@ terraform validate
 terraform fmt
 ```
 
-![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformFMT.png){: .shadow .rounded-10}
+![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformFMT.webp){: .shadow .rounded-10}
 
 #### 6. Criar as variáveis de ambiente para conectar ao Azure
 
@@ -394,7 +394,7 @@ terraform fmt
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Variáveis de autenticação do Azure no terminal](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.png){: .shadow .rounded-10}
+![Variáveis de autenticação do Azure no terminal](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.webp){: .shadow .rounded-10}
 
 - Aqui vamos adicionar as variavies de ambiente informando o usuario e senha da Virtual Machine. Adicione o comando abaixo em seu terminal do PowerShell.
 
@@ -404,7 +404,7 @@ $env:TF_VAR_admin_username="admin.cloudinsights"
 $env:TF_VAR_password="Crie uma senha e adicione aqui"
 ```
 
-![Variáveis de usuário e senha da VM Windows](/assets/img/Lab03-VMWindowsServer/VariaveisUserPass.png){: .shadow .rounded-10}
+![Variáveis de usuário e senha da VM Windows](/assets/img/Lab03-VMWindowsServer/VariaveisUserPass.webp){: .shadow .rounded-10}
 
 #### 7. Criar o plano de execução
 
@@ -414,7 +414,7 @@ $env:TF_VAR_password="Crie uma senha e adicione aqui"
 terraform plan -out my_vm.out
 ```
 
-![Plano de execução do Terraform para a VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformPlan.png){: .shadow .rounded-10}
+![Plano de execução do Terraform para a VM Windows](/assets/img/Lab03-VMWindowsServer/TerraformPlan.webp){: .shadow .rounded-10}
 
 > Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é feito para proteger a segurança dos dados e evitar exposição desnecessária de informações sensíveis, como o ID da assinatura onde os recursos serão criados. Note que ele já me traz as informações de outputs que criamos logo acima.
 {: .prompt-danger }
@@ -428,7 +428,7 @@ terraform plan -out my_vm.out
 terraform apply my_vm.out
 ```
 
-![Aplicação do Terraform e saídas do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformApply+Outputs.png){: .shadow .rounded-10}
+![Aplicação do Terraform e saídas do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformApply+Outputs.webp){: .shadow .rounded-10}
 
 <!-- #### 9. Validar as informações no Output
 
@@ -438,7 +438,7 @@ terraform apply my_vm.out
 terraform output
 ```
 
-![Saídas do Terraform após o apply](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
+![Saídas do Terraform após o apply](/assets/img/Lab02-ServicePrincipal/terraform%20output.webp){: .shadow .rounded-10}
 
  -->
 
@@ -451,28 +451,28 @@ terraform output
 terraform state list
 ```
 
-![Recursos da VM Windows listados no estado do Terraform](/assets/img/Lab03-VMWindowsServer/TerraformStateList.png){: .shadow .rounded-10}
+![Recursos da VM Windows listados no estado do Terraform](/assets/img/Lab03-VMWindowsServer/TerraformStateList.webp){: .shadow .rounded-10}
 
 #### 10. Validar recursos criados no portal do Azure
 
 - A estrutura de recursos criada pode ser vista na figura abaixo.
 
-![Recursos do laboratório no grupo de recursos](/assets/img/Lab03-VMWindowsServer/RG+Recursos.png){: .shadow .rounded-10}
+![Recursos do laboratório no grupo de recursos](/assets/img/Lab03-VMWindowsServer/RG+Recursos.webp){: .shadow .rounded-10}
 
 - Os detalhes da VM criada podem ser vistos na figura abaixo.
 
-![VM Windows criada no portal do Azure](/assets/img/Lab03-VMWindowsServer/ValidaçãoVMCriadanoPortal.png){: .shadow .rounded-10}
+![VM Windows criada no portal do Azure](/assets/img/Lab03-VMWindowsServer/ValidaçãoVMCriadanoPortal.webp){: .shadow .rounded-10}
 
 - A regra de segurança de rede (NSG) foi criada com origem somente meu IP público e destino o IP da VM, como visto na figura abaixo.
 
-![Regra RDP criada no grupo de segurança de rede](/assets/img/Lab03-VMWindowsServer/NSGRule.png){: .shadow .rounded-10}
+![Regra RDP criada no grupo de segurança de rede](/assets/img/Lab03-VMWindowsServer/NSGRule.webp){: .shadow .rounded-10}
 
 
 #### 11. Acessar a VM criada
 
 - Nesta parte, com o usuario e senha em mãos, podemos fazer o teste de acesso à VM através do ***RDP - Remote Desktop***.
 
-![Acesso RDP à VM Windows Server](/assets/img/Lab03-VMWindowsServer/AcessoWindowsServer.png){: .shadow .rounded-10}
+![Acesso RDP à VM Windows Server](/assets/img/Lab03-VMWindowsServer/AcessoWindowsServer.webp){: .shadow .rounded-10}
 
 #### 12. Remover recursos criados com terraform destroy
 
@@ -481,8 +481,8 @@ terraform state list
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Execução do terraform destroy no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformDestroy1.png){: .shadow .rounded-10}
-![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformDestroy2.png){: .shadow .rounded-10}
+![Execução do terraform destroy no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformDestroy1.webp){: .shadow .rounded-10}
+![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab03-VMWindowsServer/TerraformDestroy2.webp){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
@@ -529,7 +529,7 @@ Seguir esses passos ajudará a melhorar a segurança, eficiência e gestão cont
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #EntraID
 
