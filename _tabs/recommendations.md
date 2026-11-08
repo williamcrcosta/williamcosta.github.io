@@ -22,7 +22,7 @@ Nesta página, compartilho algumas das plataformas de cursos online e canais do 
 - <i class="fab fa-youtube"></i> [Fabricio Veronez](https://www.youtube.com/@fabricioveronez)
 - <i class="fab fa-youtube"></i> [LINUXtips](https://www.youtube.com/@LinuxTips)
 - <i class="fab fa-youtube"></i> [O Sertão Será Cloud](https://www.youtube.com/@sertaoseracloud)
-- <i class="fab fa-youtube"></i> [Cloud na Quebrada](https://www.youtube.com/@sertaoseracloud)
+- <i class="fab fa-youtube"></i> [Cloud in Focus](https://www.youtube.com/@cloudinfocus)
 - <i class="fab fa-youtube"></i> [Canal Marcus Vinícius](https://www.youtube.com/@canalmarcusvinicius)
 - <i class="fab fa-youtube"></i> [Code FC](https://www.youtube.com/@CodeFC)
 - <i class="fab fa-youtube"></i> [IT LifeHacks - Edesan Tomaz ☁️](https://www.youtube.com/@ITLifeHacks)
