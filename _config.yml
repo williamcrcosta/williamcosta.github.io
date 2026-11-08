@@ -48,11 +48,11 @@ social:
     - https://www.linkedin.com/in/williamcrpc/
     - https://github.com/williamcrcosta
 
-google_site_verification: Pt0AhOqCgTkw0FJhsWedUFHw4dXxtNR5WN39LgX0P04
+google_site_verification: # legado: jekyll-seo-tag usa webmaster_verifications.google abaixo
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: Pt0AhOqCgTkw0FJhsWedUFHw4dXxtNR5WN39LgX0P04
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
