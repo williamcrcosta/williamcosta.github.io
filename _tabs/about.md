@@ -2,22 +2,29 @@
 # the default layout is 'page'
 title: WHOIAM?
 icon: fas fa-info-circle
-#icon: fa-solid fa-user-shield
 order: 5
 ---
 
-## Hello There 👋!
+## Olá, eu sou o William 👋
 
+Profissional de cloud com foco em Microsoft Azure — arquitetura,
+rede, identidade, segurança e automação de infraestrutura com
+Terraform, Bicep e pipelines de CI/CD.
 
-Olá muito prazer, sou o William.
+Sou **Microsoft Certified Trainer (MCT)** e **Azure Solutions
+Architect Expert**, além de outras certificações Microsoft,
+HashiCorp e AWS. A lista completa está na página de
+[Certificações](/certifications/).
 
-<br>
+## Por que o Cloud Insights?
 
-![Logo do Cloud Insights](/assets/img/01/image.webp)
+Este blog é onde documento tutoriais práticos de Azure e
+infraestrutura como código: labs passo a passo, com código,
+prints e os problemas que aparecem no caminho — não só o
+caminho feliz.
 
-<br>
+## Onde me encontrar
 
-<hr>
-
-
-[![Build and Deploy](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/williamcrcosta/williamcosta.github.io/actions/workflows/pages-deploy.yml)
+- [LinkedIn](https://www.linkedin.com/in/williamcrpc/)
+- [GitHub](https://github.com/williamcrcosta)
+- [Microsoft Learn](https://learn.microsoft.com/en-us/users/williamcosta/credentials)
