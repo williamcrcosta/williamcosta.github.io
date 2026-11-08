@@ -46,7 +46,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos abaixo:
 
-![Estrutura de arquivos do laboratório do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-TF/FolderStructure2.png){: .shadow .rounded-10}
+![Estrutura de arquivos do laboratório do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-TF/FolderStructure2.webp){: .shadow .rounded-10}
 
 ### 2. Iniciar a codificação dos arquivos
 
@@ -295,7 +295,7 @@ $env:TF_VAR_admin_password="Adicione aqui sua senha"
 ```
 
 <center> Você pode validar a execução pelo exemplo abaixo: </center>
-![Variáveis de usuário e senha da máquina virtual](/assets/img/Lab01-Bastion/Bastion-TF/User+Password-EnvironmentVariables.png){: .shadow .rounded-10}
+![Variáveis de usuário e senha da máquina virtual](/assets/img/Lab01-Bastion/Bastion-TF/User+Password-EnvironmentVariables.webp){: .shadow .rounded-10}
 
 - Aqui vamos adicionar alguns outputs para facilitar a visualização dos resultados do deploy. Adicione o conteúdo abaixo no arquivo ***output.tf***.
 
@@ -348,7 +348,7 @@ Já com todos os arquivos codificados, vamos iniciar o Terraform. No terminal do
 terraform init
 ```
 
-![Inicialização do Terraform no laboratório do Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformInit2.png){: .shadow .rounded-10}
+![Inicialização do Terraform no laboratório do Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformInit2.webp){: .shadow .rounded-10}
 
 ### 4. Validar se a configuração está correta
 
@@ -358,7 +358,7 @@ terraform init
 terraform validate
 ```
 
-![Validação da configuração Terraform do Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformValidate2.png){: .shadow .rounded-10}
+![Validação da configuração Terraform do Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformValidate2.webp){: .shadow .rounded-10}
 
 #### 5. Validar a formatação dos arquivos
 
@@ -368,7 +368,7 @@ terraform validate
 terraform fmt
 ```
 
-![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformFMT2.png){: .shadow .rounded-10}
+![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformFMT2.webp){: .shadow .rounded-10}
 
 #### 6. Criar as variáveis de ambiente para conectar ao Azure
 
@@ -379,7 +379,7 @@ terraform fmt
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Variáveis de autenticação do Azure no terminal](/assets/img/Lab01-Bastion/Bastion-TF/EnvironmentVariables2.png){: .shadow .rounded-10}
+![Variáveis de autenticação do Azure no terminal](/assets/img/Lab01-Bastion/Bastion-TF/EnvironmentVariables2.webp){: .shadow .rounded-10}
 
 #### 7. Criar o plano de execução
 
@@ -402,7 +402,7 @@ terraform plan -out bastionhost.out
 terraform apply bastionhost.out
 ```
 
-![Aplicação do Terraform para criar o Azure Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformApply.png){: .shadow .rounded-10}
+![Aplicação do Terraform para criar o Azure Bastion](/assets/img/Lab01-Bastion/Bastion-TF/TerraformApply.webp){: .shadow .rounded-10}
 
 #### 9. Listar recursos criados pelo Terraform
 
@@ -413,25 +413,25 @@ terraform apply bastionhost.out
 terraform state list
 ```
 
-![Recursos do laboratório listados no estado do Terraform](/assets/img/Lab01-Bastion/Bastion-TF/TerraformState.png){: .shadow .rounded-10}
+![Recursos do laboratório listados no estado do Terraform](/assets/img/Lab01-Bastion/Bastion-TF/TerraformState.webp){: .shadow .rounded-10}
 
 #### 10. Validar recursos criados no portal do Azure
 
 - A estrutura de recursos criada pode ser vista na figura abaixo.
 
-![Recursos do laboratório no grupo de recursos](/assets/img/Lab01-Bastion/Bastion-TF/RG.png){: .shadow .rounded-10}
+![Recursos do laboratório no grupo de recursos](/assets/img/Lab01-Bastion/Bastion-TF/RG.webp){: .shadow .rounded-10}
 
 - Os detalhes da VM criada podem ser vistos na figura abaixo.
 
-![VM criada no portal do Azure](/assets/img/Lab01-Bastion/Bastion-TF/CreateVM.png){: .shadow .rounded-10}
+![VM criada no portal do Azure](/assets/img/Lab01-Bastion/Bastion-TF/CreateVM.webp){: .shadow .rounded-10}
 
 - Página de visão geral do Azure Bastion.
 
-![Azure Bastion criado no portal do Azure](/assets/img/Lab01-Bastion/Bastion-TF/BastionHost.png){: .shadow .rounded-10}
+![Azure Bastion criado no portal do Azure](/assets/img/Lab01-Bastion/Bastion-TF/BastionHost.webp){: .shadow .rounded-10}
 
 - A regra de segurança de rede (NSG) foi criada com origem somente meu IP público e destino o IP da VM, como visto na figura abaixo.
 
-![Regra de segurança criada para acesso à VM](/assets/img/Lab01-Bastion/Bastion-TF/NSG-Rule.png){: .shadow .rounded-10}
+![Regra de segurança criada para acesso à VM](/assets/img/Lab01-Bastion/Bastion-TF/NSG-Rule.webp){: .shadow .rounded-10}
 
 
 #### 11. Acessar a VM com o Azure Bastion
@@ -449,8 +449,8 @@ terraform state list
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Execução do terraform destroy no laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformDestroy.png){: .shadow .rounded-10}
-![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformDestroy2.png){: .shadow .rounded-10}
+![Execução do terraform destroy no laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformDestroy.webp){: .shadow .rounded-10}
+![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab01-Bastion/Bastion-TF/TerraformDestroy2.webp){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
@@ -481,7 +481,7 @@ Seguindo esses passos, você estará no caminho certo para otimizar a gestão e 
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #InfraAsCode #PaaS #Bastion
 

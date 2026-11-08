@@ -103,7 +103,7 @@ $newPath = $oldPath + ";C:\terraform"
 [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
 ````
 
-![Variáveis de ambiente usadas pelo Terraform](/assets/img/Lab02-ServicePrincipal/SetVariaveis.png){: .shadow .rounded-10}
+![Variáveis de ambiente usadas pelo Terraform](/assets/img/Lab02-ServicePrincipal/SetVariaveis.webp){: .shadow .rounded-10}
 
 > Esses comandos ajudam a gerenciar e verificar as variáveis de ambiente no Windows. Mais informações consulte os links a seguir:
 
@@ -118,7 +118,7 @@ $newPath = $oldPath + ";C:\terraform"
 - Crie uma nova pasta e abra o VSCode nela para começar a configurar os recursos necessários.
 - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos no Terraform.
 
-![Estrutura de arquivos do laboratório Terraform](/assets/img/Lab02-ServicePrincipal/File-Structure.png){: .shadow .rounded-10}
+![Estrutura de arquivos do laboratório Terraform](/assets/img/Lab02-ServicePrincipal/File-Structure.webp){: .shadow .rounded-10}
 
 ### 4. Iniciar a codificação dos arquivos
 
@@ -241,7 +241,7 @@ resource "azurerm_role_assignment" "spn-access-rbac" {
 terraform init
 ```
 
-![Inicialização do Terraform com terraform init](/assets/img/Lab02-ServicePrincipal/terraform%20init.png){: .shadow .rounded-10}
+![Inicialização do Terraform com terraform init](/assets/img/Lab02-ServicePrincipal/terraform%20init.webp){: .shadow .rounded-10}
 
 O *terraform init* é o primeiro passo para configurar um projeto no Terraform. Ele faz uma série de coisas essenciais:
 
@@ -261,7 +261,7 @@ O *terraform init* é o primeiro passo para configurar um projeto no Terraform. 
 terraform validate
 ```
 
-![Validação da configuração com terraform validate](/assets/img/Lab02-ServicePrincipal/terraform%20validate.png){: .shadow .rounded-10}
+![Validação da configuração com terraform validate](/assets/img/Lab02-ServicePrincipal/terraform%20validate.webp){: .shadow .rounded-10}
 
 #### 7. Validar a formatação dos arquivos
 
@@ -271,7 +271,7 @@ terraform validate
 terraform fmt
 ```
 
-![Formatação dos arquivos com terraform fmt](/assets/img/Lab02-ServicePrincipal/terraform%20fmt.png){: .shadow .rounded-10}
+![Formatação dos arquivos com terraform fmt](/assets/img/Lab02-ServicePrincipal/terraform%20fmt.webp){: .shadow .rounded-10}
 
 #### 8. Criar as variáveis de ambiente para conectar ao Azure
 
@@ -282,7 +282,7 @@ terraform fmt
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Variáveis de autenticação do Azure no terminal](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.png){: .shadow .rounded-10}
+![Variáveis de autenticação do Azure no terminal](/assets/img/Lab02-ServicePrincipal/SetVariaveisAzure.webp){: .shadow .rounded-10}
 
 #### 9. Criar o plano de execução
 
@@ -292,7 +292,7 @@ terraform fmt
 terraform plan -out meu_spn.out
 ```
 
-![Plano de execução gerado pelo Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20plan.png){: .shadow .rounded-10}
+![Plano de execução gerado pelo Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20plan.webp){: .shadow .rounded-10}
 
 > Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é necessário porque, ao executar o terraform plan, algumas informações sensíveis, como o ID da assinatura onde os recursos serão criados, são exibidas. Para proteger a segurança dos dados e evitar exposição desnecessária dessas informações, optei por mostrar apenas a quantidade de recursos.
 {: .prompt-danger }
@@ -306,7 +306,7 @@ terraform plan -out meu_spn.out
 terraform apply meu_spn.out
 ```
 
-![Aplicação da configuração com terraform apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.png){: .shadow .rounded-10}
+![Aplicação da configuração com terraform apply](/assets/img/Lab02-ServicePrincipal/terraform%20apply.webp){: .shadow .rounded-10}
 
 #### 11. Validar as informações no output
 
@@ -316,7 +316,7 @@ terraform apply meu_spn.out
 terraform output
 ```
 
-![Saída da aplicação do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20output.png){: .shadow .rounded-10}
+![Saída da aplicação do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20output.webp){: .shadow .rounded-10}
 
 #### 12. Listar recursos criados pelo Terraform
 
@@ -327,14 +327,14 @@ terraform output
 terraform state list
 ```
 
-![Recursos listados no estado do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20state%20list.png){: .shadow .rounded-10}
+![Recursos listados no estado do Terraform](/assets/img/Lab02-ServicePrincipal/terraform%20state%20list.webp){: .shadow .rounded-10}
 
 #### 13. Validar o Service Principal criado no portal do Azure
 
 - Nas imagens a seguir podemos validar que o Service Principal foi criado com sucesso no Portal Azure.
 
-![Service Principal criado no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal.png){: .shadow .rounded-10}
-![Detalhes do Service Principal no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal2.png){: .shadow .rounded-10}
+![Service Principal criado no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal.webp){: .shadow .rounded-10}
+![Detalhes do Service Principal no portal do Azure](/assets/img/Lab02-ServicePrincipal/Validar%20spn%20criado%20no%20Portal2.webp){: .shadow .rounded-10}
 
 #### 14. Remover recursos criados com terraform destroy
 
@@ -343,8 +343,8 @@ terraform state list
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Remoção dos recursos com terraform destroy](/assets/img/Lab02-ServicePrincipal/terraform%20destroy.png){: .shadow .rounded-10}
-![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab02-ServicePrincipal/terraform%20destroy2.png){: .shadow .rounded-10}
+![Remoção dos recursos com terraform destroy](/assets/img/Lab02-ServicePrincipal/terraform%20destroy.webp){: .shadow .rounded-10}
+![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab02-ServicePrincipal/terraform%20destroy2.webp){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
@@ -386,7 +386,7 @@ Para aprofundar seu conhecimento e expandir as possibilidades de automação com
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #EntraID
 

@@ -54,7 +54,7 @@ Antes de começarmos nosso laboratório, verifique se você possui:
 - Crie uma nova pasta e abra o VSCode "Visual Studio Code" nela para começar a configurar os recursos necessários.
   - Vamos estruturar os arquivos do projeto para iniciar a criação dos recursos com Terraform. Crie a estrutura de arquivos a abaixo:
 
-![Estrutura de arquivos do laboratório da VM Linux](/assets/img/Lab04-VMLNX/FolderStructure.png){: .shadow .rounded-10}
+![Estrutura de arquivos do laboratório da VM Linux](/assets/img/Lab04-VMLNX/FolderStructure.webp){: .shadow .rounded-10}
 
 ### 2. Iniciar a codificação dos arquivos
 
@@ -113,7 +113,7 @@ Adicione o conteúdo abaixo no terminal PowerShell.
 ssh-keygen -t rsa -b 4096 -f key-pub-lnx
 ```
 
-![Chave RSA gerada para acesso SSH](/assets/img/Lab04-VMLNX/RDS-Key.png){: .shadow .rounded-10}
+![Chave RSA gerada para acesso SSH](/assets/img/Lab04-VMLNX/RDS-Key.webp){: .shadow .rounded-10}
 
 > A chave privada (key-pub-lnx) deve ser mantida segura e nunca compartilhada. A chave pública (key-pub-lnx.pub) pode ser distribuída para qualquer sistema com o qual você deseja se conectar via SSH.
 {: .prompt-warning }
@@ -347,7 +347,7 @@ output "vm_name" {
 }
 ```
 
-![Saída do Terraform com o IP público usado no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformOutput.png){: .shadow .rounded-10}
+![Saída do Terraform com o IP público usado no laboratório](/assets/img/Lab03-VMWindowsServer/TerraformOutput.webp){: .shadow .rounded-10}
 
 ### 3. Inicializar o Terraform
 
@@ -357,7 +357,7 @@ output "vm_name" {
 terraform init
 ```
 
-![Inicialização do Terraform no laboratório da VM Linux](/assets/img/Lab04-VMLNX/TerraformInit.png){: .shadow .rounded-10}
+![Inicialização do Terraform no laboratório da VM Linux](/assets/img/Lab04-VMLNX/TerraformInit.webp){: .shadow .rounded-10}
 
 ### 4. Validar se a configuração está correta
 
@@ -367,7 +367,7 @@ terraform init
 terraform validate
 ```
 
-![Validação da configuração Terraform da VM Linux](/assets/img/Lab04-VMLNX/TerraformValidate.png){: .shadow .rounded-10}
+![Validação da configuração Terraform da VM Linux](/assets/img/Lab04-VMLNX/TerraformValidate.webp){: .shadow .rounded-10}
 
 #### 5. Validar a formatação dos arquivos
 
@@ -377,7 +377,7 @@ terraform validate
 terraform fmt
 ```
 
-![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab04-VMLNX/TerraformFMT.png){: .shadow .rounded-10}
+![Formatação dos arquivos Terraform do laboratório](/assets/img/Lab04-VMLNX/TerraformFMT.webp){: .shadow .rounded-10}
 
 #### 6. Criar as variáveis de ambiente para conectar ao Azure
 
@@ -388,7 +388,7 @@ terraform fmt
 ```
 
 <center> Notem na figura que eu validei se as variáveis foram adicionadas corretamente </center>
-![Variáveis de autenticação do Azure no terminal](/assets/img/Lab04-VMLNX/EnvironmentVariables.png){: .shadow .rounded-10}
+![Variáveis de autenticação do Azure no terminal](/assets/img/Lab04-VMLNX/EnvironmentVariables.webp){: .shadow .rounded-10}
 
 - Aqui vamos adicionar a variavel de ambiente da chave Publico que criamos mais acima. Adicione o comando abaixo em seu terminal do PowerShell.
 
@@ -396,7 +396,7 @@ terraform fmt
 $env:TF_VAR_key_pub_lnx="Adicione aqui o conteúdo da sua chave pública"
 ```
 
-![Variável com a chave SSH pública da VM Linux](/assets/img/Lab04-VMLNX/Key_TF_Variable.png){: .shadow .rounded-10}
+![Variável com a chave SSH pública da VM Linux](/assets/img/Lab04-VMLNX/Key_TF_Variable.webp){: .shadow .rounded-10}
 
 #### 7. Criar o plano de execução
 
@@ -406,7 +406,7 @@ $env:TF_VAR_key_pub_lnx="Adicione aqui o conteúdo da sua chave pública"
 terraform plan -out my_vm-lnx.out
 ```
 
-![Plano de execução do Terraform para a VM Linux](/assets/img/Lab04-VMLNX/TerraformPlan.png){: .shadow .rounded-10}
+![Plano de execução do Terraform para a VM Linux](/assets/img/Lab04-VMLNX/TerraformPlan.webp){: .shadow .rounded-10}
 
 > Na figura acima, estou apresentando somente a quantidade de recursos que serão criados. Isso é feito para proteger a segurança dos dados e evitar exposição desnecessária de informações sensíveis, como o ID da assinatura onde os recursos serão criados. Note que ele já me traz as informações de outputs que criamos logo acima.
 {: .prompt-danger }
@@ -420,7 +420,7 @@ terraform plan -out my_vm-lnx.out
 terraform apply my_vm-lnx.out
 ```
 
-![Aplicação do Terraform para a VM Linux](/assets/img/Lab04-VMLNX/TerraformApply.png){: .shadow .rounded-10}
+![Aplicação do Terraform para a VM Linux](/assets/img/Lab04-VMLNX/TerraformApply.webp){: .shadow .rounded-10}
 
 #### 9. Listar recursos criados pelo Terraform
 
@@ -431,21 +431,21 @@ terraform apply my_vm-lnx.out
 terraform state list
 ```
 
-![Recursos da VM Linux listados no estado do Terraform](/assets/img/Lab04-VMLNX/TerraformState.png){: .shadow .rounded-10}
+![Recursos da VM Linux listados no estado do Terraform](/assets/img/Lab04-VMLNX/TerraformState.webp){: .shadow .rounded-10}
 
 #### 10. Validar recursos criados no portal do Azure
 
 - A estrutura de recursos criada pode ser vista na figura abaixo.
 
-![Recursos do laboratório no grupo de recursos](/assets/img/Lab04-VMLNX/RG.png){: .shadow .rounded-10}
+![Recursos do laboratório no grupo de recursos](/assets/img/Lab04-VMLNX/RG.webp){: .shadow .rounded-10}
 
 - Os detalhes da VM criada podem ser vistos na figura abaixo.
 
-![VM Linux criada no portal do Azure](/assets/img/Lab04-VMLNX/CreateVM.png){: .shadow .rounded-10}
+![VM Linux criada no portal do Azure](/assets/img/Lab04-VMLNX/CreateVM.webp){: .shadow .rounded-10}
 
 - A regra de segurança de rede (NSG) foi criada com origem somente meu IP público e destino o IP da VM, como visto na figura abaixo.
 
-![Regra SSH criada no grupo de segurança de rede](/assets/img/Lab04-VMLNX/NSGRule.png){: .shadow .rounded-10}
+![Regra SSH criada no grupo de segurança de rede](/assets/img/Lab04-VMLNX/NSGRule.webp){: .shadow .rounded-10}
 
 
 #### 11. Acessar a VM criada
@@ -459,7 +459,7 @@ Execute o comando abaixo e, na sequência, aceite a conexão
 ssh -i key-pub-lnx terraform@x.x.x.231
 ```
 
-![Acesso SSH à VM Linux e versão do sistema](/assets/img/Lab04-VMLNX/VMAccess+Version.png){: .shadow .rounded-10}
+![Acesso SSH à VM Linux e versão do sistema](/assets/img/Lab04-VMLNX/VMAccess+Version.webp){: .shadow .rounded-10}
 
 #### 12. Remover recursos criados com terraform destroy
 
@@ -468,8 +468,8 @@ ssh -i key-pub-lnx terraform@x.x.x.231
 > Esse comando é útil quando você deseja desfazer todas as mudanças aplicadas ou quando precisa limpar o ambiente.
 {: .prompt-tip }
 
-![Execução do terraform destroy no laboratório](/assets/img/Lab04-VMLNX/TerraformDestroy.png){: .shadow .rounded-10}
-![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab04-VMLNX/TerraformDestroy2.png){: .shadow .rounded-10}
+![Execução do terraform destroy no laboratório](/assets/img/Lab04-VMLNX/TerraformDestroy.webp){: .shadow .rounded-10}
+![Confirmação da remoção dos recursos do laboratório](/assets/img/Lab04-VMLNX/TerraformDestroy2.webp){: .shadow .rounded-10}
 
 > É importante lembrar que o comando terraform destroy apaga todos os recursos gerenciados pelo Terraform, então use-o com cautela, especialmente em ambientes de produção. Sempre revise o plano de destruição antes de confirmar para garantir que você não está apagando algo por engano.
 {: .prompt-danger }
@@ -508,7 +508,7 @@ Agora que sua VM já está rodando, que tal explorar mais possibilidades? Aqui e
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #Terraform #InfraAsCode
 

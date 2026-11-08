@@ -42,7 +42,7 @@ No meu laboratório vou simular a instalação do Powershell no Windows 10.
 winget search Microsoft.PowerShell
 ```
 
-![Verificação da versão do PowerShell 7](/assets/img/Lab01-Bastion/Bastion-PS/Verifique%20a%20versao%20do%20Powershell7.png){: .shadow .rounded-10}
+![Verificação da versão do PowerShell 7](/assets/img/Lab01-Bastion/Bastion-PS/Verifique%20a%20versao%20do%20Powershell7.webp){: .shadow .rounded-10}
 
 - Instale o Powershell
 
@@ -50,7 +50,7 @@ winget search Microsoft.PowerShell
 winget install --id Microsoft.PowerShell --source winget
 ```
 
-![Instalação da versão mais recente do PowerShell 7](/assets/img/Lab01-Bastion/Bastion-PS/02-Instando%20Powershell7%20na%20versao%20mais%20recente.png){: .shadow .rounded-10}
+![Instalação da versão mais recente do PowerShell 7](/assets/img/Lab01-Bastion/Bastion-PS/02-Instando%20Powershell7%20na%20versao%20mais%20recente.webp){: .shadow .rounded-10}
 
 - Instale também o Azure PowerShell
 
@@ -65,7 +65,7 @@ winget install --id Microsoft.PowerShell --source winget
 $PSVersionTable.PSVersion
 ```
 
-![Versão do PowerShell instalada](/assets/img/Lab01-Bastion/Bastion-PS/07VersaoPowershell.png){: .shadow .rounded-10}
+![Versão do PowerShell instalada](/assets/img/Lab01-Bastion/Bastion-PS/07VersaoPowershell.webp){: .shadow .rounded-10}
 
 > Obs.: Talvez seja necessário reiniciar sua máquina.
 {:.prompt-info}
@@ -78,7 +78,7 @@ $PSVersionTable.PSVersion
 ```powershell
 Update-AzConfig -DefaultSubscriptionForLogin subscriptionID
 ```
-![Definição da assinatura padrão no Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/05-SetandoSubscriptionDefault.png){: .shadow .rounded-10}
+![Definição da assinatura padrão no Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/05-SetandoSubscriptionDefault.webp){: .shadow .rounded-10}
 
 - Com o Powershell aberto execute o comando a seguir para logar no Azure.
 
@@ -91,7 +91,7 @@ Connect-AzAccount -DeviceCode
 > *Depois de ter logado você vai notar que no terminal vai aparecer a assinatura padrão que você associou.*
 {:.prompt-info}
 
-![Autenticação no Azure PowerShell com código de dispositivo](/assets/img/Lab01-Bastion/Bastion-PS/06-Connect-AzAccount%20DeviceCode.png){: .shadow .rounded-10}
+![Autenticação no Azure PowerShell com código de dispositivo](/assets/img/Lab01-Bastion/Bastion-PS/06-Connect-AzAccount%20DeviceCode.webp){: .shadow .rounded-10}
 
 > Para mais informações sobre os métodos de login com o Azure Powershell, consulte <a href="https://learn.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azps-12.4.0&form=MG0AV3" target="_blank" rel="noopener noreferrer">aqui</a>.
 {: .prompt-tip }
@@ -106,7 +106,7 @@ Connect-AzAccount -DeviceCode
 New-AzResourceGroup -Name RG-BastionPS -Location eastus2
 ```
 
-![Criação do grupo de recursos com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/08-ResourceGroup.png){: .shadow .rounded-10}
+![Criação do grupo de recursos com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/08-ResourceGroup.webp){: .shadow .rounded-10}
 
 - Crie uma nova Virtual Network + AzureBastionSubnet:
 
@@ -122,11 +122,11 @@ Add-AzVirtualNetworkSubnetConfig -Name AzureBastionSubnet -VirtualNetwork $virtu
 
 $virtualNetwork | Set-AzVirtualNetwork # Associa a AzureBastionSubnet na VNet BastionPSVNet
 ```
-![Implantação da rede virtual e sub-redes com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/10-DeployVNET+Subnets.png){: .shadow .rounded-10}
+![Implantação da rede virtual e sub-redes com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/10-DeployVNET+Subnets.webp){: .shadow .rounded-10}
 
 - Aqui é uma visão da VNet + Subnets que acabamos de criar:
 
-![Rede virtual criada pelo Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/101VNet%20criada.png){: .shadow .rounded-10}
+![Rede virtual criada pelo Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/101VNet%20criada.webp){: .shadow .rounded-10}
 
 ---
 
@@ -138,7 +138,7 @@ Para que seja possível fazer o deploy do Azure Bastion, necessitamos ter um Pub
 $publicIp = New-AzPublicIpAddress -ResourceGroupName RG-BastionPS -Location eastus2 -Name BastionPS-PIP -AllocationMethod Static -Sku Standard -Zone 1,2,3
 ```
 
-![Implantação do IP público do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/11DeployPublicIP.png){: .shadow .rounded-20 }
+![Implantação do IP público do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/11DeployPublicIP.webp){: .shadow .rounded-20 }
 
 > Se quiser saber mais sobre o Public IP, para entender sua Limitações, Preços e SKU, consulte <a href="https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses" target="_blank" rel="noopener noreferrer">aqui</a>.
 {: .prompt-tip }
@@ -149,11 +149,11 @@ $publicIp = New-AzPublicIpAddress -ResourceGroupName RG-BastionPS -Location east
 New-AzBastion -ResourceGroupName RG-BastionPS -Name BastionHostPS -PublicIpAddressId $publicIp.Id -VirtualNetworkId $virtualNetwork.Id -Sku Basic
 ```
 
-![Implantação do Azure Bastion com PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/12-DeplyAZBastion.png){: .shadow .rounded-20 }
+![Implantação do Azure Bastion com PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/12-DeplyAZBastion.webp){: .shadow .rounded-20 }
 
 - Com o Deploy do Bastion concluído, podemos agora fazer o login em uma VM Linux para validar a funcionalidade do recurso.
 
-![Recursos do laboratório criados no Azure](/assets/img/Lab01-Bastion/Bastion-PS/13-RecursosCriados.png){: .shadow .rounded-20 }
+![Recursos do laboratório criados no Azure](/assets/img/Lab01-Bastion/Bastion-PS/13-RecursosCriados.webp){: .shadow .rounded-20 }
 
 #### Passo 6: Deploy VM Linux para teste de acesso
 
@@ -207,7 +207,7 @@ New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vmConfig
 > A versão `latest` foi usada para simplificar o laboratório. Em ambientes de produção, fixe uma versão de imagem testada e validada para evitar mudanças inesperadas durante o deploy.
 {: .prompt-warning }
 
-![Implantação da VM Linux com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/15-DeployVMLX.png){: .shadow .rounded-20 }
+![Implantação da VM Linux com Azure PowerShell](/assets/img/Lab01-Bastion/Bastion-PS/15-DeployVMLX.webp){: .shadow .rounded-20 }
 
 > Obs.: Em breve vou montar laboratórios ensinando como fazer o deploy de VMs em diferentes formatos, além do Powershell.
 {:.prompt-info}
@@ -219,7 +219,7 @@ New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vmConfig
   - Já logado no [Portal do Azure](https://portal.azure.com/).
   - Navegue até o **Resource-Group** onde está a VM Linux que criamos.
 
-![Localização da VM Linux no portal do Azure](/assets/img/Lab01-Bastion/Bastion-PS/16-LocalizandoVM.png){: .shadow .rounded-10}
+![Localização da VM Linux no portal do Azure](/assets/img/Lab01-Bastion/Bastion-PS/16-LocalizandoVM.webp){: .shadow .rounded-10}
 
 ### Passo 8: Conecte-se via Bastion
 
@@ -229,14 +229,14 @@ New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vmConfig
   - Uma nova tela será exibida. Insira as credenciais de login da sua VM (nome de usuário e senha).
   - Clique em **Connect**.
 
-![Configuração de acesso da VM Linux no Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM.png){: .shadow .rounded-10}
+![Configuração de acesso da VM Linux no Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM.webp){: .shadow .rounded-10}
 
 
-![Autenticação da VM Linux no Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM2.png){: .shadow .rounded-10}
+![Autenticação da VM Linux no Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM2.webp){: .shadow .rounded-10}
 
   - Após alguns segundos, uma nova janela será aberta, permitindo que você interaja com a linha de comando da sua VM Linux.
 
-![Sessão da VM Linux aberta pelo Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM3.png){: .shadow .rounded-10}
+![Sessão da VM Linux aberta pelo Azure Bastion](/assets/img/Lab01-Bastion/Bastion-PS/14-LogandoVM3.webp){: .shadow .rounded-10}
 
 ## Documentação Adicional
 
@@ -252,7 +252,7 @@ Agora você sabe como realizar o deploy do Azure Bastion e de uma Virtual Machin
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #Azure #Tech #Cloud #Security #Network #PowerShell
 

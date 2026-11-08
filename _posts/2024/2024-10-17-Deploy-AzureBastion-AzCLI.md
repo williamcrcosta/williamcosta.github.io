@@ -40,14 +40,14 @@ Primeiro, caso você não tenha Azure CLI instalado, aqui estão os links com a 
 az --version
 ```
 
-![Verificação da versão do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/01-az%20--version.png){: .shadow .rounded-10}
+![Verificação da versão do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/01-az%20--version.webp){: .shadow .rounded-10}
 
 - Se você precisar atualizar a versão do Az-CLI, você pode executar o comando a seguir:
 ```sh
 az upgrade
 ```
 
-![Atualização do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/02-az%20upgrade.png){: .shadow .rounded-10}
+![Atualização do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/02-az%20upgrade.webp){: .shadow .rounded-10}
 
 -  Verifique se atualizou para versão mais recente:
 
@@ -55,7 +55,7 @@ az upgrade
 az --version
 ```
 
-![Versão atualizada do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/03-versaoatualizadaazcli.png){: .shadow .rounded-10}
+![Versão atualizada do Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/03-versaoatualizadaazcli.webp){: .shadow .rounded-10}
 
 
 #### Passo 3: Faça login com Az CLI
@@ -66,11 +66,11 @@ az --version
 az login --use-device-code
 ```
 
-![Autenticação no Azure CLI com az login](/assets/img/Lab01-Bastion/Bastion-azcli/new/04-AzLogin.png){: .shadow .rounded-10}
+![Autenticação no Azure CLI com az login](/assets/img/Lab01-Bastion/Bastion-azcli/new/04-AzLogin.webp){: .shadow .rounded-10}
 
 - Abra link e copie o código para logar com suas credenciais.
 
-![Confirmação de login no Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/05-login2.png){: .shadow .rounded-10}
+![Confirmação de login no Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/05-login2.webp){: .shadow .rounded-10}
 
 - Depois de ter logado você vai notar no terminal que vai aparecer as subscriptions que você tem acesso.
 
@@ -87,7 +87,7 @@ az account set --subscription "<subscription ID or name>"
 az account show
 ```
 
-![Seleção da assinatura padrão no Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/06-SetandoumaSubscription.png){: .shadow .rounded-10}
+![Seleção da assinatura padrão no Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/06-SetandoumaSubscription.webp){: .shadow .rounded-10}
 
 > Para mais informações sobre os métodos de login com o Azure CLI, consulte <a href="https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli" target="_blank" rel="noopener noreferrer">aqui</a>.
 {: .prompt-tip }
@@ -101,7 +101,7 @@ az account show
 ```sh
 az group create --name RG-BastionCLI --location eastus2
 ```
-![Criação do grupo de recursos com Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/07-azgroupcreate.png){: .shadow .rounded-10}
+![Criação do grupo de recursos com Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/07-azgroupcreate.webp){: .shadow .rounded-10}
 
   - Explicação dos Parametros:
 
@@ -120,13 +120,13 @@ az group create --name RG-BastionCLI --location eastus2
 ```sh
 az network vnet create --name BastionCLIVNet --resource-group RG-BastionCLI --location eastus2 --address-prefix 10.110.0.0/16
 ```
-![Rede virtual criada no portal do Azure](/assets/img/Lab01-Bastion/Bastion-azcli/new/071-vnet%20criada.png){: .shadow .rounded-20 }
+![Rede virtual criada no portal do Azure](/assets/img/Lab01-Bastion/Bastion-azcli/new/071-vnet%20criada.webp){: .shadow .rounded-20 }
 
 ```sh
 az network vnet subnet create --resource-group RG-BastionCLI --vnet-name BastionCLIVNet --name AzureBastionSubnet --address-prefix 10.110.20.0/26
 ```
 
-![Sub-rede AzureBastionSubnet criada](/assets/img/Lab01-Bastion/Bastion-azcli/new/08-AzureBastionSubnet.png){: .shadow .rounded-20 }
+![Sub-rede AzureBastionSubnet criada](/assets/img/Lab01-Bastion/Bastion-azcli/new/08-AzureBastionSubnet.webp){: .shadow .rounded-20 }
 
   - Explicação dos Parametros:
 
@@ -156,7 +156,7 @@ Para que seja possivel fazer o deploy do Azure Bastion, necessitamos ter um Publ
 ```sh
 az network public-ip create --resource-group RG-BastionCLI --name BastionCLI-PIP --sku Standard --zone 1 2 3 --location eastus2
 ```
-![Implantação do IP público do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-azcli/new/09-DeployPublicIP.png){: .shadow .rounded-20 }
+![Implantação do IP público do Azure Bastion](/assets/img/Lab01-Bastion/Bastion-azcli/new/09-DeployPublicIP.webp){: .shadow .rounded-20 }
 
   - Explicação dos Parametros:
 
@@ -181,7 +181,7 @@ az network public-ip create --resource-group RG-BastionCLI --name BastionCLI-PIP
 az network bastion create --name BastionHost-CLI --resource-group RG-BastionCLI --vnet-name BastionCLIVNet --public-ip-address BastionCLI-PIP --location eastus2 --sku Basic
 ```
 
-![Implantação do Azure Bastion com Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/10-DeployBastionAZCLI.png){: .shadow .rounded-20 }
+![Implantação do Azure Bastion com Azure CLI](/assets/img/Lab01-Bastion/Bastion-azcli/new/10-DeployBastionAZCLI.webp){: .shadow .rounded-20 }
 
   - Explicação dos Parametros:
 
@@ -221,7 +221,7 @@ Agora você sabe como realizar o deploy do Azure Bastion através do Azure CLI.
 
 Até a próxima!! 😉
 
-![Logo do Cloud Insights](/assets/img/02/cloudinsights3.png){: .shadow .rounded-10}
+![Logo do Cloud Insights](/assets/img/02/cloudinsights3.webp){: .shadow .rounded-10}
 
 #CloudInsights #PartiuNuvem #Azure #Tech #Cloud #Security #Network #AzCLI
 
