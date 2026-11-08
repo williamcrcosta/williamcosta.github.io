@@ -14,10 +14,10 @@ gem 'base64'
 # Adicione o jekyll-feed
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.18"
-  gem "jekyll-theme-chirpy", "~> 6.5.5"  # Mantenha o tema Chirpy
+  gem "jekyll-theme-chirpy", "~> 7.0"
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
-  gem 'jekyll-toc'
+  gem 'jekyll-redirect-from'
   #gem 'jekyll-multiple-languages-plugin'  # Plugin de múltiplos idiomas
 end
 

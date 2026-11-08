@@ -63,8 +63,10 @@ webmaster_verifications:
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
-google_analytics:
-  id: G-0RVS46EEQ5 # fill in your Google Analytics ID
+# Web Analytics › https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Use-CDN-or-Self-Host-Assets
+analytics:
+  google:
+    id: G-0RVS46EEQ5 # fill in your Google Analytics ID
 
 # Prefer color scheme setting.
 #
@@ -79,12 +81,12 @@ google_analytics:
 #
 theme_mode:
 
-# The CDN endpoint for images.
-# Notice that once it is assigned, the CDN url
-# will be added to all image (site avatar & posts' images) paths starting with '/'
+# The CDN endpoint for media resources.
+# Notice that once it is assigned, the CDN url will be added to all
+# media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+cdn:
 
 # the avatar on sidebar, support local or CORS resources
 avatar: /assets/img/profile.webp
@@ -124,6 +126,8 @@ assets:
 
 pwa:
   enabled: true # the option for PWA feature
+  cache:
+    enabled: true # the option for service worker cache
 
 paginate: 10
 
@@ -138,7 +142,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-include-cache
-  - jekyll-toc
   - jekyll-redirect-from
 #  - jekyll-multiple-languages-plugin
 
