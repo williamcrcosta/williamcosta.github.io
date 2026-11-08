@@ -51,12 +51,17 @@ meta: ' '
 
 # 404 Not Found page
 not_found:
-  statment: Desculpe, perdemos esse URL ou ele está apontando para algo que não existe.
+  statement: Desculpe, perdemos esse URL ou ele está apontando para algo que não existe.
 
 # Notification
 notification:
   update_found: Uma nova versão do conteúdo está disponível.
   update: Atualização
+
+theme:
+  light: Claro
+  dark: Escuro
+  system: Sistema
 
 # ----- Posts related labels -----
 
@@ -71,6 +76,7 @@ post:
     prompt: " de leitura"
   relate_posts: Leia também
   share: Compartilhar
+  edit: Editar esta postagem
   button:
     next: Próximo
     previous: Anterior
