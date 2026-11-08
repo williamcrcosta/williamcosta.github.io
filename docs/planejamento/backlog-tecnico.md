@@ -36,9 +36,13 @@ Cloudflare Pages conectado ao repo:
 - [x] Workflow agendado semanal para checar links externos (link rot) — `link-check.yml`
 - [ ] Pin de GitHub Actions por SHA (supply chain)
 - [x] `html-proofer ~> 5.2` e `jekyll 4.4` via Dependabot
-- [ ] Avaliar migração para Chirpy 7 (mudança maior; Jekyll 4.4 já funciona com o 6.5.5)
-- [ ] Remover ~8,4 MB de imagens órfãs (`Bastion-azcli/new/`, `Bicep/`, `Lab0X-EventHUB-Splunk`)
-- [ ] Remover GIFs/fonte pesada excluídos do build (`*.gif`, `profile.png`)
+- [x] Migração para Chirpy 7 (v7.6.0; PRs #116, #118 — incluiu correção do entrypoint scss `main.bundle` para bundlar o Bootstrap em produção)
+- [x] Remover ~8,4 MB de imagens órfãs (`Bastion-azcli/new/`, `Bicep/`, `Lab0X-EventHUB-Splunk`)
+- [x] Remover GIFs/fonte pesada excluídos do build (`*.gif`, `profile.png`)
 - [ ] Converter PNGs >1 MB referenciadas para WebP
 - [ ] Configurar `google_site_verification` (Search Console)
-- [ ] Limpar `_data/assets/self_host.yml` dormente
+- [x] Limpar `_data/assets/self_host.yml` dormente
+
+## Lição aprendida (migração Chirpy 7)
+
+O ambiente de desenvolvimento pode mascarar bugs de produção. Exemplo real: o Bootstrap vem da CDN fora de produção, então o override de scss desatualizado só quebrou o site publicado. Sempre validar com `JEKYLL_ENV=production bundle exec jekyll build` antes de mudanças de tema/assets. Preview por PR (item acima) pegaria esse tipo de bug automaticamente.
